@@ -85,6 +85,11 @@ function getProgressCards(cards: AppKnowledgeCard[], type: string | null) {
   return [];
 }
 
+function getCardPosterUrl(card: AppKnowledgeCard) {
+  if (card.imageUrl.startsWith("/")) return card.imageUrl;
+  return `/generated-cards/${card.id}.svg`;
+}
+
 function runSelfTests() {
   const stats = calculateStats(mockCards);
   console.assert(stats.total === 3, "stats.total should be 3");
@@ -181,7 +186,7 @@ function ProgressCardList({ title, cards, emptyText, onOpenCard }: { title: stri
                 <button key={card.id} className="group rounded-2xl border border-slate-200 bg-white p-3 text-left transition hover:border-slate-400 hover:shadow-sm" onClick={() => onOpenCard(card.id)}>
                   <div className="flex gap-3">
                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-slate-100">
-                      <img src={card.imageUrl} alt={card.title} className="h-full w-full object-cover" />
+                      <img src={getCardPosterUrl(card)} alt={card.title} className="h-full w-full object-contain object-top" />
                     </div>
                     <div className="min-w-0">
                       <div className="mb-1 flex flex-wrap gap-1">
@@ -243,6 +248,8 @@ export default function DailyKnowledgeCardMVP() {
 
   const selectedCard = cards.find((card) => card.id === selectedId) || cards[0];
   const todayCard = cards.find((card) => card.id === todayCardId) || cards[0];
+  const todayPosterUrl = getCardPosterUrl(todayCard);
+  const selectedPosterUrl = getCardPosterUrl(selectedCard);
 
   const localStats = calculateStats(cards);
   const stats = {
@@ -395,19 +402,27 @@ export default function DailyKnowledgeCardMVP() {
           <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
               <Card className="overflow-hidden rounded-3xl border-slate-200 shadow-sm">
-                <div className="relative aspect-[4/5] bg-slate-200">
-                  <img src={todayCard.imageUrl} alt={todayCard.title} className="h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
-                  <div className="absolute bottom-0 p-6 text-white">
-                    <div className="mb-2 inline-flex rounded-full bg-white/15 px-3 py-1 text-sm backdrop-blur">{todayCard.category} · {todayCard.subCategory} · {todayCard.difficulty}</div>
-                    <h2 className="text-2xl font-semibold md:text-3xl">{todayCard.title}</h2>
-                    <p className="mt-2 max-w-2xl text-sm leading-6 text-white/80">{todayCard.subtitle}</p>
-                  </div>
+                <div className="aspect-[4/5] bg-slate-100">
+                  <img src={todayPosterUrl} alt={todayCard.title} className="h-full w-full object-contain object-top" />
                 </div>
+                <div className="border-t border-slate-200 bg-white px-5 py-4 text-sm text-slate-500">图片区域直接显示知识卡原图，页面不再覆盖标题文字。</div>
               </Card>
             </motion.div>
 
             <div className="space-y-4">
+              <Card className="rounded-3xl border-slate-200 shadow-sm">
+                <CardContent className="p-5">
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-slate-900 px-3 py-1 text-sm text-white">{todayCard.category}</span>
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{todayCard.subCategory}</span>
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{todayCard.difficulty}</span>
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{todayCard.cardDate}</span>
+                  </div>
+                  <h2 className="text-2xl font-semibold text-slate-900">{todayCard.title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">{todayCard.subtitle}</p>
+                </CardContent>
+              </Card>
+
               <Card className="rounded-3xl border-slate-200 shadow-sm">
                 <CardContent className="p-5">
                   <div className="flex items-center justify-between gap-4">
@@ -463,13 +478,16 @@ export default function DailyKnowledgeCardMVP() {
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {filteredCards.map((card) => (
                 <Card key={card.id} className="overflow-hidden rounded-3xl border-slate-200 shadow-sm">
-                  <div className="relative aspect-[4/3] bg-slate-200">
-                    <img src={card.imageUrl} alt={card.title} className="h-full w-full object-cover" />
-                    <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-slate-700 backdrop-blur">{card.category}</div>
-                    {card.completed ? <div className="absolute right-3 top-3 rounded-full bg-emerald-600 px-3 py-1 text-xs font-medium text-white">已完成</div> : null}
+                  <div className="aspect-[4/3] bg-slate-100">
+                    <img src={getCardPosterUrl(card)} alt={card.title} className="h-full w-full object-contain object-top" />
                   </div>
                   <CardContent className="p-4">
-                    <div className="mb-2 flex items-center gap-2 text-xs text-slate-500"><Icon name="calendar" className="h-4 w-4" /> {card.cardDate}<Icon name="tags" className="ml-2 h-4 w-4" /> {card.subCategory}</div>
+                    <div className="mb-2 flex flex-wrap gap-2 text-xs">
+                      <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">{card.category}</span>
+                      <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">{card.subCategory}</span>
+                      <span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">{card.cardDate}</span>
+                      {card.completed ? <span className="rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700">已完成</span> : null}
+                    </div>
                     <h3 className="line-clamp-2 text-lg font-semibold text-slate-900">{card.title}</h3>
                     <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-500">{card.summary}</p>
                     <div className="mt-4 flex gap-2">
@@ -523,7 +541,7 @@ export default function DailyKnowledgeCardMVP() {
 
         {tab === "detail" ? (
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-            <Card className="overflow-hidden rounded-3xl border-slate-200 shadow-sm"><div className="aspect-[4/5] bg-slate-200"><img src={selectedCard.imageUrl} alt={selectedCard.title} className="h-full w-full object-cover" /></div></Card>
+            <Card className="overflow-hidden rounded-3xl border-slate-200 shadow-sm"><div className="aspect-[4/5] bg-slate-100"><img src={selectedPosterUrl} alt={selectedCard.title} className="h-full w-full object-contain object-top" /></div></Card>
             <div className="space-y-4">
               <Card className="rounded-3xl border-slate-200 shadow-sm"><CardContent className="p-5"><div className="mb-3 flex flex-wrap gap-2"><span className="rounded-full bg-slate-900 px-3 py-1 text-sm text-white">{selectedCard.category}</span><span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{selectedCard.subCategory}</span><span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{selectedCard.difficulty}</span></div><h2 className="text-2xl font-semibold">{selectedCard.title}</h2><p className="mt-2 text-slate-500">{selectedCard.subtitle}</p><p className="mt-4 leading-7 text-slate-700">{selectedCard.summary}</p></CardContent></Card>
               <Card className="rounded-3xl border-slate-200 shadow-sm"><CardContent className="p-5"><div className="mb-3 flex items-center gap-2 font-semibold"><Icon name="image" className="h-5 w-5" /> 核心机制</div><p className="leading-7 text-slate-700">{selectedCard.content.coreMechanism}</p></CardContent></Card>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="bg-11" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6fffb" />
+      <stop offset="60%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d8fff2" />
+    </linearGradient>
+    <linearGradient id="accent-11" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#bg-11)" />
+  <circle cx="1120" cy="96" r="180" fill="#d8fff2" opacity="0.65" />
+  <circle cx="90" cy="1360" r="220" fill="#d8fff2" opacity="0.5" />
+  <rect x="72" y="72" rx="32" ry="32" width="1056" height="1356" fill="#ffffff" opacity="0.88" />
+
+  <rect x="72" y="72" rx="32" ry="32" width="14" height="1356" fill="url(#accent-11)" />
+
+  <rect x="100" y="80" rx="24" ry="24" width="360" height="48" fill="#d8fff2" />
+  <text x="124" y="112" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">自然科学 · 地球系统 · 入门</text>
+  <text x="948" y="112" font-size="24" font-weight="700" fill="#0f766e" font-family="Georgia, Times New Roman, serif">12 / 07</text>
+
+  <text x="72" y="176" font-size="62" font-weight="800" fill="#10243c" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">珊瑚为什么会白化</text>
+  <text x="72" y="392" font-size="30" font-weight="500" fill="#475569" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">看似一夜变白，背后是共生系统被环境压力打断</text>
+
+  <rect x="72" y="470" rx="24" ry="24" width="670" height="108" fill="#d8fff2" />
+  <text x="100" y="510" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">今日要点</text>
+  <text x="100" y="548" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">珊瑚白化不是简单褪色，而是珊瑚在高温等压力下失去共生</text><text x="100" y="576" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">藻类后，透明组织下露出白色骨骼。</text>
+
+  <text x="72" y="646" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">关键词</text>
+  
+        <rect x="72" y="604" rx="20" ry="20" width="106" height="48" fill="#d8fff2" />
+        <text x="90" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">珊瑚白化</text>
+      
+        <rect x="190" y="604" rx="20" ry="20" width="96" height="48" fill="#d8fff2" />
+        <text x="208" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">共生藻</text>
+      
+        <rect x="298" y="604" rx="20" ry="20" width="96" height="48" fill="#d8fff2" />
+        <text x="316" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">海温</text>
+      
+        <rect x="406" y="604" rx="20" ry="20" width="106" height="48" fill="#d8fff2" />
+        <text x="424" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">生态压力</text>
+      
+
+  <text x="72" y="736" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">为什么重要</text>
+  <circle cx="72" cy="768" r="5" fill="#0f766e" /><text x="90" y="774" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">能帮助理解生态系统里很多关系是靠脆弱共生维持的。</text><circle cx="72" cy="814" r="5" fill="#0f766e" /><text x="90" y="820" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">白化是气候变化影响海洋生态的直观信号之一。</text><circle cx="72" cy="860" r="5" fill="#0f766e" /><text x="90" y="866" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">让“环境变化”从抽象概念变成可观察机制。</text>
+
+  <rect x="782" y="176" rx="28" ry="28" width="346" height="420" fill="#0f172a" />
+  <text x="810" y="224" font-size="24" font-weight="700" fill="#cbd5e1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">核心机制</text>
+  <text x="810" y="270" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">健康珊瑚依赖体内共生藻进行光合作用，为自己提供能量并</text><text x="810" y="304" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">带来颜色。当海水温度异常升高或环境压力过大时，珊瑚会</text><text x="810" y="338" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">排出这些共生藻，短期内看起来变白，长期则可能因能量供</text><text x="810" y="372" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">应中断而死亡。</text>
+
+  <rect x="782" y="632" rx="28" ry="28" width="346" height="312" fill="#f6fffb" stroke="#d8fff2" stroke-width="2" />
+  <text x="810" y="680" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">财务视角</text>
+  <text x="810" y="726" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">珊瑚白化会影响海洋旅游、渔业和沿海生态服务。对依赖海</text><text x="810" y="760" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">岛旅游和渔业的地区来说，这不是纯环境新闻，而是经济韧</text><text x="810" y="794" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">性问题。</text>
+
+  <rect x="72" y="1010" rx="28" ry="28" width="670" height="350" fill="#f8fafc" stroke="#d8fff2" stroke-width="2" />
+  <text x="100" y="1060" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">结论</text>
+  <text x="100" y="1110" font-size="27" font-weight="600" fill="#10243c" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">珊瑚白化真正揭示的，不是颜色变化，而是一个高依赖共生</text><text x="100" y="1148" font-size="27" font-weight="600" fill="#10243c" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">系统在环境压力下的脆弱性。</text>
+  <text x="100" y="1268" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">日期：2026-05-11</text>
+
+  <rect x="782" y="1010" rx="28" ry="28" width="346" height="350" fill="#ffffff" stroke="#d8fff2" stroke-width="2" />
+  <text x="810" y="1060" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">记忆钩子</text>
+  <circle cx="782" cy="1110" r="5" fill="#0f766e" /><text x="800" y="1116" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">珊瑚变白，不是上色褪了，</text><text x="800" y="1148" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">是搭档走了。</text><circle cx="782" cy="1188" r="5" fill="#0f766e" /><text x="800" y="1194" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">白化是共生系统断线。</text>
+  <text x="810" y="1288" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">适合直接阅读，不再依赖页面叠字。</text>
+</svg>

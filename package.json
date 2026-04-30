@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run --pool=threads"
+    "test": "vitest run --pool=threads",
+    "generate:cards": "node scripts/generate-local-card-assets.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "latest",

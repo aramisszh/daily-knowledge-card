@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="bg-4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6fffb" />
+      <stop offset="60%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d8fff2" />
+    </linearGradient>
+    <linearGradient id="accent-4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#bg-4)" />
+  <circle cx="1120" cy="96" r="180" fill="#d8fff2" opacity="0.65" />
+  <circle cx="90" cy="1360" r="220" fill="#d8fff2" opacity="0.5" />
+  <rect x="72" y="72" rx="32" ry="32" width="1056" height="1356" fill="#ffffff" opacity="0.88" />
+
+  <rect x="72" y="72" rx="32" ry="32" width="14" height="1356" fill="url(#accent-4)" />
+
+  <rect x="100" y="80" rx="24" ry="24" width="360" height="48" fill="#d8fff2" />
+  <text x="124" y="112" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">自然科学 · 海洋地质 · 入门</text>
+  <text x="948" y="112" font-size="24" font-weight="700" fill="#0f766e" font-family="Georgia, Times New Roman, serif">05 / 07</text>
+
+  <text x="72" y="176" font-size="62" font-weight="800" fill="#10243c" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">海底热液喷口如何孕育生命</text>
+  <text x="72" y="392" font-size="30" font-weight="500" fill="#475569" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">极端环境里的生命起源线索</text>
+
+  <rect x="72" y="470" rx="24" ry="24" width="670" height="108" fill="#d8fff2" />
+  <text x="100" y="510" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">今日要点</text>
+  <text x="100" y="548" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">海底热液喷口释放富含矿物质的高温流体，为不依赖阳光的</text><text x="100" y="576" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">生命系统提供能量来源。</text>
+
+  <text x="72" y="646" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">关键词</text>
+  
+        <rect x="72" y="604" rx="20" ry="20" width="106" height="48" fill="#d8fff2" />
+        <text x="90" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">热液喷口</text>
+      
+        <rect x="190" y="604" rx="20" ry="20" width="106" height="48" fill="#d8fff2" />
+        <text x="208" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">化能合成</text>
+      
+        <rect x="308" y="604" rx="20" ry="20" width="106" height="48" fill="#d8fff2" />
+        <text x="326" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">极端生命</text>
+      
+        <rect x="426" y="604" rx="20" ry="20" width="96" height="48" fill="#d8fff2" />
+        <text x="444" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">矿物质</text>
+      
+
+  <text x="72" y="736" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">为什么重要</text>
+  <circle cx="72" cy="768" r="5" fill="#0f766e" /><text x="90" y="774" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">说明生命并不一定依赖阳光。</text><circle cx="72" cy="814" r="5" fill="#0f766e" /><text x="90" y="820" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">为生命起源研究提供线索。</text><circle cx="72" cy="860" r="5" fill="#0f766e" /><text x="90" y="866" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">可迁移到外星生命探索。</text>
+
+  <rect x="782" y="176" rx="28" ry="28" width="346" height="420" fill="#0f172a" />
+  <text x="810" y="224" font-size="24" font-weight="700" fill="#cbd5e1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">核心机制</text>
+  <text x="810" y="270" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">海水进入地壳裂隙后被岩浆加热，携带矿物质喷出，微生物</text><text x="810" y="304" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">利用化学能合成有机物，形成独立生态系统。</text>
+
+  <rect x="782" y="632" rx="28" ry="28" width="346" height="312" fill="#f6fffb" stroke="#d8fff2" stroke-width="2" />
+  <text x="810" y="680" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">财务视角</text>
+  <text x="810" y="726" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">深海探测、海洋装备和极端环境技术会影响未来科研投入与</text><text x="810" y="760" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">资源开发方向。</text>
+
+  <rect x="72" y="1010" rx="28" ry="28" width="670" height="350" fill="#f8fafc" stroke="#d8fff2" stroke-width="2" />
+  <text x="100" y="1060" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">结论</text>
+  <text x="100" y="1110" font-size="27" font-weight="600" fill="#10243c" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">热液喷口的重要性，在于它让我们看到生命可能并不依赖熟</text><text x="100" y="1148" font-size="27" font-weight="600" fill="#10243c" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">悉的阳光路径。</text>
+  <text x="100" y="1268" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">日期：2026-05-04</text>
+
+  <rect x="782" y="1010" rx="28" ry="28" width="346" height="350" fill="#ffffff" stroke="#d8fff2" stroke-width="2" />
+  <text x="810" y="1060" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">记忆钩子</text>
+  <circle cx="782" cy="1110" r="5" fill="#0f766e" /><text x="800" y="1116" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">没有阳光，也能有生态。</text><circle cx="782" cy="1156" r="5" fill="#0f766e" /><text x="800" y="1162" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">极端环境可能藏着起源线索</text><text x="800" y="1194" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">。</text>
+  <text x="810" y="1288" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">适合直接阅读，不再依赖页面叠字。</text>
+</svg>

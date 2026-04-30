@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="bg-7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7fbff" />
+      <stop offset="60%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d9e8ff" />
+    </linearGradient>
+    <linearGradient id="accent-7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#234a78" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#bg-7)" />
+  <circle cx="1120" cy="96" r="180" fill="#d9e8ff" opacity="0.65" />
+  <circle cx="90" cy="1360" r="220" fill="#d9e8ff" opacity="0.5" />
+  <rect x="72" y="72" rx="32" ry="32" width="1056" height="1356" fill="#ffffff" opacity="0.88" />
+
+  <rect x="72" y="72" rx="32" ry="32" width="14" height="1356" fill="url(#accent-7)" />
+
+  <rect x="100" y="80" rx="24" ry="24" width="360" height="48" fill="#d9e8ff" />
+  <text x="124" y="112" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">商业金融 · 定价策略 · 进阶</text>
+  <text x="948" y="112" font-size="24" font-weight="700" fill="#234a78" font-family="Georgia, Times New Roman, serif">08 / 07</text>
+
+  <text x="72" y="176" font-size="62" font-weight="800" fill="#0f172a" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">为什么演唱会门票喜欢分区定价</text>
+  <text x="72" y="392" font-size="30" font-weight="500" fill="#475569" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">同一场演出卖出不同价格，本质是在管理支付意愿</text><text x="72" y="432" font-size="30" font-weight="500" fill="#475569" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">差异</text>
+
+  <rect x="72" y="470" rx="24" ry="24" width="670" height="108" fill="#d9e8ff" />
+  <text x="100" y="510" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">今日要点</text>
+  <text x="100" y="548" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">演唱会把座位分区、权益分层，本质上是在用价格梯度回收</text><text x="100" y="576" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">不同观众的支付意愿，而不是简单按成本定价。</text>
+
+  <text x="72" y="646" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">关键词</text>
+  
+        <rect x="72" y="604" rx="20" ry="20" width="106" height="48" fill="#d9e8ff" />
+        <text x="90" y="635" font-size="22" font-weight="600" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">价格歧视</text>
+      
+        <rect x="190" y="604" rx="20" ry="20" width="106" height="48" fill="#d9e8ff" />
+        <text x="208" y="635" font-size="22" font-weight="600" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">支付意愿</text>
+      
+        <rect x="308" y="604" rx="20" ry="20" width="106" height="48" fill="#d9e8ff" />
+        <text x="326" y="635" font-size="22" font-weight="600" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">分区定价</text>
+      
+        <rect x="426" y="604" rx="20" ry="20" width="106" height="48" fill="#d9e8ff" />
+        <text x="444" y="635" font-size="22" font-weight="600" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">收益管理</text>
+      
+
+  <text x="72" y="736" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">为什么重要</text>
+  <circle cx="72" cy="768" r="5" fill="#234a78" /><text x="90" y="774" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">帮助理解为什么热门消费品常常不是一个价格卖给所有</text><text x="90" y="806" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">人。</text><circle cx="72" cy="846" r="5" fill="#234a78" /><text x="90" y="852" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">能看懂票务、酒店、航空等行业如何用分层定价提升收</text><text x="90" y="884" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">入。</text><circle cx="72" cy="924" r="5" fill="#234a78" /><text x="90" y="930" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">理解价格不是只看成本，而是看需求弹性和支付意愿。</text>
+
+  <rect x="782" y="176" rx="28" ry="28" width="346" height="420" fill="#0f172a" />
+  <text x="810" y="224" font-size="24" font-weight="700" fill="#cbd5e1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">核心机制</text>
+  <text x="810" y="270" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">同一场演出的边际成本差异不大，但不同观众对视野、距离</text><text x="810" y="304" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">、体验和稀缺感的支付意愿差异很大。主办方通过内场、看</text><text x="810" y="338" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">台、VIP 和附加权益，把原本统一的需求曲线切成多个</text><text x="810" y="372" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">价格层，尽量减少高意愿用户的消费者剩余流失。</text>
+
+  <rect x="782" y="632" rx="28" ry="28" width="346" height="312" fill="#f7fbff" stroke="#d9e8ff" stroke-width="2" />
+  <text x="810" y="680" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">财务视角</text>
+  <text x="810" y="726" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">从财务角度看，分区定价是在固定容量约束下提高单场收入</text><text x="810" y="760" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">和毛利率。分析这类业务时，要看高价档售罄率、整体上座</text><text x="810" y="794" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">率、附加权益收入以及动态调价能力。</text>
+
+  <rect x="72" y="1010" rx="28" ry="28" width="670" height="350" fill="#f8fafc" stroke="#d9e8ff" stroke-width="2" />
+  <text x="100" y="1060" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">结论</text>
+  <text x="100" y="1110" font-size="27" font-weight="600" fill="#0f172a" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">演唱会门票分区定价的本质，不是位置不同这么简单，而是</text><text x="100" y="1148" font-size="27" font-weight="600" fill="#0f172a" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">在固定座位容量下，把不同观众的支付意愿尽量转化成收入</text><text x="100" y="1186" font-size="27" font-weight="600" fill="#0f172a" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">。</text>
+  <text x="100" y="1268" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">日期：2026-05-07</text>
+
+  <rect x="782" y="1010" rx="28" ry="28" width="346" height="350" fill="#ffffff" stroke="#d9e8ff" stroke-width="2" />
+  <text x="810" y="1060" font-size="24" font-weight="700" fill="#234a78" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">记忆钩子</text>
+  <circle cx="782" cy="1110" r="5" fill="#234a78" /><text x="800" y="1116" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">同一场演出，不同票价，本</text><text x="800" y="1148" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">质是不同支付意愿。</text><circle cx="782" cy="1188" r="5" fill="#234a78" /><text x="800" y="1194" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">定价不是算成本，而是管理</text><text x="800" y="1226" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">需求。</text>
+  <text x="810" y="1288" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">适合直接阅读，不再依赖页面叠字。</text>
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="bg-9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4fffd" />
+      <stop offset="60%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d5fbf6" />
+    </linearGradient>
+    <linearGradient id="accent-9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#bg-9)" />
+  <circle cx="1120" cy="96" r="180" fill="#d5fbf6" opacity="0.65" />
+  <circle cx="90" cy="1360" r="220" fill="#d5fbf6" opacity="0.5" />
+  <rect x="72" y="72" rx="32" ry="32" width="1056" height="1356" fill="#ffffff" opacity="0.88" />
+
+  <rect x="72" y="72" rx="32" ry="32" width="14" height="1356" fill="url(#accent-9)" />
+
+  <rect x="100" y="80" rx="24" ry="24" width="360" height="48" fill="#d5fbf6" />
+  <text x="124" y="112" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">艺术设计 · 版式系统 · 入门</text>
+  <text x="948" y="112" font-size="24" font-weight="700" fill="#0f766e" font-family="Georgia, Times New Roman, serif">10 / 07</text>
+
+  <text x="72" y="176" font-size="62" font-weight="800" fill="#132238" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">网格系统为什么能让版面更耐看</text>
+  <text x="72" y="392" font-size="30" font-weight="500" fill="#475569" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">看似拘束的线框，其实是在帮信息建立秩序</text>
+
+  <rect x="72" y="470" rx="24" ry="24" width="670" height="108" fill="#d5fbf6" />
+  <text x="100" y="510" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">今日要点</text>
+  <text x="100" y="548" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">网格系统的作用不是把设计做得死板，而是让文字、图片和</text><text x="100" y="576" font-size="22" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">留白有统一节奏，降低阅读负担。</text>
+
+  <text x="72" y="646" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">关键词</text>
+  
+        <rect x="72" y="604" rx="20" ry="20" width="106" height="48" fill="#d5fbf6" />
+        <text x="90" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">网格系统</text>
+      
+        <rect x="190" y="604" rx="20" ry="20" width="96" height="48" fill="#d5fbf6" />
+        <text x="208" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">版式</text>
+      
+        <rect x="298" y="604" rx="20" ry="20" width="96" height="48" fill="#d5fbf6" />
+        <text x="316" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">对齐</text>
+      
+        <rect x="406" y="604" rx="20" ry="20" width="106" height="48" fill="#d5fbf6" />
+        <text x="424" y="635" font-size="22" font-weight="600" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">视觉秩序</text>
+      
+
+  <text x="72" y="736" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">为什么重要</text>
+  <circle cx="72" cy="768" r="5" fill="#0f766e" /><text x="90" y="774" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">能帮助非设计背景的人快速提高页面整洁度。</text><circle cx="72" cy="814" r="5" fill="#0f766e" /><text x="90" y="820" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">理解为什么很多高质量杂志、海报和产品界面都离不开</text><text x="90" y="852" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">网格。</text><circle cx="72" cy="892" r="5" fill="#0f766e" /><text x="90" y="898" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">知道美观很多时候来自秩序，而不是装饰。</text>
+
+  <rect x="782" y="176" rx="28" ry="28" width="346" height="420" fill="#0f172a" />
+  <text x="810" y="224" font-size="24" font-weight="700" fill="#cbd5e1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">核心机制</text>
+  <text x="810" y="270" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">人的视觉系统天生更容易处理有规律的对齐和重复。网格通</text><text x="810" y="304" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">过统一栏宽、边距、间距和模块关系，减少页面元素的随机</text><text x="810" y="338" font-size="24" font-weight="400" fill="#f8fafc" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">摆放，让信息层级更稳定、扫描路径更清晰。</text>
+
+  <rect x="782" y="632" rx="28" ry="28" width="346" height="312" fill="#f4fffd" stroke="#d5fbf6" stroke-width="2" />
+  <text x="810" y="680" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">财务视角</text>
+  <text x="810" y="726" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">在商业表达里，网格会直接影响理解效率和专业感。报表、</text><text x="810" y="760" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">汇报页和宣传页如果没有网格，往往会增加阅读成本，降低</text><text x="810" y="794" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">信息传达效率。</text>
+
+  <rect x="72" y="1010" rx="28" ry="28" width="670" height="350" fill="#f8fafc" stroke="#d5fbf6" stroke-width="2" />
+  <text x="100" y="1060" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">结论</text>
+  <text x="100" y="1110" font-size="27" font-weight="600" fill="#132238" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">网格系统的价值，不在于把页面做成同一种样子，而在于先</text><text x="100" y="1148" font-size="27" font-weight="600" fill="#132238" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">建立秩序，再允许有控制的变化。</text>
+  <text x="100" y="1268" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">日期：2026-05-09</text>
+
+  <rect x="782" y="1010" rx="28" ry="28" width="346" height="350" fill="#ffffff" stroke="#d5fbf6" stroke-width="2" />
+  <text x="810" y="1060" font-size="24" font-weight="700" fill="#0f766e" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">记忆钩子</text>
+  <circle cx="782" cy="1110" r="5" fill="#0f766e" /><text x="800" y="1116" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">网格不是束缚，是秩序的底</text><text x="800" y="1148" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">盘。</text><circle cx="782" cy="1188" r="5" fill="#0f766e" /><text x="800" y="1194" font-size="24" font-weight="400" fill="#334155" opacity="1" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">好看很多时候来自对齐。</text>
+  <text x="810" y="1288" font-size="21" font-weight="600" fill="#64748b" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">适合直接阅读，不再依赖页面叠字。</text>
+</svg>
