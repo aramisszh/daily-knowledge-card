@@ -369,9 +369,6 @@ export default function DailyKnowledgeCardMVP() {
               <Icon name="book" className="h-4 w-4" /> 陌生领域每日学习卡
             </div>
             <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">每日一图流知识学习系统</h1>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
-              第一版优先读取真实 API；如果本地数据库或环境变量还没配好，会自动回退到示例数据，保证页面可用。
-            </p>
           </div>
           <div className="grid grid-cols-2 gap-2 text-sm md:w-80">
             {categoryRotation.map((item) => (
@@ -393,9 +390,6 @@ export default function DailyKnowledgeCardMVP() {
           {[["today", "今日学习"], ["library", "知识图库"], ["progress", "学习进度"], ["detail", "知识详情"]].map(([key, label]) => (
             <Button key={key} variant={tab === key ? "default" : "outline"} className="rounded-2xl" onClick={() => setTab(key as TabKey)}>{label}</Button>
           ))}
-          <div className="ml-auto inline-flex items-center rounded-2xl bg-slate-100 px-3 text-sm text-slate-600">
-            {isLoading ? "加载中..." : dataMode === "api" ? "真实数据" : "示例数据"}
-          </div>
         </nav>
 
         {tab === "today" ? (
@@ -405,7 +399,6 @@ export default function DailyKnowledgeCardMVP() {
                 <div className="aspect-[4/5] bg-slate-100">
                   <img src={todayPosterUrl} alt={todayCard.title} className="h-full w-full object-contain object-top" />
                 </div>
-                <div className="border-t border-slate-200 bg-white px-5 py-4 text-sm text-slate-500">图片区域直接显示知识卡原图，页面不再覆盖标题文字。</div>
               </Card>
             </motion.div>
 
