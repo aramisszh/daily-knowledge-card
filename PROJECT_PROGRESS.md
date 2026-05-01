@@ -1,154 +1,81 @@
 # 项目最新进度
 
-## 项目目标
+## 当前状态
 
-每天自动生成一张“陌生领域一图流知识卡”，用于学习新领域知识。系统需要：
+项目已经达到“初步可用”状态。
 
-1. 每天生成一张知识图片。
-2. 保存历史图片。
-3. 按知识类别、日期、学习状态筛选。
-4. 支持学习打卡。
-5. 统计累计完成、连续学习、收藏、待复习、分类完成情况。
-6. 图片之外保留完整知识内容包，供前端详情页和复习题使用。
+当前线上可用主链路：
 
-## 已确定的产品方案
+1. 浏览知识卡
+2. 查看详情
+3. 完成今日学习
+4. 收藏
+5. 标记复习
+6. 查看学习进度统计
 
-当前采用 MVP 方案：
+## 当前真实运行模式
 
-```txt
-完整知识内容包 -> 图片生成提示词 -> image2/OpenAI 图像 API 生成一图流海报 -> 入库 -> 前端展示
-```
+当前是混合模式，不是纯本地，也不是纯数据库：
 
-暂不采用 HTML 模板 + Playwright 渲染。原因：直接用 image2 生成整图已满足当前基础需求，优先跑起来。
+- 卡片内容：`data/cards.json`
+- 卡片图片：`public/generated-cards/*`
+- 学习状态：Supabase `study_records`
+- 内容桥接：Supabase `knowledge_cards`
 
-## 已确定的选题轮动
+桥接逻辑已经处理以下问题：
 
-```txt
-周一：自然科学
-周二：工程技术
-周三：人文社科
-周四：商业金融
-周五：历史文明
-周六：艺术设计
-周日：综合冷知识
-```
+- Vercel 只读文件系统导致本地写入失败
+- 本地卡片 `id` 是文本 slug，但学习状态表要求 UUID
 
-## 已确定的知识内容包结构
+当前实现会按 `card_date` 自动把本地卡片映射到 `knowledge_cards` 中的 UUID 记录，再写入 `study_records`。
 
-核心字段：
+## 最近完成
 
-```txt
-title
-subtitle
-category
-subCategory
-difficulty
-summary
-coreMechanism
-whyImportant
-processSteps
-keywords
-misconception
-financeAngle
-memoryHooks
-thinkingQuestions
-conclusion
-```
+### 1. 修复线上打卡写本地文件报错
 
-其中 `thinkingQuestions` 固定 3 道题，每题包含：
+已修复 `EROFS: read-only file system, open '/var/task/data/study-records.json'`。
 
-```txt
-level
-question
-answer
-keyPoint
-```
+当前打卡、收藏、复习都写入 Supabase，不再写 `data/study-records.json`。
 
-3 道题层级：
+### 2. 恢复本地 14 张中文卡显示
 
-1. 概念理解
-2. 因果分析
-3. 迁移应用
+此前将卡片读取源切到了 Supabase，导致线上只显示数据库里少量卡片。
 
-## 前端已完成
+现已恢复为：
 
-文件：`src/app/page.tsx`
+- 页面内容仍读本地 `data/cards.json`
+- 学习状态继续读写 Supabase
 
-已实现：
+### 3. 修复 slug 与 UUID 不匹配
 
-1. 今日学习页。
-2. 知识图库页。
-3. 学习进度页。
-4. 知识详情页。
-5. 分类、状态、关键词筛选。
-6. 完成今日学习。
-7. 收藏。
-8. 标记待复习。
-9. 学习进度页中“累计完成 / 收藏 / 待复习”可展开对应卡片列表。
-10. 详情页展示三道思考题和参考答案。
-11. 移除 `lucide-react`，改用内联 SVG，避免 CDN 图标加载失败。
-12. 加入轻量自测逻辑。
+本地卡片 `id` 例如：
 
-## 后端当前状态
+- `2026-05-01-roman-roads`
 
-已打包后端骨架，但尚未实际运行验证数据库、OpenAI、Supabase Storage 的联调。
+而 `study_records.card_id` 需要 UUID。
 
-包含：
+现已加入桥接逻辑，按 `card_date` 自动关联或创建 `knowledge_cards` 记录，再用其 UUID 写学习状态。
 
-1. Supabase schema：`database/schema.sql`
-2. API 路由：`src/app/api/*`
-3. OpenAI 内容生成服务：`src/services/content-service.ts`
-4. 图片 prompt 生成服务：`src/services/image-prompt-service.ts`
-5. 图片生成服务：`src/services/image-service.ts`
-6. Supabase Storage 上传：`src/services/storage-service.ts`
-7. 每日生成主流程：`src/services/generation-service.ts`
-8. 新加坡日期工具：`src/lib/date.ts`
-9. 数据映射：`src/lib/mapper.ts`
-10. 连续学习统计：`src/lib/progress.ts`
-11. Vitest 测试：`src/lib/progress.test.ts`
+## 当前保留但未启用
 
-## 当前后端 API
+以下在线生成接口当前有意关闭，返回 409：
 
-```txt
-GET  /api/cards/today
-GET  /api/cards
-GET  /api/cards/:id
-POST /api/study/complete
-POST /api/study/favorite
-POST /api/study/review
-GET  /api/stats
-GET  /api/cron/generate-daily-card
-POST /api/admin/generate-today
-POST /api/admin/cards/:id/regenerate
-```
+- `POST /api/admin/generate-today`
+- `POST /api/admin/cards/:id/regenerate`
+- `GET /api/cron/generate-daily-card`
 
-## 数据库表
+原因：项目当前主流程仍是“本地周批量卡片模式”，不是“线上自动生成模式”。
 
-```txt
-knowledge_cards
-study_records
-generation_jobs
-```
+## 当前风险
 
-## Codex 接手建议顺序
+1. 图片仍跟随仓库存放
+2. README 与交接文档历史上曾多次落后于代码，需要持续保持同步
+3. `knowledge_cards` 目前只作为桥接，不是最终内容主源
+4. 中文文本曾出现过终端显示乱码，需要继续校正编码相关流程
 
-1. 安装依赖并跑通前端：`npm install && npm run dev`。
-2. 解决 TypeScript / Next.js 版本导致的类型错误。
-3. 初始化 Supabase 表和 Storage bucket。
-4. 配置 `.env.local`。
-5. 先手动插入一条 `knowledge_cards` 测试数据，验证 API 查询。
-6. 把前端 mock 数据替换为 API 加载。
-7. 验证打卡、收藏、待复习写入 `study_records`。
-8. 手动调用 `/api/admin/generate-today`，验证内容生成、图片生成、图片上传、入库。
-9. 部署 Vercel 后启用 Cron。
-10. 再做错误重试、后台管理页、真实登录、多用户。
+## 下一步建议
 
-## 需要 Codex 特别注意
-
-1. 当前前端还没有接 API，仍是 mock 数据。
-2. `OPENAI_TEXT_MODEL` 和 `OPENAI_IMAGE_MODEL` 需要按账号可用模型调整。
-3. `image-service.ts` 使用了 `as any`，是为了兼容不同版本 OpenAI SDK 的图像生成参数。Codex 应根据实际 SDK 类型修正。
-4. Supabase Storage bucket 当前按 public bucket 设计。
-5. 当前 `USER_ID` 固定为 `default_user`，后续接登录后再替换。
-6. Vercel Cron 可能重复触发，所以 `knowledge_cards.card_date unique` 和 `generation_jobs unique(job_date, job_type)` 保留用于幂等。
-7. 连续学习统计按新加坡日期计算，后续要继续保持。
+1. 保持当前混合模式稳定一段时间
+2. 清理和统一中文编码
+3. 再决定是否把卡片内容整体迁入 Supabase
+4. 图片数量增长后，再迁移到对象存储

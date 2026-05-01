@@ -1,40 +1,84 @@
-# Codex 接手提示词
+# Codex 接手提示
 
-你将接手一个 Next.js + Supabase + OpenAI 的 MVP 项目：每日一图流知识学习系统。
+## 接手顺序
 
-请先阅读：
+先读：
 
-1. `PROJECT_PROGRESS.md`
+1. `AGENTS.md`
 2. `README.md`
-3. `src/app/page.tsx`
-4. `database/schema.sql`
-5. `src/services/generation-service.ts`
+3. `PROJECT_PROGRESS.md`
+4. `src/services/card-service.ts`
+5. `src/app/page.tsx`
 
-当前目标不是重构，而是把 MVP 跑通。
+## 当前项目结论
 
-## 优先任务
+这个项目当前不要按“全数据库内容系统”来理解，也不要按“纯本地静态页”来理解。
 
-1. 跑通前端页面。
-2. 修复 TypeScript / Next.js 构建错误。
-3. 初始化 Supabase 表和 Storage bucket。
-4. 把前端 mock 数据改为 API 数据。
-5. 跑通打卡、收藏、待复习。
-6. 跑通手动生成今日卡片。
-7. 验证图片上传和图片 URL 展示。
-8. 最后再启用 Vercel Cron。
+真实状态是：
 
-## 不要做的事
+- 本地卡片内容：`data/cards.json`
+- 本地图片目录：`public/generated-cards/`
+- Supabase：只负责学习状态和 UUID 桥接
 
-1. 不要一开始引入复杂登录系统。
-2. 不要重做 UI。
-3. 不要切换到 HTML 模板渲染。
-4. 不要删除 `content_json`，它是后续复习、详情页、搜索的主数据。
-5. 不要把 OpenAI Key 暴露到前端。
+## 当前主目标
 
-## 当前产品决策
+不是重构，而是稳住 MVP 主链路：
 
-- 先用 image2/OpenAI 图像 API 直接生成完整一图流知识卡。
-- 每张卡先生成完整知识内容包，再生成图片 prompt。
-- 图片中展示问题，不展示答案；答案在前端详情页展开。
-- 选题按星期轮动。
-- 第一版单用户，`USER_ID = default_user`。
+1. 正常展示 14 张知识卡
+2. 详情页可读
+3. 打卡成功
+4. 收藏成功
+5. 标记复习成功
+6. 学习进度统计正常
+
+## 关键实现说明
+
+### 1. 卡片内容来源
+
+当前线上页面仍以 `data/cards.json` 为内容真源。
+
+不要误以为 `knowledge_cards` 现在就是完整内容主表。当前它只是学习状态桥接层。
+
+### 2. 学习状态来源
+
+学习状态统一写入 Supabase `study_records`，不要再改回本地 JSON。
+
+### 3. UUID 桥接
+
+本地卡片 `id` 是文本 slug，Supabase `study_records.card_id` 是 UUID。
+
+当前服务层会：
+
+1. 先按本地卡片 `cardDate` 找 `knowledge_cards`
+2. 如果没有，就插入一条桥接记录
+3. 再用该 UUID 写 `study_records`
+
+核心文件：
+
+- `src/services/card-service.ts`
+
+## 当前不要做的事
+
+1. 不要把页面再次全量切到 Supabase 内容读取
+2. 不要恢复本地 `study-records.json` 写入
+3. 不要急着把图片迁到 Supabase Storage
+4. 不要在还没稳定 MVP 前做大 UI 重构
+
+## 当前验证方式
+
+```bash
+npm test
+npm run build
+```
+
+如果 Codex 本地沙箱出现 `spawn EPERM`，需要用无沙箱构建或以 Vercel 构建结果为准。
+
+## 后续演进方向
+
+更合理的长期路线是：
+
+1. 先保持“本地内容 + Supabase 学习状态”稳定
+2. 再设计内容整体导入 Supabase
+3. 图片增多后迁移到对象存储
+
+不要跳步。当前最重要的是稳定可用，而不是一次性做成终态。

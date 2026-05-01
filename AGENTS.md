@@ -20,6 +20,11 @@ Build an MVP daily knowledge-card system:
 - Do not switch to HTML template rendering unless the product direction is explicitly changed.
 - Keep `content_json`; it is the source for details, review, and search.
 - The current UI is an MVP prototype. Prioritize connecting data and making the system run before redesigning.
+- The current operational mode is hybrid:
+  - card content comes from `data/cards.json`
+  - card images come from `public/generated-cards/`
+  - study actions and progress come from Supabase
+  - `knowledge_cards` currently acts as a UUID bridge for study records, not yet as the primary content source
 
 ## Local Development
 
@@ -39,6 +44,8 @@ Build an MVP daily knowledge-card system:
 - Follow existing file structure and naming conventions.
 - Keep changes small and focused on running the MVP.
 - Do not remove mock data until the API-backed flow has been verified.
+- Do not switch the card-reading source away from `data/cards.json` unless the full local card set has been intentionally migrated into Supabase.
+- Do not restore writes to `data/study-records.json`; study state must stay on Supabase.
 - Do not introduce authentication, multi-user support, admin dashboards, or major UI redesign before the MVP data flow is working.
 - Preserve Singapore date logic for daily card and streak calculations.
 - After code changes, run the relevant verification commands before reporting completion.
