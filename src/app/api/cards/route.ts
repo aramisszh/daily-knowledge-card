@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listLocalCards } from "@/lib/local-data";
+import { listCardsFromDatabase } from "@/services/card-service";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -7,6 +7,6 @@ export async function GET(request: Request) {
   const query = searchParams.get("query");
   const status = searchParams.get("status");
 
-  const cards = await listLocalCards({ category, query, status });
+  const cards = await listCardsFromDatabase({ category, query, status });
   return NextResponse.json({ cards });
 }

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { getLocalStats } from "@/lib/local-data";
+import { getStatsFromDatabase } from "@/services/card-service";
 
 export async function GET() {
-  const summary = await getLocalStats();
+  const summary = await getStatsFromDatabase();
   return NextResponse.json(summary);
 }
