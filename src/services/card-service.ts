@@ -1,8 +1,8 @@
 import { getSingaporeDateString } from "../lib/date";
-import { mapCard } from "../lib/mapper";
+import { readLocalCards } from "../lib/local-data";
 import { calculateStreak } from "../lib/progress";
 import { supabaseAdmin } from "../lib/supabase-admin";
-import type { AppKnowledgeCard, KnowledgeCardRow, StatsSummary, StudyRecordRow } from "../types/knowledge";
+import type { AppKnowledgeCard, StatsSummary, StudyRecordRow } from "../types/knowledge";
 
 const USER_ID = "default_user";
 
@@ -20,9 +20,20 @@ function throwIfError(error: { message: string } | null, context: string) {
   }
 }
 
-export function mergeCardsWithStudyRecords(cardRows: KnowledgeCardRow[], recordRows: StudyRecordRow[]) {
+export function mergeCardsWithStudyRecords(cards: AppKnowledgeCard[], recordRows: StudyRecordRow[]) {
   const recordMap = new Map(recordRows.map((record) => [record.card_id, record]));
-  return cardRows.map((row) => mapCard(row, recordMap.get(row.id)));
+
+  return cards.map((card) => {
+    const record = recordMap.get(card.id);
+    if (!record) return card;
+
+    return {
+      ...card,
+      completed: record.completed,
+      favorite: record.is_favorite,
+      needReview: record.need_review,
+    };
+  });
 }
 
 function applyFilters(cards: AppKnowledgeCard[], filters?: CardFilters) {
@@ -49,10 +60,9 @@ function applyFilters(cards: AppKnowledgeCard[], filters?: CardFilters) {
   });
 }
 
-async function loadCardRows() {
-  const { data, error } = await supabaseAdmin.from("knowledge_cards").select("*").order("card_date", { ascending: false });
-  throwIfError(error, "Failed to load cards");
-  return (data ?? []) as KnowledgeCardRow[];
+async function loadLocalCards() {
+  const cards = await readLocalCards();
+  return cards.slice().sort((a, b) => b.cardDate.localeCompare(a.cardDate));
 }
 
 async function loadStudyRecordRows() {
@@ -62,8 +72,16 @@ async function loadStudyRecordRows() {
 }
 
 async function loadCardsAndRecords() {
-  const [cardRows, recordRows] = await Promise.all([loadCardRows(), loadStudyRecordRows()]);
-  return { cardRows, recordRows };
+  const [cards, recordRows] = await Promise.all([loadLocalCards(), loadStudyRecordRows()]);
+  return { cards, recordRows };
+}
+
+async function assertLocalCardExists(cardId: string) {
+  const cards = await loadLocalCards();
+  const cardExists = cards.some((card) => card.id === cardId);
+  if (!cardExists) {
+    throw new Error("Card not found");
+  }
 }
 
 async function getStudyRecordByCardId(cardId: string) {
@@ -79,6 +97,7 @@ async function getStudyRecordByCardId(cardId: string) {
 }
 
 async function upsertStudyRecord(cardId: string, patch: StudyRecordPatch) {
+  await assertLocalCardExists(cardId);
   const current = await getStudyRecordByCardId(cardId);
   const payload = {
     user_id: USER_ID,
@@ -101,8 +120,8 @@ async function upsertStudyRecord(cardId: string, patch: StudyRecordPatch) {
 }
 
 export async function listCardsFromDatabase(filters?: CardFilters) {
-  const { cardRows, recordRows } = await loadCardsAndRecords();
-  const merged = mergeCardsWithStudyRecords(cardRows, recordRows);
+  const { cards, recordRows } = await loadCardsAndRecords();
+  const merged = mergeCardsWithStudyRecords(cards, recordRows);
   return applyFilters(merged, filters);
 }
 
@@ -117,8 +136,8 @@ export async function getTodayCardFromDatabase(todayDate = getSingaporeDateStrin
 }
 
 export async function getStatsFromDatabase(todayDate = getSingaporeDateString()): Promise<StatsSummary> {
-  const { cardRows, recordRows } = await loadCardsAndRecords();
-  const cards = mergeCardsWithStudyRecords(cardRows, recordRows);
+  const { cards: localCards, recordRows } = await loadCardsAndRecords();
+  const cards = mergeCardsWithStudyRecords(localCards, recordRows);
   const completedCards = cards.filter((card) => card.completed);
   const favoriteCards = cards.filter((card) => card.favorite);
   const reviewCards = cards.filter((card) => card.needReview);
