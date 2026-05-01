@@ -17,33 +17,33 @@ const mockReadLocalCards = vi.mocked(readLocalCards);
 const mockFrom = vi.mocked(supabaseAdmin.from);
 
 const baseCard = {
-  id: "11111111-1111-1111-1111-111111111111",
-  title: "Test Card",
+  id: "2026-05-01-roman-roads",
+  title: "Roman Roads",
   subtitle: "Subtitle",
-  category: "工程技术",
-  subCategory: "半导体",
-  difficulty: "入门",
+  category: "History",
+  subCategory: "Infrastructure",
+  difficulty: "Beginner",
   cardDate: "2026-05-01",
-  imageUrl: "/generated-cards/test-card.png",
+  imageUrl: "/generated-cards/2026-05-01-roman-roads.png",
   summary: "Summary",
-  keywords: ["EUV"],
+  keywords: ["rome"],
   completed: false,
   favorite: false,
   needReview: false,
   content: {
-    title: "Test Card",
+    title: "Roman Roads",
     subtitle: "Subtitle",
-    category: "工程技术",
-    subCategory: "半导体",
-    difficulty: "入门",
+    category: "History",
+    subCategory: "Infrastructure",
+    difficulty: "Beginner",
     summary: "Summary",
     coreMechanism: "Mechanism",
     whyImportant: ["Reason"],
-    keywords: [{ term: "EUV", desc: "Keyword" }],
+    keywords: [{ term: "rome", desc: "Keyword" }],
     misconception: { title: "Misconception", content: "Content" },
     financeAngle: "Finance",
     memoryHooks: ["Hook"],
-    thinkingQuestions: [{ level: "概念理解", question: "Q1", answer: "A1", keyPoint: "K1" }],
+    thinkingQuestions: [{ level: "Concept", question: "Q1", answer: "A1", keyPoint: "K1" }],
     conclusion: "Conclusion",
   },
 };
@@ -55,7 +55,7 @@ beforeEach(() => {
 });
 
 describe("listCardsFromDatabase", () => {
-  it("keeps local cards as the content source and merges Supabase study records", async () => {
+  it("keeps local cards as the content source and maps study records back by card_date", async () => {
     mockFrom.mockImplementation((table: string) => {
       if (table === "study_records") {
         return {
@@ -65,7 +65,7 @@ describe("listCardsFromDatabase", () => {
                 {
                   id: "record-1",
                   user_id: "default_user",
-                  card_id: baseCard.id,
+                  card_id: "11111111-1111-1111-1111-111111111111",
                   completed: true,
                   completed_at: "2026-05-01T08:00:00+08:00",
                   is_favorite: true,
@@ -81,6 +81,20 @@ describe("listCardsFromDatabase", () => {
         };
       }
 
+      if (table === "knowledge_cards") {
+        return {
+          select: () => Promise.resolve({
+            data: [
+              {
+                id: "11111111-1111-1111-1111-111111111111",
+                card_date: "2026-05-01",
+              },
+            ],
+            error: null,
+          }),
+        };
+      }
+
       throw new Error(`Unexpected table: ${table}`);
     });
 
@@ -88,7 +102,7 @@ describe("listCardsFromDatabase", () => {
 
     expect(mockReadLocalCards).toHaveBeenCalled();
     expect(cards).toHaveLength(1);
-    expect(cards[0].title).toBe("Test Card");
+    expect(cards[0].title).toBe("Roman Roads");
     expect(cards[0].completed).toBe(true);
     expect(cards[0].favorite).toBe(true);
     expect(cards[0].needReview).toBe(false);
@@ -96,12 +110,39 @@ describe("listCardsFromDatabase", () => {
 });
 
 describe("markCardCompleteInDatabase", () => {
-  it("upserts the completion record in Supabase for an existing local card", async () => {
-    const single = vi.fn().mockResolvedValue({
+  it("ensures a UUID-backed knowledge card exists before writing the study record", async () => {
+    const maybeSingleKnowledgeCard = vi
+      .fn()
+      .mockResolvedValueOnce({ data: null, error: null })
+      .mockResolvedValueOnce({
+        data: {
+          id: "11111111-1111-1111-1111-111111111111",
+          card_date: "2026-05-01",
+        },
+        error: null,
+      });
+    const knowledgeCardEq = vi.fn(() => ({ maybeSingle: maybeSingleKnowledgeCard }));
+    const insertedKnowledgeCardSingle = vi.fn().mockResolvedValue({
+      data: {
+        id: "11111111-1111-1111-1111-111111111111",
+        card_date: "2026-05-01",
+      },
+      error: null,
+    });
+    const insertKnowledgeCard = vi.fn(() => ({
+      select: () => ({
+        single: insertedKnowledgeCardSingle,
+      }),
+    }));
+
+    const maybeSingleStudyRecord = vi.fn().mockResolvedValue({ data: null, error: null });
+    const studyRecordEqCardId = vi.fn(() => ({ maybeSingle: maybeSingleStudyRecord }));
+    const studyRecordEqUserId = vi.fn(() => ({ eq: studyRecordEqCardId }));
+    const insertedStudyRecordSingle = vi.fn().mockResolvedValue({
       data: {
         id: "record-1",
         user_id: "default_user",
-        card_id: baseCard.id,
+        card_id: "11111111-1111-1111-1111-111111111111",
         completed: true,
         completed_at: "2026-05-01T08:00:00+08:00",
         is_favorite: false,
@@ -112,19 +153,28 @@ describe("markCardCompleteInDatabase", () => {
       },
       error: null,
     });
-    const selectAfterUpsert = vi.fn(() => ({ single }));
-    const upsert = vi.fn(() => ({ select: selectAfterUpsert }));
-    const maybeSingle = vi.fn().mockResolvedValue({ data: null, error: null });
-    const eqCardId = vi.fn(() => ({ maybeSingle }));
-    const eqUserId = vi.fn(() => ({ eq: eqCardId }));
+    const upsertStudyRecord = vi.fn(() => ({
+      select: () => ({
+        single: insertedStudyRecordSingle,
+      }),
+    }));
 
     mockFrom.mockImplementation((table: string) => {
+      if (table === "knowledge_cards") {
+        return {
+          select: () => ({
+            eq: knowledgeCardEq,
+          }),
+          insert: insertKnowledgeCard,
+        };
+      }
+
       if (table === "study_records") {
         return {
           select: () => ({
-            eq: eqUserId,
+            eq: studyRecordEqUserId,
           }),
-          upsert,
+          upsert: upsertStudyRecord,
         };
       }
 
@@ -133,10 +183,17 @@ describe("markCardCompleteInDatabase", () => {
 
     const record = await markCardCompleteInDatabase(baseCard.id, "finished", "2026-05-01T08:00:00+08:00");
 
-    expect(upsert).toHaveBeenCalledWith(
+    expect(insertKnowledgeCard).toHaveBeenCalledWith(
+      expect.objectContaining({
+        title: "Roman Roads",
+        card_date: "2026-05-01",
+        image_url: "/generated-cards/2026-05-01-roman-roads.png",
+      })
+    );
+    expect(upsertStudyRecord).toHaveBeenCalledWith(
       expect.objectContaining({
         user_id: "default_user",
-        card_id: baseCard.id,
+        card_id: "11111111-1111-1111-1111-111111111111",
         completed: true,
         completed_at: "2026-05-01T08:00:00+08:00",
         note: "finished",
@@ -144,6 +201,5 @@ describe("markCardCompleteInDatabase", () => {
       { onConflict: "user_id,card_id" }
     );
     expect(record.completed).toBe(true);
-    expect(record.note).toBe("finished");
   });
 });
