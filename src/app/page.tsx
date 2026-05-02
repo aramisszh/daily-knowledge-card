@@ -87,7 +87,7 @@ function getProgressCards(cards: AppKnowledgeCard[], type: string | null) {
 
 function getCardPosterUrl(card: AppKnowledgeCard) {
   if (card.imageUrl.startsWith("/")) return card.imageUrl;
-  return `/generated-cards/${card.id}.svg`;
+  return `/generated-cards/${card.id}.png`;
 }
 
 function runSelfTests() {
