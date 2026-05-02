@@ -58,7 +58,6 @@ Windows 也可以直接使用脚本：
 - `scripts/init-local.cmd`
 - `scripts/start-local.cmd`
 - `scripts/stop-local.cmd`
-- `scripts/reset-progress.cmd`
 
 ## 必要环境变量
 

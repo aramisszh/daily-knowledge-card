@@ -96,14 +96,3 @@ export type StatsSummary = {
     review: AppKnowledgeCard[];
   };
 };
-
-export type LocalStudyRecord = {
-  cardId: string;
-  completed: boolean;
-  completedAt: string | null;
-  favorite: boolean;
-  needReview: boolean;
-  note: string | null;
-  createdAt: string;
-  updatedAt: string;
-};
