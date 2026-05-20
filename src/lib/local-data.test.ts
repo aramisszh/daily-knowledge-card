@@ -9,10 +9,17 @@ const expectedTitles = {
   "2026-05-18": "冰芯为什么能记录过去的气候变化",
   "2026-05-19": "GPS为什么能知道你在哪",
   "2026-05-20": "从众效应为什么会影响我们的判断",
+  "2026-05-21": "订阅制为什么能让企业收入更稳定",
+  "2026-05-22": "驿站制度为什么能支撑古代帝国的信息传递",
+  "2026-05-23": "字体字重为什么会影响阅读感受",
+  "2026-05-24": "为什么飞机窗户是圆角的",
+  "2026-05-25": "洋流为什么会影响全球气候",
+  "2026-05-26": "数据库索引为什么能让查询变快",
+  "2026-05-27": "锚定效应为什么会影响价格判断",
 } as const;
 
 describe("readLocalCards", () => {
-  it("keeps weekly card titles readable for 2026-05-14 to 2026-05-20", async () => {
+  it("keeps weekly card titles readable for 2026-05-14 to 2026-05-27", async () => {
     const cards = await readLocalCards();
 
     for (const [cardDate, expectedTitle] of Object.entries(expectedTitles)) {
