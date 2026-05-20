@@ -19,3 +19,4 @@ dev-server.*.log
 Thumbs.db
 
 .vercel
+.env*.local
