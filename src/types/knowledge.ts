@@ -53,6 +53,28 @@ export type KnowledgeCardRow = {
   updated_at: string;
 };
 
+export type PodcastStatus = "none" | "draft" | "pending" | "processing" | "generated" | "published" | "archived" | "withdrawn" | "failed";
+
+export type PodcastInfo = {
+  status: PodcastStatus;
+  version?: number;
+  title?: string;
+  duration?: number;
+  audioUrl?: string;
+  transcriptUrl?: string;
+  sizeBytes?: number;
+  checksum?: string;
+  updatedAt?: string;
+  archivedVersions?: Array<{
+    version: number;
+    status: string;
+    audioUrl?: string;
+    transcriptUrl?: string;
+    archivedAt?: string;
+    reason?: string;
+  }>;
+};
+
 export type StudyRecordRow = {
   id: string;
   user_id: string;
@@ -61,6 +83,8 @@ export type StudyRecordRow = {
   completed_at: string | null;
   is_favorite: boolean;
   need_review: boolean;
+  podcast_listened?: boolean;
+  podcast_listened_at?: string | null;
   note: string | null;
   created_at: string;
   updated_at: string;
@@ -80,6 +104,9 @@ export type AppKnowledgeCard = {
   completed: boolean;
   favorite: boolean;
   needReview: boolean;
+  podcastListened?: boolean;
+  podcastListenedAt?: string | null;
+  podcast?: PodcastInfo;
   content: KnowledgePack;
 };
 

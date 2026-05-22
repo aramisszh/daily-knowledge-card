@@ -12,7 +12,7 @@ type CardFilters = {
   status?: string | null;
 };
 
-type StudyRecordPatch = Partial<Pick<StudyRecordRow, "completed" | "completed_at" | "is_favorite" | "need_review" | "note">>;
+type StudyRecordPatch = Partial<Pick<StudyRecordRow, "completed" | "completed_at" | "is_favorite" | "need_review" | "podcast_listened" | "podcast_listened_at" | "note">>;
 
 function throwIfError(error: { message: string } | null, context: string) {
   if (error) {
@@ -32,6 +32,8 @@ export function mergeCardsWithStudyRecords(cards: AppKnowledgeCard[], recordRows
       completed: record.completed,
       favorite: record.is_favorite,
       needReview: record.need_review,
+      podcastListened: record.podcast_listened ?? false,
+      podcastListenedAt: record.podcast_listened_at ?? null,
     };
   });
 }
@@ -157,7 +159,7 @@ async function upsertStudyRecord(cardId: string, patch: StudyRecordPatch) {
 
   const knowledgeCard = await ensureKnowledgeCardRow(localCard);
   const current = await getStudyRecordByCardId(knowledgeCard.id);
-  const payload = {
+  const payload: Partial<StudyRecordRow> & { user_id: string; card_id: string } = {
     user_id: USER_ID,
     card_id: knowledgeCard.id,
     completed: patch.completed ?? current?.completed ?? false,
@@ -166,6 +168,16 @@ async function upsertStudyRecord(cardId: string, patch: StudyRecordPatch) {
     need_review: patch.need_review ?? current?.need_review ?? false,
     note: patch.note ?? current?.note ?? null,
   };
+
+  const shouldWritePodcastFields =
+    "podcast_listened" in patch ||
+    "podcast_listened_at" in patch ||
+    (current ? "podcast_listened" in current || "podcast_listened_at" in current : false);
+
+  if (shouldWritePodcastFields) {
+    payload.podcast_listened = patch.podcast_listened ?? current?.podcast_listened ?? false;
+    payload.podcast_listened_at = patch.podcast_listened_at ?? current?.podcast_listened_at ?? null;
+  }
 
   const { data, error } = await supabaseAdmin
     .from("study_records")
@@ -252,5 +264,12 @@ export async function toggleReviewInDatabase(cardId: string) {
   const current = await getStudyRecordByCardId(knowledgeCard.id);
   return upsertStudyRecord(cardId, {
     need_review: !(current?.need_review ?? false),
+  });
+}
+
+export async function markPodcastListenedInDatabase(cardId: string, listenedAt = new Date().toISOString()) {
+  return upsertStudyRecord(cardId, {
+    podcast_listened: true,
+    podcast_listened_at: listenedAt,
   });
 }

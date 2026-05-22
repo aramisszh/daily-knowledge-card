@@ -25,6 +25,18 @@ export const mockCards: AppKnowledgeCard[] = [
     completed: false,
     favorite: true,
     needReview: false,
+    podcast: {
+      status: "published",
+      version: 1,
+      title: "EUV 光刻机为什么是芯片产业链瓶颈",
+      duration: 1,
+      audioUrl: "/audio/published/2026-04-30-aviation-engine-podcast-v1.wav",
+      transcriptUrl: "/transcripts/published/2026-04-30-aviation-engine-podcast-v1.md",
+      sizeBytes: 16044,
+      checksum: "sha256-03bdffca899373ff48458ba2c658718abf3e83544a9989e873e05cb990e230b9",
+      updatedAt: "2026-05-21T15:30:00+08:00",
+      archivedVersions: [],
+    },
     content: {
       title: "EUV 光刻机为什么是芯片产业链瓶颈",
       subtitle: "一张图看懂先进制程背后的关键设备",
@@ -74,6 +86,13 @@ export const mockCards: AppKnowledgeCard[] = [
     completed: true,
     favorite: false,
     needReview: true,
+    podcast: {
+      status: "withdrawn",
+      version: 1,
+      title: "海底热液喷口如何孕育生命",
+      updatedAt: "2026-05-21T15:30:00+08:00",
+      archivedVersions: [],
+    },
     content: {
       title: "海底热液喷口如何孕育生命",
       subtitle: "极端环境里的生命起源线索",

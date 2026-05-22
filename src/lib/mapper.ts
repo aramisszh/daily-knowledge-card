@@ -15,6 +15,8 @@ export function mapCard(row: KnowledgeCardRow, record?: Partial<StudyRecordRow> 
     completed: record?.completed ?? false,
     favorite: record?.is_favorite ?? false,
     needReview: record?.need_review ?? false,
+    podcastListened: record?.podcast_listened ?? false,
+    podcastListenedAt: record?.podcast_listened_at ?? null,
     content: row.content_json,
   };
 }

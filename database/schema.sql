@@ -28,11 +28,19 @@ create table if not exists study_records (
   completed_at timestamptz,
   is_favorite boolean default false,
   need_review boolean default false,
+  podcast_listened boolean default false,
+  podcast_listened_at timestamptz,
   note text,
   created_at timestamptz default now(),
   updated_at timestamptz default now(),
   unique(user_id, card_id)
 );
+
+alter table study_records
+add column if not exists podcast_listened boolean default false;
+
+alter table study_records
+add column if not exists podcast_listened_at timestamptz;
 
 create table if not exists generation_jobs (
   id uuid primary key default gen_random_uuid(),

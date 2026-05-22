@@ -18,6 +18,18 @@
     "completed": false,
     "favorite": false,
     "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "航空发动机为什么像卖打印机",
+      "duration": 1,
+      "audioUrl": "/audio/published/2026-04-30-aviation-engine-podcast-v1.wav",
+      "transcriptUrl": "/transcripts/published/2026-04-30-aviation-engine-podcast-v1.md",
+      "sizeBytes": 16044,
+      "checksum": "sha256-03bdffca899373ff48458ba2c658718abf3e83544a9989e873e05cb990e230b9",
+      "updatedAt": "2026-05-21T15:30:00+08:00",
+      "archivedVersions": []
+    },
     "content": {
       "title": "航空发动机为什么像卖打印机",
       "subtitle": "设备销售与长期服务收入的商业模式",
@@ -117,6 +129,13 @@
     "completed": false,
     "favorite": false,
     "needReview": false,
+    "podcast": {
+      "status": "withdrawn",
+      "version": 1,
+      "title": "罗马道路为什么能支撑帝国治理",
+      "updatedAt": "2026-05-21T15:30:00+08:00",
+      "archivedVersions": []
+    },
     "content": {
       "title": "罗马道路为什么能支撑帝国治理",
       "subtitle": "基础设施如何放大行政、军事与贸易效率",

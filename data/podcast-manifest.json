@@ -1,0 +1,16 @@
+{
+  "updatedAt": "2026-05-21T15:30:00+08:00",
+  "items": [
+    {
+      "cardId": "2026-04-30-aviation-engine",
+      "status": "published",
+      "version": 1,
+      "title": "航空发动机为什么像卖打印机",
+      "audioUrl": "/audio/published/2026-04-30-aviation-engine-podcast-v1.wav",
+      "transcriptUrl": "/transcripts/published/2026-04-30-aviation-engine-podcast-v1.md",
+      "duration": 1,
+      "sizeBytes": 16044,
+      "checksum": "sha256-03bdffca899373ff48458ba2c658718abf3e83544a9989e873e05cb990e230b9"
+    }
+  ]
+}

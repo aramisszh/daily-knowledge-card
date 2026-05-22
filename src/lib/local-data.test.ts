@@ -32,4 +32,16 @@ describe("readLocalCards", () => {
       expect(card?.summary.includes("?")).toBe(false);
     }
   });
+
+  it("supports optional podcast fields while keeping older cards valid", async () => {
+    const cards = await readLocalCards();
+    const publishedPodcastCard = cards.find((item) => item.id === "2026-04-30-aviation-engine");
+    const withdrawnPodcastCard = cards.find((item) => item.id === "2026-05-01-roman-roads");
+    const cardWithoutPodcast = cards.find((item) => item.id === "2026-05-02-negative-space");
+
+    expect(publishedPodcastCard?.podcast?.status).toBe("published");
+    expect(publishedPodcastCard?.podcast?.audioUrl).toBe("/audio/published/2026-04-30-aviation-engine-podcast-v1.wav");
+    expect(withdrawnPodcastCard?.podcast?.status).toBe("withdrawn");
+    expect(cardWithoutPodcast?.podcast).toBeUndefined();
+  });
 });

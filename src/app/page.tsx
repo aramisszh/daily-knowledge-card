@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { categoryRotation, mockCards } from "@/lib/mock-cards";
+import { formatPodcastDuration, getPodcastDisplayState } from "@/lib/podcast";
 import type { AppKnowledgeCard, StatsSummary, ThinkingQuestion } from "@/types/knowledge";
 
 const iconPaths = {
@@ -19,6 +20,7 @@ const iconPaths = {
   chart: "M4 19V5M4 19h16M8 16V9M12 16V6M16 16v-4",
   flame: "M12 22c4 0 7-3 7-7 0-3-2-5-4-8 0 3-2 4-3 4-2 0-3-2-2-5-3 3-5 6-5 9 0 4 3 7 7 7Z",
   image: "M4 5h16v14H4V5ZM8 13l2.5-3 3 4 2-2.5L20 17M8 8h.01",
+  audio: "M9 18V6l10 6-10 6ZM5 5v14",
   down: "m6 9 6 6 6-6",
   up: "m18 15-6-6-6 6",
   clock: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM12 6v6l4 2",
@@ -231,6 +233,85 @@ function QuestionItem({ item, index }: { item: ThinkingQuestion; index: number }
   );
 }
 
+function PodcastPanel({ card, onMarkListened }: { card: AppKnowledgeCard; onMarkListened: (id: string) => void }) {
+  const [transcriptOpen, setTranscriptOpen] = useState(false);
+  const [transcriptText, setTranscriptText] = useState("");
+  const [transcriptMessage, setTranscriptMessage] = useState("");
+  const state = getPodcastDisplayState(card.podcast);
+
+  if (state.kind === "hidden") return null;
+
+  if (state.kind === "withdrawn") {
+    return (
+      <Card className="rounded-3xl border-amber-200 bg-amber-50 shadow-sm">
+        <CardContent className="p-5">
+          <div className="mb-2 flex items-center gap-2 font-semibold text-amber-900"><Icon name="audio" className="h-5 w-5" /> AI 播客</div>
+          <p className="text-sm leading-6 text-amber-800">{state.message}</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (state.kind === "status") {
+    return (
+      <Card className="rounded-3xl border-slate-200 bg-white shadow-sm">
+        <CardContent className="p-5">
+          <div className="mb-2 flex items-center gap-2 font-semibold"><Icon name="audio" className="h-5 w-5" /> AI 播客</div>
+          <p className="text-sm leading-6 text-slate-500">{state.message}</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const podcast = state.podcast;
+  const duration = formatPodcastDuration(podcast.duration);
+
+  async function toggleTranscript() {
+    const nextOpen = !transcriptOpen;
+    setTranscriptOpen(nextOpen);
+    setTranscriptMessage("");
+    if (!nextOpen || transcriptText || !podcast.transcriptUrl) return;
+
+    try {
+      const response = await fetch(podcast.transcriptUrl);
+      if (!response.ok) throw new Error("文字稿读取失败");
+      setTranscriptText(await response.text());
+    } catch (error) {
+      setTranscriptMessage(error instanceof Error ? error.message : "文字稿读取失败");
+    }
+  }
+
+  return (
+    <Card className="rounded-3xl border-slate-200 bg-white shadow-sm">
+      <CardContent className="p-5">
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <div className="mb-2 flex items-center gap-2 font-semibold"><Icon name="audio" className="h-5 w-5" /> AI 播客</div>
+            <div className="text-lg font-semibold text-slate-900">{podcast.title || card.title}</div>
+            {duration ? <div className="mt-1 text-sm text-slate-500">约 {duration}</div> : null}
+          </div>
+          <Button variant="outline" className="rounded-2xl" onClick={() => onMarkListened(card.id)} disabled={card.podcastListened}>
+            {card.podcastListened ? "已听完" : "标记已听完"}
+          </Button>
+        </div>
+        <audio controls preload="metadata" src={podcast.audioUrl} className="w-full" />
+        {podcast.transcriptUrl ? (
+          <div className="mt-4">
+            <Button variant="outline" className="rounded-2xl" onClick={toggleTranscript}>
+              {transcriptOpen ? "收起文字稿" : "查看文字稿"}
+            </Button>
+            {transcriptOpen ? (
+              <div className="mt-3 rounded-2xl bg-slate-50 p-4 text-sm leading-7 text-slate-700">
+                {transcriptMessage ? <div className="text-amber-700">{transcriptMessage}</div> : <pre className="whitespace-pre-wrap font-sans">{transcriptText || "正在读取文字稿..."}</pre>}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function DailyKnowledgeCardMVP() {
   const [cards, setCards] = useState<AppKnowledgeCard[]>(mockCards);
   const [selectedId, setSelectedId] = useState(mockCards[0]?.id ?? "");
@@ -345,6 +426,14 @@ export default function DailyKnowledgeCardMVP() {
 
   const toggleReview = (id: string) => {
     void performCardAction(id, "/api/study/review", (card) => ({ ...card, needReview: !card.needReview }));
+  };
+
+  const markPodcastListened = (id: string) => {
+    void performCardAction(id, "/api/study/podcast-listened", (card) => ({
+      ...card,
+      podcastListened: true,
+      podcastListenedAt: new Date().toISOString(),
+    }));
   };
 
   const openCardDetail = (id: string) => {
@@ -537,6 +626,7 @@ export default function DailyKnowledgeCardMVP() {
             <Card className="overflow-hidden rounded-3xl border-slate-200 shadow-sm"><div className="aspect-[4/5] bg-slate-100"><img src={selectedPosterUrl} alt={selectedCard.title} className="h-full w-full object-contain object-top" /></div></Card>
             <div className="space-y-4">
               <Card className="rounded-3xl border-slate-200 shadow-sm"><CardContent className="p-5"><div className="mb-3 flex flex-wrap gap-2"><span className="rounded-full bg-slate-900 px-3 py-1 text-sm text-white">{selectedCard.category}</span><span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{selectedCard.subCategory}</span><span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">{selectedCard.difficulty}</span></div><h2 className="text-2xl font-semibold">{selectedCard.title}</h2><p className="mt-2 text-slate-500">{selectedCard.subtitle}</p><p className="mt-4 leading-7 text-slate-700">{selectedCard.summary}</p></CardContent></Card>
+              <PodcastPanel card={selectedCard} onMarkListened={markPodcastListened} />
               <Card className="rounded-3xl border-slate-200 shadow-sm"><CardContent className="p-5"><div className="mb-3 flex items-center gap-2 font-semibold"><Icon name="image" className="h-5 w-5" /> 核心机制</div><p className="leading-7 text-slate-700">{selectedCard.content.coreMechanism}</p></CardContent></Card>
               <Card className="rounded-3xl border-slate-200 shadow-sm"><CardContent className="p-5"><div className="mb-3 flex items-center gap-2 font-semibold"><Icon name="clock" className="h-5 w-5" /> 为什么重要</div><div className="grid gap-2 md:grid-cols-2">{selectedCard.content.whyImportant.map((item, index) => <div key={item} className="rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700"><span className="mr-2 font-semibold text-slate-900">{index + 1}.</span>{item}</div>)}</div></CardContent></Card>
               <Card className="rounded-3xl border-slate-200 shadow-sm"><CardContent className="p-5"><div className="mb-3 font-semibold">财务视角</div><p className="leading-7 text-slate-700">{selectedCard.content.financeAngle}</p></CardContent></Card>
