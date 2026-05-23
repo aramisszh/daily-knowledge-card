@@ -239,6 +239,12 @@ function PodcastPanel({ card, onMarkListened }: { card: AppKnowledgeCard; onMark
   const [transcriptMessage, setTranscriptMessage] = useState("");
   const state = getPodcastDisplayState(card.podcast);
 
+  useEffect(() => {
+    setTranscriptOpen(false);
+    setTranscriptText("");
+    setTranscriptMessage("");
+  }, [card.id, card.podcast?.audioUrl, card.podcast?.transcriptUrl]);
+
   if (state.kind === "hidden") return null;
 
   if (state.kind === "withdrawn") {
@@ -294,7 +300,7 @@ function PodcastPanel({ card, onMarkListened }: { card: AppKnowledgeCard; onMark
             {card.podcastListened ? "已听完" : "标记已听完"}
           </Button>
         </div>
-        <audio controls preload="metadata" src={podcast.audioUrl} className="w-full" />
+        <audio key={podcast.audioUrl || card.id} controls preload="metadata" src={podcast.audioUrl} className="w-full" />
         {podcast.transcriptUrl ? (
           <div className="mt-4">
             <Button variant="outline" className="rounded-2xl" onClick={toggleTranscript}>
