@@ -54,6 +54,12 @@ Build an MVP daily knowledge-card system:
 
 The standard production update flow for this project is now the external weekly pack mode below. Follow this exact order unless the product direction is explicitly changed.
 
+This is the current latest formal version of the 3-end workflow:
+
+1. ChatGPT web produces the weekly content pack.
+2. Windows produces the podcast audio when audio production is needed.
+3. Mac-side Codex receives the handoff zip, validates it, imports it into the repo, runs local verification, and prepares the local Git release state.
+
 1. ChatGPT web produces the new weekly pack outside this repo.
    - Mac-side Codex does not generate topics.
    - Mac-side Codex does not generate card body content.
