@@ -1,0 +1,118 @@
+{
+  "weekId": "2026-05-22_to_2026-05-22",
+  "createdAt": "2026-05-22T00:00:00+08:00",
+  "updatedAt": "2026-05-22T10:14:29.432Z",
+  "cards": [
+    {
+      "cardId": "2026-05-22-post-station-network",
+      "cardDate": "2026-05-22",
+      "category": "历史文明",
+      "subCategory": "信息网络",
+      "difficulty": "进阶",
+      "title": "驿站制度为什么能支撑古代帝国的信息传递",
+      "subtitle": "治理大国不只靠命令，还要靠路上能跑起来的网络",
+      "summary": "驿站制度通过固定站点、马匹更换、人员接力和公文等级，把中央命令变成可以跨地域传递的组织能力。",
+      "keywords": [
+        "驿站",
+        "接力传递",
+        "公文等级",
+        "治理半径"
+      ],
+      "content": {
+        "title": "驿站制度为什么能支撑古代帝国的信息传递",
+        "subtitle": "治理大国不只靠命令，还要靠路上能跑起来的网络",
+        "category": "历史文明",
+        "subCategory": "信息网络",
+        "difficulty": "进阶",
+        "summary": "驿站制度通过固定站点、马匹更换、人员接力和公文等级，把中央命令变成可以跨地域传递的组织能力。",
+        "coreMechanism": "驿站把长距离通信拆成一段段标准化节点，信使可以沿途补给、换马和交接文书，使中央命令能以更稳定的速度抵达地方。",
+        "whyImportant": [
+          "能理解古代国家治理为什么依赖交通与通信基础设施。",
+          "能看懂信息传递速度如何影响军事、财政和行政效率。",
+          "能把驿站理解为古代帝国的信息物流系统。"
+        ],
+        "processSteps": [
+          {
+            "step": 1,
+            "title": "设置固定站点",
+            "desc": "在主要交通干线上安排驿站和基础补给。"
+          },
+          {
+            "step": 2,
+            "title": "分段接力传递",
+            "desc": "信使在站点换马、休整或交接文书。"
+          },
+          {
+            "step": 3,
+            "title": "按等级分配资源",
+            "desc": "紧急军情和重要公文获得更高传递优先级。"
+          }
+        ],
+        "keywords": [
+          {
+            "term": "驿站",
+            "desc": "承担传递公文、补给信使和换马功能的官方站点。"
+          },
+          {
+            "term": "接力传递",
+            "desc": "通过分段交接提高长距离通信效率。"
+          },
+          {
+            "term": "公文等级",
+            "desc": "按重要性和紧急程度分配传递资源。"
+          },
+          {
+            "term": "治理半径",
+            "desc": "中央命令能够有效抵达和执行的空间范围。"
+          }
+        ],
+        "misconception": {
+          "title": "驿站不只是送信的地方",
+          "content": "它同时是国家把远方纳入管理秩序的一套基础设施。"
+        },
+        "financeAngle": "从组织管理看，驿站像一套跨区域运营网络，固定节点和标准流程降低了信息传递的不确定性和协调成本。",
+        "memoryHooks": [
+          "命令要能跑到，权力才算到达。",
+          "驿站是古代治理的节点网络。",
+          "帝国越大，越需要标准化传递。"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "概念理解",
+            "question": "为什么信息传递慢会削弱中央治理能力？",
+            "answer": "因为命令、军情和财政信息无法及时到达，中央就难以及时判断和干预地方事务。",
+            "keyPoint": "速度影响治理有效性。"
+          },
+          {
+            "level": "因果分析",
+            "question": "为什么固定站点比临时派人更适合大范围治理？",
+            "answer": "固定站点能提供稳定补给和标准流程，减少每次传递都重新组织的成本。",
+            "keyPoint": "节点网络降低协调成本。"
+          },
+          {
+            "level": "迁移应用",
+            "question": "今天的企业跨区域管理，和驿站制度有什么相似之处？",
+            "answer": "都需要固定的信息节点、标准流程和优先级机制，才能让总部决策稳定传到一线。",
+            "keyPoint": "跨区域组织依赖可复制网络。"
+          }
+        ],
+        "conclusion": "驿站制度的价值，不只是提高送信速度，而是让中央能够持续、稳定、标准化地管理远距离空间。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-22-post-station-network.png"
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "驿站制度为什么能支撑古代帝国的信息传递",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-22-post-station-network-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-22-post-station-network-podcast-v1.md",
+        "duration": 260.64,
+        "sizeBytes": 3170504,
+        "checksum": "sha256-ff9ada7737b938cdd42d3a700fcba652081cb1c7c364e54744fb8f2e20a67e9c"
+      }
+    }
+  ]
+}

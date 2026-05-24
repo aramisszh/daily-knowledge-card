@@ -1,0 +1,54 @@
+{
+  "cardId": "2026-05-24-rounded-airplane-windows",
+  "date": "2026-05-24",
+  "title": "为什么飞机窗户是圆角的",
+  "category": "综合冷知识",
+  "status": "generated",
+  "version": 1,
+  "scriptFormat": "VoxCPM2-inline-control",
+  "targetDurationSeconds": {
+    "min": 180,
+    "max": 300,
+    "estimated": 198
+  },
+  "speakerMap": {
+    "spk1": {
+      "role": "male_host",
+      "displayName": "男声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/male.wav"
+    },
+    "spk2": {
+      "role": "female_host",
+      "displayName": "女声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/female.wav"
+    }
+  },
+  "inputFiles": {
+    "scriptMd": "script.md",
+    "scriptSrt": "script.srt",
+    "transcriptMd": "transcript.md"
+  },
+  "output": {
+    "audioFileName": "2026-05-24-rounded-airplane-windows-podcast-v1.mp3",
+    "format": "mp3",
+    "bitrate": "96k",
+    "sampleRate": 44100,
+    "audioUrl": "/audio/published/2026-05-24-rounded-airplane-windows-podcast-v1.mp3",
+    "transcriptUrl": "/transcripts/published/2026-05-24-rounded-airplane-windows-podcast-v1.md"
+  },
+  "qualityChecklist": [
+    "script.md contains only alternating [ctrl] and [spk1]/[spk2] dialogue lines",
+    "[ctrl] is repeated before every spoken line",
+    "transcript.md is web-display text and does not contain TTS control labels",
+    "mp3 output file name must be {cardId}-podcast-v1.mp3"
+  ],
+  "podcastVersion": 1,
+  "audioFile": "2026-05-24-rounded-airplane-windows-podcast-v1.mp3",
+  "duration": 150.88,
+  "sizeBytes": 1823439,
+  "checksum": "sha256-ded1a62a8dc0fe8398d043cb663e2ad701356889953b7f0bfbb4cdce702901c1",
+  "format": "mp3",
+  "bitrate": "96k",
+  "sampleRate": 44100,
+  "generatedAt": "2026-05-23T09:40:32+08:00"
+}

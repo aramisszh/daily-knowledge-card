@@ -4,7 +4,13 @@ import { copyFile, mkdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readJsonFile, writeJsonFileStable } from "./lib/weekly-json.mjs";
-import { assertSafeWeekId, getWeeklyWorkspacePaths } from "./lib/weekly-paths.mjs";
+import {
+  assertSafeIncomingWeekKey,
+  assertSafeWeekId,
+  getLegacyIncomingWeeklyPackPaths,
+  getWeeklyExchangeWorkspacePaths,
+  getWeeklyWorkspacePaths,
+} from "./lib/weekly-paths.mjs";
 
 const CARD_ID_PATTERN = /^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -65,6 +71,39 @@ async function loadWeeklyPlan(weeklyPlanPath) {
   }
 }
 
+async function resolveIncomingSourceImageDir(paths) {
+  for (const candidate of [paths.imageAssetsDir, paths.rawImagesDir]) {
+    try {
+      const candidateStat = await stat(candidate);
+      if (candidateStat.isDirectory()) {
+        return candidate;
+      }
+    } catch (error) {
+      if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) {
+        throw error;
+      }
+    }
+  }
+
+  throw new Error(`Missing source image directory for ${paths.weekDir}`);
+}
+
+async function resolveIncomingWeekPaths(projectRoot, weekKey) {
+  const normalizedWeekKey = assertSafeIncomingWeekKey(weekKey);
+  const newPaths = getWeeklyExchangeWorkspacePaths(projectRoot, normalizedWeekKey);
+
+  try {
+    await stat(newPaths.weeklyPlan);
+    return newPaths;
+  } catch (error) {
+    if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) {
+      throw error;
+    }
+  }
+
+  return getLegacyIncomingWeeklyPackPaths(projectRoot, normalizedWeekKey);
+}
+
 async function readDestinationChecksumIfPresent(destinationPath) {
   try {
     const destinationBuffer = await readFile(destinationPath);
@@ -102,20 +141,30 @@ async function copyImageExclusively(sourcePath, destinationPath, cardId, sourceC
 export async function runImportWeeklyImages({
   projectRoot = process.cwd(),
   weekId,
+  weekKey,
 } = {}) {
-  if (!weekId) {
-    throw new Error("weekId is required");
+  if (!weekId && !weekKey) {
+    throw new Error("weekId or weekKey is required");
   }
 
-  const safeWeekId = assertSafeWeekId(weekId);
-  const paths = getWeeklyWorkspacePaths(projectRoot, safeWeekId);
+  const usingIncomingPack = Boolean(weekKey);
+  const paths = usingIncomingPack
+    ? await resolveIncomingWeekPaths(projectRoot, weekKey)
+    : getWeeklyWorkspacePaths(projectRoot, assertSafeWeekId(weekId));
   const weeklyPlan = await loadWeeklyPlan(paths.weeklyPlan);
   const destinationDir = path.join(projectRoot, "public", "generated-cards");
+  const sourceImageDir = usingIncomingPack
+    ? await resolveIncomingSourceImageDir(paths)
+    : paths.rawImagesDir;
 
   const operations = await Promise.all(
     weeklyPlan.cards.map(async (card) => {
       const safeCardId = assertSafeCardId(card.cardId);
-      const sourcePath = resolveWithinDir(paths.rawImagesDir, `${safeCardId}.png`);
+      const sourceFileName =
+        typeof card?.image?.sourceFileName === "string" && card.image.sourceFileName.length > 0
+          ? card.image.sourceFileName
+          : `${safeCardId}.png`;
+      const sourcePath = resolveWithinDir(sourceImageDir, sourceFileName);
       const sourceBuffer = await readBuffer(
         sourcePath,
         `Missing source image for ${safeCardId}: ${sourcePath}`,
@@ -170,15 +219,22 @@ export async function runImportWeeklyImages({
   await writeJsonFileStable(paths.weeklyPlan, updatedPlan);
 
   return {
-    weekId: safeWeekId,
+    ...(usingIncomingPack
+      ? { weekKey: assertSafeIncomingWeekKey(weekKey) }
+      : { weekId: assertSafeWeekId(weekId) }),
     importedCount: operations.length,
   };
 }
 
 async function runCli() {
-  const weekId = process.argv[2];
-  const result = await runImportWeeklyImages({ weekId });
-  console.log(`Imported ${result.importedCount} images for ${result.weekId}`);
+  const value = process.argv[2];
+  const isIncomingWeekKey = typeof value === "string" && /^\d{4}-W\d{2}$/.test(value);
+  const result = await runImportWeeklyImages(
+    isIncomingWeekKey ? { weekKey: value } : { weekId: value },
+  );
+  console.log(
+    `Imported ${result.importedCount} images for ${result.weekKey ?? result.weekId}`,
+  );
 }
 
 const scriptEntryPath = fileURLToPath(import.meta.url);

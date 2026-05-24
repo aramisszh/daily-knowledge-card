@@ -1,0 +1,20 @@
+{
+  "cardId": "2026-05-22-post-station-network",
+  "podcastVersion": 1,
+  "title": "驿站制度为什么能支撑古代帝国的信息传递",
+  "targetDurationSec": 180,
+  "language": "zh-CN",
+  "style": "双人对话式科普",
+  "speakerA": "host-a",
+  "speakerB": "host-b",
+  "status": "generated",
+  "createdAt": "2026-05-22T00:00:00+08:00",
+  "audioFile": "2026-05-22-post-station-network-podcast-v1.mp3",
+  "duration": 260.64,
+  "sizeBytes": 3170504,
+  "checksum": "sha256-ff9ada7737b938cdd42d3a700fcba652081cb1c7c364e54744fb8f2e20a67e9c",
+  "format": "mp3",
+  "bitrate": "96k",
+  "sampleRate": 44100,
+  "generatedAt": "2026-05-22T18:06:18+08:00"
+}

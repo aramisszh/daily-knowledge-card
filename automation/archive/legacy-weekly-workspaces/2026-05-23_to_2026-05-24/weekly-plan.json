@@ -1,0 +1,240 @@
+{
+  "weekId": "2026-05-23_to_2026-05-24",
+  "createdAt": "2026-05-23T01:46:23.363Z",
+  "updatedAt": "2026-05-23T01:46:28.267Z",
+  "status": "created",
+  "cards": [
+    {
+      "cardId": "2026-05-23-font-weight",
+      "cardDate": "2026-05-23",
+      "category": "艺术设计",
+      "subCategory": "字体层级",
+      "difficulty": "入门",
+      "title": "字体字重为什么会影响阅读感受",
+      "subtitle": "同一段文字，粗细变化会改变信息的声音",
+      "summary": "字重是字体笔画的粗细程度，它会影响视觉重量、信息层级、情绪感受和阅读节奏。",
+      "keywords": [
+        "字重",
+        "视觉重量",
+        "阅读节奏",
+        "层级组合"
+      ],
+      "content": {
+        "title": "字体字重为什么会影响阅读感受",
+        "subtitle": "同一段文字，粗细变化会改变信息的声音",
+        "category": "艺术设计",
+        "subCategory": "字体层级",
+        "difficulty": "入门",
+        "summary": "字重是字体笔画的粗细程度，它会影响视觉重量、信息层级、情绪感受和阅读节奏。",
+        "coreMechanism": "粗细不同的文字会产生不同视觉重量。粗字重更容易抢占注意力，常规字重更适合长段阅读，而不同字重组合能建立页面主次和阅读路径。",
+        "whyImportant": [
+          "能解释为什么同样的文字换个粗细就会变得更强势或更轻盈。",
+          "能帮助制作汇报页、海报和产品界面时建立视觉层级。",
+          "能避免全都加粗导致页面嘈杂。"
+        ],
+        "processSteps": [
+          {
+            "step": 1,
+            "title": "确定主次",
+            "desc": "先判断标题、结论、正文和注释各自的重要性。"
+          },
+          {
+            "step": 2,
+            "title": "分配字重",
+            "desc": "重点信息使用更高字重，长文本保持更舒适的常规字重。"
+          },
+          {
+            "step": 3,
+            "title": "形成阅读路径",
+            "desc": "用轻重变化引导读者先看重点，再看解释。"
+          }
+        ],
+        "keywords": [
+          {
+            "term": "字重",
+            "desc": "字体笔画粗细的等级。"
+          },
+          {
+            "term": "视觉重量",
+            "desc": "元素在页面上吸引注意力的强弱。"
+          },
+          {
+            "term": "阅读节奏",
+            "desc": "眼睛在标题、正文和注释之间移动的速度。"
+          },
+          {
+            "term": "层级组合",
+            "desc": "用不同粗细安排信息主次。"
+          }
+        ],
+        "misconception": {
+          "title": "加粗不等于更专业",
+          "content": "如果所有文字都很重，页面会失去层级，反而更难读。"
+        },
+        "financeAngle": "在商业汇报中，字重会影响管理者先看到什么、记住什么，从而影响信息传达效率和决策讨论焦点。",
+        "memoryHooks": [
+          "字重是文字的音量。",
+          "加粗是强调，不是装饰。",
+          "页面有轻重，阅读才有顺序。"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "概念理解",
+            "question": "为什么正文通常不适合全部使用很粗的字重？",
+            "answer": "因为粗字重视觉压力更大，长时间阅读容易疲劳，也会削弱标题和重点的区别。",
+            "keyPoint": "字重要服务阅读场景。"
+          },
+          {
+            "level": "因果分析",
+            "question": "为什么标题、数字和结论可以使用不同字重？",
+            "answer": "因为它们承担不同信息角色，字重差异能让读者更快识别主次。",
+            "keyPoint": "不同角色需要不同视觉重量。"
+          },
+          {
+            "level": "迁移应用",
+            "question": "做一页汇报时，哪些信息最值得加重？",
+            "answer": "最值得加重的是结论、关键数字和决策相关信息，而不是所有说明文字。",
+            "keyPoint": "加重应优先服务决策重点。"
+          }
+        ],
+        "conclusion": "字重的本质，是用文字粗细安排注意力，让读者知道哪些信息先看、哪些信息后看。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-23-font-weight.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "字体字重为什么会影响阅读感受",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-23-font-weight-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-23-font-weight-podcast-v1.md",
+        "duration": 178.72,
+        "sizeBytes": 2158290,
+        "checksum": "sha256-b7d9a720626d110589fb170bb52d988fe351ac4c240f6b7443cecaf196309a3e"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    },
+    {
+      "cardId": "2026-05-24-rounded-airplane-windows",
+      "cardDate": "2026-05-24",
+      "category": "综合冷知识",
+      "subCategory": "工程安全",
+      "difficulty": "入门",
+      "title": "为什么飞机窗户是圆角的",
+      "subtitle": "一个小小的圆角，背后是材料受力和安全事故教训",
+      "summary": "飞机窗户采用圆角，是为了减少机身加压和飞行循环中产生的应力集中，降低裂纹从尖角处扩展的风险。",
+      "keywords": [
+        "应力集中",
+        "金属疲劳",
+        "机舱加压",
+        "圆角设计"
+      ],
+      "content": {
+        "title": "为什么飞机窗户是圆角的",
+        "subtitle": "一个小小的圆角，背后是材料受力和安全事故教训",
+        "category": "综合冷知识",
+        "subCategory": "工程安全",
+        "difficulty": "入门",
+        "summary": "飞机窗户采用圆角，是为了减少机身加压和飞行循环中产生的应力集中，降低裂纹从尖角处扩展的风险。",
+        "coreMechanism": "客机高空飞行时机舱需要加压，机身会反复承受压力变化。尖锐直角容易让局部应力集中，圆角能让受力更平滑地分散。",
+        "whyImportant": [
+          "能理解日常物件背后往往有安全工程逻辑。",
+          "能看懂形状如何影响材料受力。",
+          "能纠正圆角只是为了好看的误解。"
+        ],
+        "processSteps": [
+          {
+            "step": 1,
+            "title": "机舱需要加压",
+            "desc": "高空飞行时，舱内外存在明显气压差。"
+          },
+          {
+            "step": 2,
+            "title": "材料反复受力",
+            "desc": "起降和巡航循环会让机身经历压力变化。"
+          },
+          {
+            "step": 3,
+            "title": "圆角分散应力",
+            "desc": "圆滑边界降低尖角处裂纹扩展风险。"
+          }
+        ],
+        "keywords": [
+          {
+            "term": "应力集中",
+            "desc": "局部区域承受过高受力。"
+          },
+          {
+            "term": "金属疲劳",
+            "desc": "材料在反复受力后逐渐损伤。"
+          },
+          {
+            "term": "机舱加压",
+            "desc": "让高空飞行时舱内保持适合人体的气压。"
+          },
+          {
+            "term": "圆角设计",
+            "desc": "通过平滑边界降低尖角风险。"
+          }
+        ],
+        "misconception": {
+          "title": "圆角不是单纯为了美观",
+          "content": "它首先是安全结构设计的一部分，用来减少应力集中和疲劳裂纹风险。"
+        },
+        "financeAngle": "对航空制造来说，安全设计会增加前期研发和测试成本，但能显著降低事故风险、维修成本和品牌信任损失。",
+        "memoryHooks": [
+          "尖角容易藏风险。",
+          "圆角让压力绕过去。",
+          "好看的形状，先要安全。"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "概念理解",
+            "question": "为什么高空飞行会让机身承受反复压力变化？",
+            "answer": "因为飞机在地面和高空之间反复经历不同气压环境，机舱加压会让机身结构周期性受力。",
+            "keyPoint": "加压循环带来结构疲劳。"
+          },
+          {
+            "level": "因果分析",
+            "question": "为什么一个小小的尖角可能成为裂纹起点？",
+            "answer": "因为尖角会让应力集中在局部，材料更容易从这里开始疲劳和开裂。",
+            "keyPoint": "局部高应力会放大风险。"
+          },
+          {
+            "level": "迁移应用",
+            "question": "生活中还有哪些圆角设计其实是为了安全？",
+            "answer": "家具边角、手机外壳、儿童用品和机械开孔常用圆角来降低碰撞或结构风险。",
+            "keyPoint": "圆角常常是在管理风险。"
+          }
+        ],
+        "conclusion": "飞机窗户的圆角，本质是用形状管理风险，让压力不在局部尖角处集中破坏结构。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-24-rounded-airplane-windows.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "为什么飞机窗户是圆角的",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-24-rounded-airplane-windows-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-24-rounded-airplane-windows-podcast-v1.md",
+        "duration": 150.88,
+        "sizeBytes": 1823439,
+        "checksum": "sha256-ded1a62a8dc0fe8398d043cb663e2ad701356889953b7f0bfbb4cdce702901c1"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    }
+  ]
+}

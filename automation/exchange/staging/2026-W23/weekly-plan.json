@@ -1,0 +1,41 @@
+{
+  "weekId": "2026-W23",
+  "weekStart": "2026-06-01",
+  "weekEnd": "2026-06-07",
+  "batchDays": 7,
+  "cycleType": "full_monday_to_sunday_week",
+  "latestConfirmedContentDateBeforeThisBatch": "2026-05-27",
+  "testMode": true,
+  "testScope": "single_card_mvp_test_for_2026-06-01_only",
+  "includedDates": [
+    "2026-06-01"
+  ],
+  "cardCount": 1,
+  "expectedFullWeekCardCount": 7,
+  "transitionGap": {
+    "start": "2026-05-28",
+    "end": "2026-05-31",
+    "autoGenerate": false,
+    "reason": "switch from 5-day test package to 7-day full weekly cycle"
+  },
+  "cards": [
+    {
+      "date": "2026-06-01",
+      "weekday": "Monday",
+      "cardId": "2026-06-01-qr-code-error-correction",
+      "title": "二维码被弄脏，为什么还能扫出来？",
+      "category": "信息技术",
+      "imageStatus": "generated",
+      "imageSource": "chatgpt-image2",
+      "imageReadyForImport": true,
+      "audioTargetFileName": "2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+      "windowsJobDir": "podcast_jobs/pending/2026-06-01-qr-code-error-correction",
+      "imageFile": "images/raw/2026-06-01-qr-code-error-correction.png",
+      "imageResolution": "1122x1402",
+      "imageQualityStatus": "pass"
+    }
+  ],
+  "imageGateStatus": "pass",
+  "updatedAt": "2026-05-24T03:14:56Z",
+  "notes": "MVP single-card package for testing chatgpt-windows-mac workflow. Week window follows 2026-W23, but only 2026-06-01 is included."
+}

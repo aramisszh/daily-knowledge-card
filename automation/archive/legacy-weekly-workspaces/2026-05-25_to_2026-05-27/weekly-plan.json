@@ -1,0 +1,356 @@
+{
+  "weekId": "2026-05-25_to_2026-05-27",
+  "createdAt": "2026-05-23T01:46:23.371Z",
+  "updatedAt": "2026-05-23T01:46:28.270Z",
+  "status": "created",
+  "cards": [
+    {
+      "cardId": "2026-05-25-ocean-currents-climate",
+      "cardDate": "2026-05-25",
+      "category": "自然科学",
+      "subCategory": "地球系统",
+      "difficulty": "进阶",
+      "title": "洋流为什么会影响全球气候",
+      "subtitle": "海水不是静止的，它像地球的热量传送带",
+      "summary": "洋流通过搬运热量、影响水汽和调节海气交换，把赤道和高纬度地区连接成一个巨大的气候调节系统。",
+      "keywords": [
+        "暖流",
+        "寒流",
+        "海气交换",
+        "热盐环流"
+      ],
+      "content": {
+        "title": "洋流为什么会影响全球气候",
+        "subtitle": "海水不是静止的，它像地球的热量传送带",
+        "category": "自然科学",
+        "subCategory": "地球系统",
+        "difficulty": "进阶",
+        "summary": "洋流通过搬运热量、影响水汽和调节海气交换，把赤道和高纬度地区连接成一个巨大的气候调节系统。",
+        "coreMechanism": "低纬度海洋吸收更多太阳能，洋流把热水带向高纬度、把冷水带回低纬度，并通过海气交换影响空气温度、水汽和降水分布。",
+        "whyImportant": [
+          "能理解为什么同纬度地区气候可能差异很大。",
+          "能看懂海洋不是气候背景，而是主动调节器。",
+          "能把热量、水汽、风和降水放进同一个系统理解。"
+        ],
+        "processSteps": [
+          {
+            "step": 1,
+            "title": "低纬度吸收热量",
+            "desc": "太阳让赤道附近海水获得更多能量。"
+          },
+          {
+            "step": 2,
+            "title": "洋流重新分配",
+            "desc": "暖流和寒流把热量在不同区域之间搬运。"
+          },
+          {
+            "step": 3,
+            "title": "影响海气交换",
+            "desc": "海水温度改变空气温度、水汽和降水格局。"
+          }
+        ],
+        "keywords": [
+          {
+            "term": "暖流",
+            "desc": "把较温暖的海水带向其他区域。"
+          },
+          {
+            "term": "寒流",
+            "desc": "把较冷的海水带向其他区域。"
+          },
+          {
+            "term": "海气交换",
+            "desc": "海洋与大气之间的热量和水汽交换。"
+          },
+          {
+            "term": "热盐环流",
+            "desc": "由温度和盐度差异驱动的大尺度海水循环。"
+          }
+        ],
+        "misconception": {
+          "title": "洋流不只影响海边城市",
+          "content": "它会通过大气环流和水汽输送影响更大范围的气候格局。"
+        },
+        "financeAngle": "对农业、能源、航运和保险行业来说，洋流变化会影响天气风险、作物产量、航线效率和灾害损失预估。",
+        "memoryHooks": [
+          "海洋在搬运热量。",
+          "洋流一变，气候跟着变。",
+          "地球的空调，一半在海里。"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "概念理解",
+            "question": "为什么同样纬度的地区气候可能完全不同？",
+            "answer": "因为洋流、风向和海陆位置会改变热量与水汽分布，同纬度不等于同气候。",
+            "keyPoint": "纬度只是气候因素之一。"
+          },
+          {
+            "level": "因果分析",
+            "question": "为什么洋流变化会影响降水和极端天气风险？",
+            "answer": "洋流改变海面温度，进而影响蒸发、水汽输送和大气环流。",
+            "keyPoint": "海温会影响天气系统。"
+          },
+          {
+            "level": "迁移应用",
+            "question": "哪些行业最需要关注海洋和气候之间的关系？",
+            "answer": "农业、能源、航运、渔业、保险和供应链管理都需要关注相关风险。",
+            "keyPoint": "气候影响会传导到产业经营。"
+          }
+        ],
+        "conclusion": "洋流影响气候的关键，是它把热量和水汽重新分配，让海洋成为全球气候系统的重要调节器。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-25-ocean-currents-climate.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "洋流为什么会影响全球气候",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-25-ocean-currents-climate-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-25-ocean-currents-climate-podcast-v1.md",
+        "duration": 157.92,
+        "sizeBytes": 1907911,
+        "checksum": "sha256-03c7c03d8464c4299bcbec401a7ccea711d6653b55434afbd302597ce967ba42"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    },
+    {
+      "cardId": "2026-05-26-database-index",
+      "cardDate": "2026-05-26",
+      "category": "工程技术",
+      "subCategory": "数据结构",
+      "difficulty": "入门",
+      "title": "数据库索引为什么能让查询变快",
+      "subtitle": "它不是让数据变少，而是让系统少走弯路",
+      "summary": "数据库索引像一本书的目录，让系统不用逐行扫描全部数据，而是通过有序结构更快定位目标记录。",
+      "keywords": [
+        "全表扫描",
+        "索引",
+        "查询条件",
+        "写入成本"
+      ],
+      "content": {
+        "title": "数据库索引为什么能让查询变快",
+        "subtitle": "它不是让数据变少，而是让系统少走弯路",
+        "category": "工程技术",
+        "subCategory": "数据结构",
+        "difficulty": "入门",
+        "summary": "数据库索引像一本书的目录，让系统不用逐行扫描全部数据，而是通过有序结构更快定位目标记录。",
+        "coreMechanism": "索引为常用查询字段维护额外的有序结构。查询时系统先查索引缩小范围，再定位真实记录，用额外维护成本换取更短查找路径。",
+        "whyImportant": [
+          "能理解为什么同一张表有索引和没索引速度差异很大。",
+          "能看懂查询慢不一定是服务器不够强。",
+          "能认识到索引会提升读取效率，但也会带来写入和存储成本。"
+        ],
+        "processSteps": [
+          {
+            "step": 1,
+            "title": "建立有序结构",
+            "desc": "为常用查询字段建立额外索引。"
+          },
+          {
+            "step": 2,
+            "title": "先查索引",
+            "desc": "查询时不直接翻完整张表，而是先缩小范围。"
+          },
+          {
+            "step": 3,
+            "title": "定位记录",
+            "desc": "根据索引结果找到真正的数据行。"
+          }
+        ],
+        "keywords": [
+          {
+            "term": "全表扫描",
+            "desc": "从头到尾检查所有数据。"
+          },
+          {
+            "term": "索引",
+            "desc": "为了快速查找而维护的额外数据结构。"
+          },
+          {
+            "term": "查询条件",
+            "desc": "用户希望用来筛选数据的字段。"
+          },
+          {
+            "term": "写入成本",
+            "desc": "新增或修改数据时同步维护索引的额外开销。"
+          }
+        ],
+        "misconception": {
+          "title": "索引不是越多越好",
+          "content": "过多索引会占用空间，并让新增、修改、删除数据变慢。"
+        },
+        "financeAngle": "对业务系统来说，合适的索引能降低等待时间、提升运营效率，但错误索引会增加存储、维护和系统复杂度成本。",
+        "memoryHooks": [
+          "没索引像翻全书，有索引像查目录。",
+          "快不是因为数据少，是因为路更短。",
+          "索引加速读取，也消耗维护成本。"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "概念理解",
+            "question": "为什么一本书有目录会更容易找到内容？",
+            "answer": "目录把内容位置提前组织好，读者不用从第一页翻到最后一页。",
+            "keyPoint": "索引减少无效查找。"
+          },
+          {
+            "level": "因果分析",
+            "question": "为什么经常被查询的字段更适合建立索引？",
+            "answer": "因为这些字段会反复参与筛选，索引带来的读取收益更容易覆盖维护成本。",
+            "keyPoint": "高频查询字段更值得优化。"
+          },
+          {
+            "level": "迁移应用",
+            "question": "为什么索引太多反而可能拖慢系统？",
+            "answer": "因为每次写入、更新或删除数据时，系统还要同步维护多个索引。",
+            "keyPoint": "读取加速和写入成本要平衡。"
+          }
+        ],
+        "conclusion": "数据库索引的本质，是用额外结构换取更短查找路径，让系统更快找到目标数据。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-26-database-index.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "数据库索引为什么能让查询变快",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-26-database-index-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-26-database-index-podcast-v1.md",
+        "duration": 147.68,
+        "sizeBytes": 1784984,
+        "checksum": "sha256-e342a2379df92126d7d195ddb0b619d7309712526ee90a37794ad69c0152990a"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    },
+    {
+      "cardId": "2026-05-27-anchoring-effect",
+      "cardDate": "2026-05-27",
+      "category": "人文社科",
+      "subCategory": "判断偏差",
+      "difficulty": "入门",
+      "title": "锚定效应为什么会影响价格判断",
+      "subtitle": "第一个数字常常偷偷变成后续判断的参照系",
+      "summary": "锚定效应是指人们在判断价格、价值或数量时，容易受到先看到的数字影响，并围绕这个初始参照进行调整。",
+      "keywords": [
+        "锚点",
+        "调整不足",
+        "参考价格",
+        "谈判报价"
+      ],
+      "content": {
+        "title": "锚定效应为什么会影响价格判断",
+        "subtitle": "第一个数字常常偷偷变成后续判断的参照系",
+        "category": "人文社科",
+        "subCategory": "判断偏差",
+        "difficulty": "入门",
+        "summary": "锚定效应是指人们在判断价格、价值或数量时，容易受到先看到的数字影响，并围绕这个初始参照进行调整。",
+        "coreMechanism": "人们先接触到一个显眼数字后，大脑会把它当作判断参照点。后续估计虽然会调整，但常常调整不足，仍被原始数字拉住。",
+        "whyImportant": [
+          "能解释原价、建议价、首轮报价为什么会影响购买和谈判。",
+          "能帮助识别商业场景中的价格心理设计。",
+          "能提醒自己在决策时主动寻找独立参照。"
+        ],
+        "processSteps": [
+          {
+            "step": 1,
+            "title": "看到初始数字",
+            "desc": "先接触一个显眼的价格、估值或报价。"
+          },
+          {
+            "step": 2,
+            "title": "形成判断参照",
+            "desc": "大脑把这个数字当作后续比较的坐标。"
+          },
+          {
+            "step": 3,
+            "title": "围绕锚点调整",
+            "desc": "后续判断会调整，但往往仍被初始数字影响。"
+          }
+        ],
+        "keywords": [
+          {
+            "term": "锚点",
+            "desc": "最先进入判断过程的参照信息。"
+          },
+          {
+            "term": "调整不足",
+            "desc": "从锚点出发调整，但调整幅度不够。"
+          },
+          {
+            "term": "参考价格",
+            "desc": "消费者心中用来比较价格高低的标准。"
+          },
+          {
+            "term": "谈判报价",
+            "desc": "通过先出价影响对方判断区间。"
+          }
+        ],
+        "misconception": {
+          "title": "锚点不一定要合理才有效",
+          "content": "哪怕它只是一个随意出现的数字，也可能改变后续判断。"
+        },
+        "financeAngle": "在定价、促销和谈判中，锚定效应会影响客户对贵不贵和值不值的感受，也会影响预算审批和交易预期。",
+        "memoryHooks": [
+          "第一个数字会先占位置。",
+          "判断不是从零开始，而是从锚点开始。",
+          "原价常常是在设置心理坐标。"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "概念理解",
+            "question": "为什么商家喜欢同时展示原价和折后价？",
+            "answer": "原价会成为锚点，让折后价看起来更便宜、更有吸引力。",
+            "keyPoint": "原价会塑造参考坐标。"
+          },
+          {
+            "level": "因果分析",
+            "question": "为什么谈判中的第一次报价会影响后续区间？",
+            "answer": "第一次报价会改变双方对合理范围的感知，后续让步往往围绕它展开。",
+            "keyPoint": "首轮报价会框定讨论范围。"
+          },
+          {
+            "level": "迁移应用",
+            "question": "做预算判断时，怎样避免被无关数字带偏？",
+            "answer": "应先建立独立测算依据，再比较外部报价或历史数字是否合理。",
+            "keyPoint": "先有独立参照，再看外部锚点。"
+          }
+        ],
+        "conclusion": "锚定效应的本质，是初始参照改变了判断坐标，让后续价格感知围绕第一个数字展开。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-27-anchoring-effect.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "锚定效应为什么会影响价格判断",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-27-anchoring-effect-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-27-anchoring-effect-podcast-v1.md",
+        "duration": 147.68,
+        "sizeBytes": 1784875,
+        "checksum": "sha256-6124c15cbc820b87316d189707252d84d9e362f535cdfb7603a72dc2bef9e626"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    }
+  ]
+}

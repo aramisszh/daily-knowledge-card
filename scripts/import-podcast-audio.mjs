@@ -14,7 +14,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readJsonFile } from "./lib/weekly-json.mjs";
-import { assertSafeWeekId, getWeeklyWorkspacePaths } from "./lib/weekly-paths.mjs";
+import {
+  assertSafeIncomingWeekKey,
+  assertSafeWeekId,
+  getLegacyIncomingWeeklyPackPaths,
+  getWeeklyExchangeWorkspacePaths,
+  getWeeklyWorkspacePaths,
+} from "./lib/weekly-paths.mjs";
 
 const CARD_ID_PATTERN = /^\d{4}-\d{2}-\d{2}-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -138,11 +144,10 @@ function validateMeta(meta, expectedCardId, expectedVersion, metaPath) {
     throw new Error(`Invalid podcast.meta.json at ${metaPath}: missing required field cardId`);
   }
 
-  if (!Number.isInteger(meta.podcastVersion) || meta.podcastVersion <= 0) {
-    throw new Error(
-      `Invalid podcast.meta.json at ${metaPath}: missing required field podcastVersion`,
-    );
-  }
+  const resolvedVersion =
+    Number.isInteger(meta.podcastVersion) && meta.podcastVersion > 0
+      ? meta.podcastVersion
+      : 1;
 
   if (typeof meta.title !== "string" || meta.title.trim().length === 0) {
     throw new Error(`Invalid podcast.meta.json at ${metaPath}: missing required field title`);
@@ -154,9 +159,9 @@ function validateMeta(meta, expectedCardId, expectedVersion, metaPath) {
     );
   }
 
-  if (meta.podcastVersion !== expectedVersion) {
+  if (resolvedVersion !== expectedVersion) {
     throw new Error(
-      `podcast.meta.json version mismatch for ${expectedCardId}: expected ${expectedVersion}, got ${meta.podcastVersion}`,
+      `podcast.meta.json version mismatch for ${expectedCardId}: expected ${expectedVersion}, got ${resolvedVersion}`,
     );
   }
 
@@ -355,16 +360,35 @@ function prepareJsonWrite(currentValue, currentText, candidateValue, now) {
   };
 }
 
+async function resolveIncomingWeekPaths(projectRoot, weekKey) {
+  const normalizedWeekKey = assertSafeIncomingWeekKey(weekKey);
+  const newPaths = getWeeklyExchangeWorkspacePaths(projectRoot, normalizedWeekKey);
+
+  try {
+    await stat(newPaths.weeklyPlan);
+    return newPaths;
+  } catch (error) {
+    if (!(isMissingError(error))) {
+      throw error;
+    }
+  }
+
+  return getLegacyIncomingWeeklyPackPaths(projectRoot, normalizedWeekKey);
+}
+
 export async function runImportPodcastAudio({
   projectRoot = process.cwd(),
   weekId,
+  weekKey,
 } = {}) {
-  if (!weekId) {
-    throw new Error("weekId is required");
+  if (!weekId && !weekKey) {
+    throw new Error("weekId or weekKey is required");
   }
 
-  const safeWeekId = assertSafeWeekId(weekId);
-  const paths = getWeeklyWorkspacePaths(projectRoot, safeWeekId);
+  const usingIncomingPack = Boolean(weekKey);
+  const paths = usingIncomingPack
+    ? await resolveIncomingWeekPaths(projectRoot, weekKey)
+    : getWeeklyWorkspacePaths(projectRoot, assertSafeWeekId(weekId));
   const weeklyPlanState = await loadJsonFileWithText(
     paths.weeklyPlan,
     `weekly-plan.json not found: ${paths.weeklyPlan}`,
@@ -544,15 +568,22 @@ export async function runImportPodcastAudio({
   }
 
   return {
-    weekId: safeWeekId,
+    ...(usingIncomingPack
+      ? { weekKey: assertSafeIncomingWeekKey(weekKey) }
+      : { weekId: assertSafeWeekId(weekId) }),
     importedCount: operations.length,
   };
 }
 
 async function runCli() {
-  const weekId = process.argv[2];
-  const result = await runImportPodcastAudio({ weekId });
-  console.log(`Imported ${result.importedCount} audio files for ${result.weekId}`);
+  const value = process.argv[2];
+  const isIncomingWeekKey = typeof value === "string" && /^\d{4}-W\d{2}$/.test(value);
+  const result = await runImportPodcastAudio(
+    isIncomingWeekKey ? { weekKey: value } : { weekId: value },
+  );
+  console.log(
+    `Imported ${result.importedCount} audio files for ${result.weekKey ?? result.weekId}`,
+  );
 }
 
 const scriptEntryPath = fileURLToPath(import.meta.url);

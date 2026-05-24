@@ -14,6 +14,7 @@ import { runImportWeeklyImages } from "./import-weekly-images.mjs";
 
 const TEMP_DIRS = [];
 const WEEK_ID = "2026-05-22_to_2026-05-28";
+const WEEK_KEY = "2026-W22";
 const CARD_ID = "2026-05-22-post-station-network";
 
 afterEach(async () => {
@@ -87,6 +88,55 @@ async function createFixtureProject() {
   };
 }
 
+async function createIncomingFixtureProject() {
+  const projectRoot = await mkdtemp(
+    path.join(os.tmpdir(), "import-weekly-images-incoming-test-"),
+  );
+  TEMP_DIRS.push(projectRoot);
+
+  const weekDir = path.join(projectRoot, "automation", "incoming", WEEK_KEY);
+  const imageAssetsDir = path.join(weekDir, "image-assets");
+  const generatedCardsDir = path.join(projectRoot, "public", "generated-cards");
+  await mkdir(imageAssetsDir, { recursive: true });
+  await mkdir(generatedCardsDir, { recursive: true });
+
+  const weeklyPlanPath = path.join(weekDir, "weekly-plan.json");
+  const sourceImagePath = path.join(imageAssetsDir, `${CARD_ID}.png`);
+  const destinationPath = path.join(generatedCardsDir, `${CARD_ID}.png`);
+
+  const plan = {
+    weekKey: WEEK_KEY,
+    workflowMode: "incoming-pack",
+    status: "received",
+    cards: [
+      {
+        cardId: CARD_ID,
+        title: "驿站网络为什么能加快信息传递",
+        image: {
+          status: "pending",
+          sourceFileName: `${CARD_ID}.png`,
+          publishedUrl: null,
+          sizeBytes: null,
+          checksum: null,
+        },
+      },
+    ],
+  };
+
+  await writeFile(
+    weeklyPlanPath,
+    `${JSON.stringify(plan, null, 2)}\n`,
+    "utf8",
+  );
+
+  return {
+    projectRoot,
+    weeklyPlanPath,
+    sourceImagePath,
+    destinationPath,
+  };
+}
+
 async function readPlan(weeklyPlanPath) {
   return JSON.parse(await readFile(weeklyPlanPath, "utf8"));
 }
@@ -96,8 +146,8 @@ async function readPlanText(weeklyPlanPath) {
 }
 
 describe("runImportWeeklyImages", () => {
-  it("throws when weekId is missing", async () => {
-    await expect(runImportWeeklyImages()).rejects.toThrow("weekId is required");
+  it("throws when weekId and weekKey are both missing", async () => {
+    await expect(runImportWeeklyImages()).rejects.toThrow("weekId or weekKey is required");
   });
 
   it("throws when weekly-plan.json is missing", async () => {
@@ -138,6 +188,27 @@ describe("runImportWeeklyImages", () => {
     expect(plan.cards[0].extraField).toEqual({ keepMe: true });
     expect(plan.cards[0].image).toMatchObject({
       status: "imported",
+      publishedUrl: `/generated-cards/${CARD_ID}.png`,
+      sizeBytes: sourceBytes.length,
+      checksum: checksumFor(sourceBytes),
+    });
+  });
+
+  it("imports images from an incoming weekly pack when weekKey is provided", async () => {
+    const { projectRoot, weeklyPlanPath, sourceImagePath, destinationPath } =
+      await createIncomingFixtureProject();
+    const sourceBytes = Buffer.from("incoming-image-bytes");
+    await writeFile(sourceImagePath, sourceBytes);
+
+    const result = await runImportWeeklyImages({ projectRoot, weekKey: WEEK_KEY });
+
+    expect(result.importedCount).toBe(1);
+    expect(await readFile(destinationPath)).toEqual(sourceBytes);
+
+    const plan = await readPlan(weeklyPlanPath);
+    expect(plan.cards[0].image).toMatchObject({
+      status: "imported",
+      sourceFileName: `${CARD_ID}.png`,
       publishedUrl: `/generated-cards/${CARD_ID}.png`,
       sizeBytes: sourceBytes.length,
       checksum: checksumFor(sourceBytes),
@@ -252,7 +323,7 @@ describe("import-weekly-images CLI", () => {
     expect(result.stdout).toContain("Imported 1 images");
   });
 
-  it("exits nonzero with a clear message when weekId is missing", async () => {
+  it("exits nonzero with a clear message when no weekly identifier is provided", async () => {
     const { projectRoot } = await createFixtureProject();
     const scriptPath = path.resolve("scripts/import-weekly-images.mjs");
 
@@ -262,6 +333,6 @@ describe("import-weekly-images CLI", () => {
     });
 
     expect(result.status).not.toBe(0);
-    expect(result.stderr).toContain("weekId is required");
+    expect(result.stderr).toContain("weekId or weekKey is required");
   });
 });

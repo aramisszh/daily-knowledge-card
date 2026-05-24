@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "daily-knowledge-card.package-manifest.v1",
+  "packageRole": "chatgpt-weekly-source",
+  "packageFileName": "dkc-source__2026-W23__2026-06-01_to_2026-06-07.zip",
+  "weekId": "2026-W23",
+  "weekStart": "2026-06-01",
+  "weekEnd": "2026-06-07",
+  "testMode": true,
+  "packageMode": "mvp-single-card-test",
+  "testScope": "single_card_mvp_test_for_2026-06-01_only",
+  "includedCardCount": 1,
+  "expectedFullWeekCardCount": 7,
+  "imageGateStatus": "pass",
+  "imageSource": "chatgpt-image2",
+  "imageFile": "images/raw/2026-06-01-qr-code-error-correction.png",
+  "imageResolution": "1122x1402",
+  "windowsInboxDir": "D:\\AI-Podcast\\exchange\\inbox",
+  "expectedWindowsCommand": "/batch-podcast",
+  "expectedWindowsCommandWithWeekId": "/batch-podcast weekId=2026-W23",
+  "audioTargetFileName": "2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+  "createdAt": "2026-05-24T03:14:56Z",
+  "qualityGates": {
+    "zipFileNameMatchesRule": true,
+    "weeklyPlanDateRangeMatchesFileName": true,
+    "imageExists": true,
+    "imageSourceIsChatgptImage2": true,
+    "imageAspectRatioIsFourToFive": true,
+    "imageMinResolutionPass": true,
+    "scriptAllowedTagsOnly": true,
+    "everySpkHasImmediateCtrl": true,
+    "transcriptIsWebPolished": true,
+    "windowsHandoffContainsInboxInstruction": true
+  },
+  "files": [
+    {
+      "path": "cards-draft.json",
+      "sizeBytes": 3456,
+      "sha256": "a9843481a383c53cbfcb675d7e19802e3e03ec59c9d3d0eb3cc8bbf34f4cff65"
+    },
+    {
+      "path": "handoff-to-mac.md",
+      "sizeBytes": 976,
+      "sha256": "222c65e8d60494912d3ca8a8bad7d4aa8e68660f44e4a447148d00d2ae6801d3"
+    },
+    {
+      "path": "handoff-to-windows.md",
+      "sizeBytes": 1777,
+      "sha256": "df5f61d1d84829721abe6a2165ca1acbe9cc48816cac23f309ff395ce724ce49"
+    },
+    {
+      "path": "image-generation-report.json",
+      "sizeBytes": 1086,
+      "sha256": "f9058f975bb2aac362f4fe7641aa42793f66854f15ae1ab8ee7369e957461129"
+    },
+    {
+      "path": "image-prompts.md",
+      "sizeBytes": 3955,
+      "sha256": "db8045f34a0689d04a7addc94c385cc4b1dedcf46d98cd6438520e683cfcc397"
+    },
+    {
+      "path": "images/raw/2026-06-01-qr-code-error-correction.png",
+      "sizeBytes": 1898624,
+      "sha256": "de2037304b4faa062eb65a0f000f91aea268faa1e77bbbfef8ea476d66d6fa18"
+    },
+    {
+      "path": "podcast_jobs/pending/2026-06-01-qr-code-error-correction/podcast.meta.json",
+      "sizeBytes": 1017,
+      "sha256": "a99bf6c9beab7fcc0d36a94f84768dc2cbe10063fc5e378310ef26bb196c1c07"
+    },
+    {
+      "path": "podcast_jobs/pending/2026-06-01-qr-code-error-correction/script.md",
+      "sizeBytes": 4246,
+      "sha256": "5ccd5877c201751eebafc161d2fd27eea866b467775d1295156257b880f1fbb7"
+    },
+    {
+      "path": "podcast_jobs/pending/2026-06-01-qr-code-error-correction/script.srt",
+      "sizeBytes": 3625,
+      "sha256": "21fdae00a43969f1bda6b7969903d16e0587cdde780b299ee1ca942b1b04d98c"
+    },
+    {
+      "path": "podcast_jobs/pending/2026-06-01-qr-code-error-correction/transcript.md",
+      "sizeBytes": 4970,
+      "sha256": "3c2315486ddb59846b20f4eb3c39b45daff88132bb87a552a0a9ec98916e8ddf"
+    },
+    {
+      "path": "transcript-preview-index.md",
+      "sizeBytes": 590,
+      "sha256": "5f5f3e6476d3808dead232a1f56a925ced82597d34650568f545c2574a82260d"
+    },
+    {
+      "path": "tts-validation-report.json",
+      "sizeBytes": 943,
+      "sha256": "7aecf4411636c8fb17e081e0a25259d0d3546900e5253f63c926f0286989ac3b"
+    },
+    {
+      "path": "weekly-plan.json",
+      "sizeBytes": 1431,
+      "sha256": "ab6be907f06130c584538f6c5e405ccb568f1e9a5a1ca0c1914a746e72f65693"
+    },
+    {
+      "path": "workflow-test-readme.md",
+      "sizeBytes": 1010,
+      "sha256": "4f83a167d11b254ce738da5800fe4f3abb6669129a2fe2f7d093a029710125cb"
+    }
+  ]
+}

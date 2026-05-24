@@ -1,0 +1,71 @@
+{
+  "cardId": "2026-05-28-bridge-expansion-joints",
+  "date": "2026-05-28",
+  "title": "桥梁为什么要留伸缩缝",
+  "category": "工程技术",
+  "status": "generated",
+  "version": 1,
+  "scriptFormat": "VoxCPM2-inline-control",
+  "targetDurationSeconds": {
+    "min": 180,
+    "max": 300,
+    "estimated": 214
+  },
+  "speakerMap": {
+    "spk1": {
+      "role": "male_host",
+      "displayName": "男声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/male.wav"
+    },
+    "spk2": {
+      "role": "female_host",
+      "displayName": "女声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/female.wav"
+    }
+  },
+  "ttsControlPolicy": {
+    "voiceIdentity": "provided_by_reference_audio",
+    "ctrlControls": [
+      "语速",
+      "节奏",
+      "情绪",
+      "语调",
+      "停顿",
+      "画面感"
+    ],
+    "ctrlDoesNotSpecify": [
+      "固定音色",
+      "固定年龄",
+      "固定声线质感"
+    ]
+  },
+  "inputFiles": {
+    "scriptMd": "script.md",
+    "scriptSrt": "script.srt",
+    "transcriptMd": "transcript.md"
+  },
+  "output": {
+    "audioFileName": "2026-05-28-bridge-expansion-joints-podcast-v1.mp3",
+    "format": "mp3",
+    "bitrate": "96k",
+    "sampleRate": 44100,
+    "audioUrl": "/audio/published/2026-05-28-bridge-expansion-joints-podcast-v1.mp3",
+    "transcriptUrl": "/transcripts/published/2026-05-28-bridge-expansion-joints-podcast-v1.md"
+  },
+  "qualityChecklist": [
+    "script.md contains only alternating [ctrl] and [spk1]/[spk2] dialogue lines",
+    "[ctrl] is repeated before every spoken line and only controls the next line",
+    "[ctrl] avoids fixed timbre descriptions; speaker identity comes from reference audio",
+    "transcript.md is web-display text and does not contain TTS control labels",
+    "mp3 output file name must be {cardId}-podcast-v1.mp3"
+  ],
+  "podcastVersion": 1,
+  "audioFile": "2026-05-28-bridge-expansion-joints-podcast-v1.mp3",
+  "duration": 162.88,
+  "sizeBytes": 1966938,
+  "checksum": "sha256-ab8c31bbaf70fefceaafadc3e2e87c39650242b4a46341d3b6a91c0d4ce6c02e",
+  "format": "mp3",
+  "bitrate": "96k",
+  "sampleRate": 44100,
+  "generatedAt": "2026-05-23T13:19:51+08:00"
+}

@@ -1,7 +1,7 @@
 import { getSingaporeDateString } from "../lib/date";
 import { readLocalCards } from "../lib/local-data";
 import { calculateStreak } from "../lib/progress";
-import { supabaseAdmin } from "../lib/supabase-admin";
+import { hasSupabaseAdminEnv, supabaseAdmin } from "../lib/supabase-admin";
 import type { AppKnowledgeCard, KnowledgeCardRow, StatsSummary, StudyRecordRow } from "../types/knowledge";
 
 const USER_ID = "default_user";
@@ -80,6 +80,11 @@ async function loadKnowledgeCardRows() {
 }
 
 async function loadCardsAndRecords() {
+  if (!hasSupabaseAdminEnv) {
+    const cards = await loadLocalCards();
+    return { cards, recordRows: [], knowledgeCardRows: [] };
+  }
+
   const [cards, recordRows, knowledgeCardRows] = await Promise.all([loadLocalCards(), loadStudyRecordRows(), loadKnowledgeCardRows()]);
   return { cards, recordRows, knowledgeCardRows };
 }

@@ -134,6 +134,17 @@ describe("validatePublishedPodcastAssets", () => {
     expect(summary.errors.join("\n")).toContain(transcriptPath);
   });
 
+  it("fails if a published transcript still contains control or speaker tags", async () => {
+    const { projectRoot, transcriptPath } = await createFixtureProject();
+    await writeFile(transcriptPath, "[ctrl] cue\n[spk1] hello\n", "utf8");
+
+    const summary = await validatePublishedPodcastAssets(projectRoot);
+
+    expect(summary.ok).toBe(false);
+    expect(summary.errors.join("\n")).toContain("contains forbidden TTS tags");
+    expect(summary.errors.join("\n")).toContain(transcriptPath);
+  });
+
   it("reports podcast manifest mismatch for published podcasts", async () => {
     const { projectRoot } = await createFixtureProject({
       manifestItem: {

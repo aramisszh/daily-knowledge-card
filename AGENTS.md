@@ -52,31 +52,61 @@ Build an MVP daily knowledge-card system:
 
 ## Weekly Batch Workflow
 
-The standard production update flow for this project is the local weekly batch mode below. Follow this exact order unless the product direction is explicitly changed.
+The standard production update flow for this project is now the external weekly pack mode below. Follow this exact order unless the product direction is explicitly changed.
 
-1. The user starts a new Codex session and asks for the next week's `image2` prompts.
-2. Codex generates one weekly markdown file for the 7-day batch.
-   - The file must contain enough structured information for both image generation and later `data/cards.json` entry creation.
-   - At minimum, each day must include date, category, title, subtitle, and the full Image2 prompt content.
-   - Codex must explicitly tell the user that the next step is to generate 7 images in ChatGPT and save them into `public/generated-cards/`.
-3. The user generates the 7 images in ChatGPT, saves them into `D:\codex\daily-knowledge-card\public\generated-cards`, and tells Codex the images are saved.
-4. After the user confirms the images are saved, Codex must complete the whole weekly update pipeline:
-   - append or update the 7 structured cards in `data/cards.json`
-   - rename and align image filenames with the project's existing `YYYY-MM-DD-topic.png` convention
-   - make sure every new `imageUrl` matches a real file under `public/generated-cards/`
+1. ChatGPT web produces the new weekly pack outside this repo.
+   - Mac-side Codex does not generate topics.
+   - Mac-side Codex does not generate card body content.
+   - Mac-side Codex does not generate `image2` prompts.
+   - Mac-side Codex does not generate podcast scripts.
+2. The user places the external weekly handoff zip under `automation/exchange/inbox/`.
+   - The standard filename is `dkc-handoff__<weekKey>__<weekStart>_to_<weekEnd>.zip`.
+   - The zip must contain at least `weekly-plan.json`, `cards-draft.json`, `package-manifest.json`, `images/` or `image-assets/`, and `podcast_jobs/done/`.
+   - The weekly key is the external pack key, for example `2026-W22`.
+3. If Windows-side audio production is part of the batch, the user completes it outside this repo and puts the finished handoff zip back into that inbox location.
+4. Mac-side Codex must then run the repo-side receiving and publish workflow:
+   - `npm run weekly:receive -- <weekKey>`
+   - `npm run weekly:publish -- <weekKey>`
+   - `npm run weekly:validate`
+   - `npm run site:capacity`
+5. During publish, Codex must:
+   - unzip the handoff into `automation/exchange/staging/<weekKey>/`
+   - normalize source materials into `automation/weekly/<weekKey>/source/`
+   - keep previous workflow materials under `automation/archive/` or `docs/archive/`
+   - validate `weekly-plan.json`, `cards-draft.json`, images, transcripts, audio, and metadata alignment
+   - keep exchange evidence under `automation/exchange/processed/` or `automation/exchange/failed/`
+   - import images into `public/generated-cards/`
+   - import audio into `public/audio/published/`
+   - import transcripts into `public/transcripts/published/`
+   - merge `cards-draft.json` into `data/cards.json`
+   - update `data/podcast-manifest.json`
+   - update `data/archive-manifest.json` when archive state changes
    - verify Chinese text in `data/cards.json` was preserved correctly and did not degrade into `?` or mojibake
    - run the required verification commands before any release conclusion
-5. After local verification passes, Codex should continue the release flow when the user wants the weekly update published:
+6. After local verification passes, Codex should continue the release flow when the user wants the weekly update published:
    - complete local Git commit work
    - push to the remote repository
    - verify Vercel project linkage, environment-variable readiness, and deployment status
-6. After deployment is ready, Codex must explicitly ask the user to perform final acceptance on production.
+7. After deployment is ready, Codex must explicitly ask the user to perform final acceptance on production.
+
+Legacy note:
+
+- `automation/archive/legacy-incoming/`
+- `automation/archive/legacy-weekly-workspaces/`
+- `docs/archive/weekly-workflow-history/`
+- `npm run legacy:weekly:create`
+- `npm run legacy:weekly:continue`
+
+These legacy assets are retained for compatibility and local history only. They are not the standard workflow and should not be expanded in new work unless the user explicitly asks for legacy support.
 
 For this workflow, Vercel deployment readiness means all of the following are true:
 
-- `data/cards.json` contains the new 7-day batch
+- `data/cards.json` contains the new weekly batch from the external pack
 - all referenced images exist in `public/generated-cards/`
+- all referenced audio files exist in `public/audio/published/`
+- all referenced transcript files exist in `public/transcripts/published/`
 - `npm test` passes
+- `npm run typecheck` passes
 - `npm run build` passes, or if sandbox limitations interfere, an equivalent no-sandbox or Vercel build passes
 - the remote Git push succeeds
 - the latest Vercel production deployment is `Ready`

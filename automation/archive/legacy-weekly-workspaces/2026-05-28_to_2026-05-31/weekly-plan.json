@@ -1,0 +1,404 @@
+{
+  "weekId": "2026-05-28_to_2026-05-31",
+  "createdAt": "2026-05-23T06:39:47.541Z",
+  "updatedAt": "2026-05-23T06:41:40.603Z",
+  "status": "created",
+  "cards": [
+    {
+      "cardId": "2026-05-28-bridge-expansion-joints",
+      "cardDate": "2026-05-28",
+      "category": "工程技术",
+      "subCategory": "结构工程",
+      "difficulty": "入门",
+      "title": "桥梁为什么要留伸缩缝",
+      "subtitle": "桥不是一整块石头，而是会呼吸的结构",
+      "summary": "桥梁伸缩缝是桥面结构中预留的变形空间，用来吸收温度变化、车辆荷载和结构位移带来的伸长、缩短与微小转动。没有伸缩缝，桥面可能因为热胀冷缩产生挤压、开裂、翘曲或漏水病害。",
+      "keywords": [
+        "伸缩缝",
+        "热胀冷缩",
+        "结构位移",
+        "应力释放"
+      ],
+      "content": {
+        "title": "桥梁为什么要留伸缩缝",
+        "subtitle": "桥不是一整块石头，而是会呼吸的结构",
+        "category": "工程技术",
+        "subCategory": "结构工程",
+        "difficulty": "入门",
+        "summary": "桥梁伸缩缝是桥面结构中预留的变形空间，用来吸收温度变化、车辆荷载和结构位移带来的伸长、缩短与微小转动。没有伸缩缝，桥面可能因为热胀冷缩产生挤压、开裂、翘曲或漏水病害。",
+        "coreMechanism": "钢材和混凝土都会随温度变化发生热胀冷缩，长桥的微小应变会放大成可见位移。；车辆通过、风荷载、地震和基础沉降，也会让桥面产生微小转动和相对位移。；伸缩缝与支座配合，把变形释放掉，避免应力集中到桥面和梁体上。",
+        "whyImportant": [
+          "能理解公共设施中的缝隙不一定是缺陷，可能是主动设计。",
+          "能看懂工程结构不是追求完全固定，而是要给材料留出安全变形空间。",
+          "能解释为什么伸缩缝损坏会带来跳车、噪音、渗水和后续维修问题。"
+        ],
+        "keywords": [
+          {
+            "term": "伸缩缝",
+            "desc": "伸缩缝相关概念"
+          },
+          {
+            "term": "热胀冷缩",
+            "desc": "热胀冷缩相关概念"
+          },
+          {
+            "term": "结构位移",
+            "desc": "结构位移相关概念"
+          },
+          {
+            "term": "应力释放",
+            "desc": "应力释放相关概念"
+          }
+        ],
+        "misconception": {
+          "title": "常见误区",
+          "content": "伸缩缝不是施工没接好，也不是桥坏了。它是主动留出的安全空间，真正需要警惕的是伸缩缝破损、堵塞或漏水。"
+        },
+        "financeAngle": "工程管理中，伸缩缝这类“小构造”决定长期维护成本。前期设计和施工质量不到位，后期会转化为噪音投诉、行车舒适性下降和高频维修。",
+        "memoryHooks": [
+          "桥也会伸懒腰",
+          "缝隙不是松散，而是释放",
+          "允许微动，才能长期稳定"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "思考题",
+            "question": "为什么长桥比短桥更需要重视伸缩缝？",
+            "answer": "因为材料热胀冷缩的比例虽然很小，但桥越长，总位移越大，梁端需要释放的变形也越明显。",
+            "keyPoint": "因为材料热胀冷缩的比例虽然很小，但桥越长，总位移越大，梁端需要释放的变形也越明显。"
+          },
+          {
+            "level": "思考题",
+            "question": "为什么伸缩缝坏了会影响行车体验？",
+            "answer": "伸缩缝破损或不平整会造成车辆经过时跳动、冲击和噪音，还可能进一步损伤桥面结构。",
+            "keyPoint": "伸缩缝破损或不平整会造成车辆经过时跳动、冲击和噪音，还可能进一步损伤桥面结构。"
+          },
+          {
+            "level": "思考题",
+            "question": "伸缩缝体现了工程设计中的什么思维？",
+            "answer": "它体现了“允许可控变形”的思维。工程安全不是把一切固定死，而是让不可避免的变化在设计范围内发生。",
+            "keyPoint": "它体现了“允许可控变形”的思维。工程安全不是把一切固定死，而是让不可避免的变化在设计范围内发生。"
+          }
+        ],
+        "conclusion": "伸缩缝的本质，是给桥梁预留安全变形空间，让材料变化被释放，而不是在结构内部积累成风险。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-28-bridge-expansion-joints.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "桥梁为什么要留伸缩缝",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-28-bridge-expansion-joints-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-28-bridge-expansion-joints-podcast-v1.md",
+        "duration": 162.88,
+        "sizeBytes": 1966938,
+        "checksum": "sha256-ab8c31bbaf70fefceaafadc3e2e87c39650242b4a46341d3b6a91c0d4ce6c02e"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    },
+    {
+      "cardId": "2026-05-29-barcode-qr-code",
+      "cardDate": "2026-05-29",
+      "category": "工程技术",
+      "subCategory": "信息编码",
+      "difficulty": "入门",
+      "title": "条形码和二维码如何存信息",
+      "subtitle": "黑白格子不是图案，而是机器能读的编码",
+      "summary": "条形码和二维码都是把信息转换成机器可识别图案的编码方式。条形码主要用一维宽窄条纹表达数字或字符；二维码用二维黑白模块表达更丰富的信息，并通过定位图形和纠错机制提高识读稳定性。",
+      "keywords": [
+        "条形码",
+        "二维码",
+        "编码",
+        "纠错"
+      ],
+      "content": {
+        "title": "条形码和二维码如何存信息",
+        "subtitle": "黑白格子不是图案，而是机器能读的编码",
+        "category": "工程技术",
+        "subCategory": "信息编码",
+        "difficulty": "入门",
+        "summary": "条形码和二维码都是把信息转换成机器可识别图案的编码方式。条形码主要用一维宽窄条纹表达数字或字符；二维码用二维黑白模块表达更丰富的信息，并通过定位图形和纠错机制提高识读稳定性。",
+        "coreMechanism": "条形码依靠黑白条纹的宽窄和排列顺序表达信息，适合商品编号等短信息。；二维码使用二维矩阵模块，可容纳更多字符，并通过角上的定位图形帮助设备确定方向。；二维码包含纠错设计，即使局部被遮挡或污损，仍可能被正确识别。",
+        "whyImportant": [
+          "能理解扫码不是“拍照识字”，而是按编码规则读取图案。",
+          "能分清二维码本身可以存文本，但打开网页需要网络。",
+          "能看懂为什么二维码可以在海报、支付、物流和门票中大量使用。"
+        ],
+        "keywords": [
+          {
+            "term": "条形码",
+            "desc": "条形码相关概念"
+          },
+          {
+            "term": "二维码",
+            "desc": "二维码相关概念"
+          },
+          {
+            "term": "编码",
+            "desc": "编码相关概念"
+          },
+          {
+            "term": "纠错",
+            "desc": "纠错相关概念"
+          }
+        ],
+        "misconception": {
+          "title": "常见误区",
+          "content": "二维码不是一定存着完整网页。很多二维码只存一个网址，手机扫码后再通过网络打开对应页面。"
+        },
+        "financeAngle": "二维码降低了线下到线上、实物到数据的连接成本，因此在支付、票务、广告转化、仓储物流和用户运营中非常重要。",
+        "memoryHooks": [
+          "条形码是一条线",
+          "二维码是一张网",
+          "扫码是解码，不是猜图"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "思考题",
+            "question": "为什么二维码通常比条形码能存更多信息？",
+            "answer": "因为二维码在横向和纵向两个方向都使用模块表达数据，而条形码主要沿一个方向编码。",
+            "keyPoint": "因为二维码在横向和纵向两个方向都使用模块表达数据，而条形码主要沿一个方向编码。"
+          },
+          {
+            "level": "思考题",
+            "question": "为什么二维码脏了一点有时还能扫出来？",
+            "answer": "因为二维码设计了纠错机制，可以在部分模块损坏时根据冗余信息恢复内容。",
+            "keyPoint": "因为二维码设计了纠错机制，可以在部分模块损坏时根据冗余信息恢复内容。"
+          },
+          {
+            "level": "思考题",
+            "question": "扫码打开网页时，二维码本身一定存了网页内容吗？",
+            "answer": "不一定。常见情况是二维码只存网址，手机解码后再联网访问该网址。",
+            "keyPoint": "不一定。常见情况是二维码只存网址，手机解码后再联网访问该网址。"
+          }
+        ],
+        "conclusion": "条形码和二维码的本质，是把信息变成机器可读的图形规则，让现实世界的物品可以快速连接到数据系统。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-29-barcode-qr-code.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "条形码和二维码如何存信息",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-29-barcode-qr-code-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-29-barcode-qr-code-podcast-v1.md",
+        "duration": 163.04,
+        "sizeBytes": 1969222,
+        "checksum": "sha256-385196b4a8673105e5dab2652beb9e0717be02302edaf41a2cfe8f810d0ff917"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    },
+    {
+      "cardId": "2026-05-30-refrigerator-heat-pump",
+      "cardDate": "2026-05-30",
+      "category": "自然科学",
+      "subCategory": "热力学",
+      "difficulty": "入门",
+      "title": "为什么冰箱背后会发热",
+      "subtitle": "冰箱不是制造冷，而是把热搬出去",
+      "summary": "冰箱制冷的本质不是凭空制造冷，而是利用制冷剂循环把箱内热量搬到箱外。制冷剂在冰箱内部蒸发吸热，在外部冷凝放热；压缩机提供能量推动循环，因此冰箱背后或侧面会发热。",
+      "keywords": [
+        "热泵",
+        "制冷剂",
+        "压缩机",
+        "冷凝放热"
+      ],
+      "content": {
+        "title": "为什么冰箱背后会发热",
+        "subtitle": "冰箱不是制造冷，而是把热搬出去",
+        "category": "自然科学",
+        "subCategory": "热力学",
+        "difficulty": "入门",
+        "summary": "冰箱制冷的本质不是凭空制造冷，而是利用制冷剂循环把箱内热量搬到箱外。制冷剂在冰箱内部蒸发吸热，在外部冷凝放热；压缩机提供能量推动循环，因此冰箱背后或侧面会发热。",
+        "coreMechanism": "制冷剂在蒸发器中蒸发，吸收冰箱内部热量，使箱内温度下降。；压缩机把低压气态制冷剂压缩成高温高压状态，为热量搬运提供动力。；冷凝器位于箱体外侧或背部，制冷剂在这里放热，所以外部会变热。",
+        "whyImportant": [
+          "能理解冰箱降温不是消灭热量，而是转移热量。",
+          "能解释为什么冰箱周围需要留散热空间。",
+          "能看懂空调、热泵和除湿机背后也有类似热量搬运逻辑。"
+        ],
+        "keywords": [
+          {
+            "term": "热泵",
+            "desc": "热泵相关概念"
+          },
+          {
+            "term": "制冷剂",
+            "desc": "制冷剂相关概念"
+          },
+          {
+            "term": "压缩机",
+            "desc": "压缩机相关概念"
+          },
+          {
+            "term": "冷凝放热",
+            "desc": "冷凝放热相关概念"
+          }
+        ],
+        "misconception": {
+          "title": "常见误区",
+          "content": "冰箱不是把热量变没了。箱内少掉的热，加上压缩机消耗的电能，最终都会以热的形式释放到房间里。"
+        },
+        "financeAngle": "家电能效的关键不只是“够不够冷”，而是单位电能能搬走多少热量。能效越高，长期电费和散热负担越低。",
+        "memoryHooks": [
+          "冷不是造出来的",
+          "热是搬出去的",
+          "冰箱背后热，说明它在工作"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "思考题",
+            "question": "为什么冰箱不能贴墙太近？",
+            "answer": "因为冷凝器需要把热量散到空气中，贴墙太近会影响散热，使耗电增加并降低制冷效率。",
+            "keyPoint": "因为冷凝器需要把热量散到空气中，贴墙太近会影响散热，使耗电增加并降低制冷效率。"
+          },
+          {
+            "level": "思考题",
+            "question": "为什么打开冰箱门不能给房间降温？",
+            "answer": "因为冰箱只是把箱内热量搬到箱外，还会额外消耗电能并放热，整体上房间会更热。",
+            "keyPoint": "因为冰箱只是把箱内热量搬到箱外，还会额外消耗电能并放热，整体上房间会更热。"
+          },
+          {
+            "level": "思考题",
+            "question": "冰箱和空调有什么相似之处？",
+            "answer": "它们都通过制冷剂循环搬运热量，只是空调把室内热量搬到室外，冰箱把箱内热量搬到厨房空气中。",
+            "keyPoint": "它们都通过制冷剂循环搬运热量，只是空调把室内热量搬到室外，冰箱把箱内热量搬到厨房空气中。"
+          }
+        ],
+        "conclusion": "冰箱背后发热，是因为它正在把箱内热量和压缩机耗电产生的热一起排到外部。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-30-refrigerator-heat-pump.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "为什么冰箱背后会发热",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-30-refrigerator-heat-pump-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-30-refrigerator-heat-pump-podcast-v1.md",
+        "duration": 147.36,
+        "sizeBytes": 1780517,
+        "checksum": "sha256-4f2e55212b07a7b39a599b22f9a12d61b9947c533636e0e40fe69fd970e58175"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    },
+    {
+      "cardId": "2026-05-31-confirmation-bias",
+      "cardDate": "2026-05-31",
+      "category": "人文社科",
+      "subCategory": "认知偏差",
+      "difficulty": "入门",
+      "title": "确认偏误为什么让人越看越相信自己",
+      "subtitle": "大脑不只找答案，也会挑选证据",
+      "summary": "确认偏误是指人们更容易寻找、注意、记住和解释那些支持自己已有观点的信息，同时忽视或低估相反证据。它不是简单的愚蠢，而是大脑节省认知成本、保护既有判断的一种倾向。",
+      "keywords": [
+        "确认偏误",
+        "认知偏差",
+        "反证思维",
+        "信息茧房"
+      ],
+      "content": {
+        "title": "确认偏误为什么让人越看越相信自己",
+        "subtitle": "大脑不只找答案，也会挑选证据",
+        "category": "人文社科",
+        "subCategory": "认知偏差",
+        "difficulty": "入门",
+        "summary": "确认偏误是指人们更容易寻找、注意、记住和解释那些支持自己已有观点的信息，同时忽视或低估相反证据。它不是简单的愚蠢，而是大脑节省认知成本、保护既有判断的一种倾向。",
+        "coreMechanism": "已有观点会影响注意力，让人更容易看到支持自己的证据。；同一条信息会被不同立场的人解释成不同含义。；社交圈和推荐算法会重复推送相似内容，进一步强化原有判断。",
+        "whyImportant": [
+          "能解释为什么争论中双方都觉得“证据都站在我这边”。",
+          "能提醒自己在投资、管理和学习中主动寻找反证。",
+          "能帮助建立更稳健的决策流程，而不是只收集支持材料。"
+        ],
+        "keywords": [
+          {
+            "term": "确认偏误",
+            "desc": "确认偏误相关概念"
+          },
+          {
+            "term": "认知偏差",
+            "desc": "认知偏差相关概念"
+          },
+          {
+            "term": "反证思维",
+            "desc": "反证思维相关概念"
+          },
+          {
+            "term": "信息茧房",
+            "desc": "信息茧房相关概念"
+          }
+        ],
+        "misconception": {
+          "title": "常见误区",
+          "content": "确认偏误不是只有别人有。越是熟悉、重要、投入成本高的观点，越容易触发确认偏误。"
+        },
+        "financeAngle": "在投资和项目决策中，确认偏误会让团队只看增长故事、忽视风险信号。有效做法是设置反方角色、预演失败原因、强制列出相反证据。",
+        "memoryHooks": [
+          "大脑会挑证据",
+          "越想赢，越要找反证",
+          "反对意见是决策体检"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "思考题",
+            "question": "为什么确认偏误在投资决策中特别危险？",
+            "answer": "因为投资者一旦持有仓位，就更容易寻找利好、忽视利空，导致止损和调整变得困难。",
+            "keyPoint": "因为投资者一旦持有仓位，就更容易寻找利好、忽视利空，导致止损和调整变得困难。"
+          },
+          {
+            "level": "思考题",
+            "question": "如何在团队讨论中降低确认偏误？",
+            "answer": "可以指定反方角色，要求先列失败原因和相反证据，再讨论支持材料。",
+            "keyPoint": "可以指定反方角色，要求先列失败原因和相反证据，再讨论支持材料。"
+          },
+          {
+            "level": "思考题",
+            "question": "为什么“我查了很多资料”不一定代表判断客观？",
+            "answer": "如果资料来源只支持原有观点，搜索越多可能只是把偏见强化得更牢。",
+            "keyPoint": "如果资料来源只支持原有观点，搜索越多可能只是把偏见强化得更牢。"
+          }
+        ],
+        "conclusion": "确认偏误的本质，是大脑把“寻找真相”悄悄改造成“寻找支持自己观点的证据”。"
+      },
+      "image": {
+        "status": "imported",
+        "publishedUrl": "/generated-cards/2026-05-31-confirmation-bias.png",
+        "sizeBytes": null,
+        "checksum": null
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "确认偏误为什么让人越看越相信自己",
+        "targetDurationSec": 180,
+        "audioUrl": "/audio/published/2026-05-31-confirmation-bias-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-05-31-confirmation-bias-podcast-v1.md",
+        "duration": 157.44,
+        "sizeBytes": 1901720,
+        "checksum": "sha256-a75308ca050abab3b06df85345a2a2cf6532f7f818af0186d02880e4ad8c6c82"
+      },
+      "meta": {
+        "podcastVersion": 1
+      }
+    }
+  ]
+}

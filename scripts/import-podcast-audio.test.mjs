@@ -19,6 +19,7 @@ import {
 
 const TEMP_DIRS = [];
 const WEEK_ID = "2026-05-22_to_2026-05-28";
+const WEEK_KEY = "2026-W22";
 const CARD_ID = "2026-05-22-post-station-network";
 const DEFAULT_VERSION = 2;
 const DEFAULT_TITLE = "驿站网络的声音版";
@@ -75,6 +76,61 @@ async function createFixtureProject({
     preservedTopLevel: {
       note: "keep",
     },
+  };
+
+  const manifest = {
+    updatedAt: "2026-05-21T09:30:00.000Z",
+    items: manifestItems,
+  };
+
+  await writeFile(weeklyPlanPath, `${JSON.stringify(weeklyPlan, null, 2)}\n`, "utf8");
+  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+
+  return {
+    projectRoot,
+    weekDir,
+    donePodcastDir,
+    publicAudioDir,
+    publicTranscriptDir,
+    weeklyPlanPath,
+    manifestPath,
+  };
+}
+
+async function createIncomingFixtureProject({
+  cards,
+  manifestItems = [],
+} = {}) {
+  const projectRoot = await mkdtemp(
+    path.join(os.tmpdir(), "import-podcast-audio-incoming-test-"),
+  );
+  TEMP_DIRS.push(projectRoot);
+
+  const weekDir = path.join(projectRoot, "automation", "incoming", WEEK_KEY);
+  const donePodcastDir = path.join(weekDir, "podcast_jobs", "done");
+  const publicAudioDir = path.join(projectRoot, "public", "audio", "published");
+  const publicTranscriptDir = path.join(
+    projectRoot,
+    "public",
+    "transcripts",
+    "published",
+  );
+  const dataDir = path.join(projectRoot, "data");
+
+  await mkdir(donePodcastDir, { recursive: true });
+  await mkdir(publicAudioDir, { recursive: true });
+  await mkdir(publicTranscriptDir, { recursive: true });
+  await mkdir(dataDir, { recursive: true });
+
+  const weeklyPlanPath = path.join(weekDir, "weekly-plan.json");
+  const manifestPath = path.join(dataDir, "podcast-manifest.json");
+  const defaultCards = cards ?? [buildPlanCard()];
+
+  const weeklyPlan = {
+    weekKey: WEEK_KEY,
+    workflowMode: "incoming-pack",
+    status: "received",
+    cards: defaultCards,
   };
 
   const manifest = {
@@ -178,8 +234,8 @@ async function readText(filePath) {
 }
 
 describe("runImportPodcastAudio", () => {
-  it("throws when weekId is missing", async () => {
-    await expect(runImportPodcastAudio()).rejects.toThrow("weekId is required");
+  it("throws when weekId and weekKey are both missing", async () => {
+    await expect(runImportPodcastAudio()).rejects.toThrow("weekId or weekKey is required");
   });
 
   it("throws on invalid weekId before touching weekly files", async () => {
@@ -215,6 +271,50 @@ describe("runImportPodcastAudio", () => {
 
     expect(await readText(weeklyPlanPath)).toBe(planTextBefore);
     expect(await readText(manifestPath)).toBe(manifestTextBefore);
+  });
+
+  it("imports audio from an incoming weekly pack when weekKey is provided", async () => {
+    const {
+      projectRoot,
+      donePodcastDir,
+      weeklyPlanPath,
+      manifestPath,
+      publicAudioDir,
+      publicTranscriptDir,
+    } = await createIncomingFixtureProject();
+    const created = await createDonePackage(donePodcastDir);
+
+    const result = await runImportPodcastAudio({ projectRoot, weekKey: WEEK_KEY });
+
+    expect(result.importedCount).toBe(1);
+    expect(result.weekKey).toBe(WEEK_KEY);
+    expect(
+      await readFile(path.join(publicAudioDir, `${CARD_ID}-podcast-v${DEFAULT_VERSION}.mp3`)),
+    ).toEqual(created.audioBytes);
+    expect(
+      await readFile(
+        path.join(publicTranscriptDir, `${CARD_ID}-podcast-v${DEFAULT_VERSION}.md`),
+        "utf8",
+      ),
+    ).toBe(created.transcriptText);
+
+    const plan = await readJson(weeklyPlanPath);
+    expect(plan.cards[0].podcast).toMatchObject({
+      status: "published",
+      audioUrl: `/audio/published/${CARD_ID}-podcast-v${DEFAULT_VERSION}.mp3`,
+      transcriptUrl: `/transcripts/published/${CARD_ID}-podcast-v${DEFAULT_VERSION}.md`,
+    });
+
+    const manifest = await readJson(manifestPath);
+    expect(manifest.items).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          cardId: CARD_ID,
+          status: "published",
+          version: DEFAULT_VERSION,
+        }),
+      ]),
+    );
   });
 
   it("throws when the required mp3 is missing", async () => {
@@ -314,9 +414,6 @@ describe("runImportPodcastAudio", () => {
     await expect(
       runImportPodcastAudio({ projectRoot, weekId: WEEK_ID }),
     ).rejects.toThrow("podcast.meta.json");
-    await expect(
-      runImportPodcastAudio({ projectRoot, weekId: WEEK_ID }),
-    ).rejects.toThrow("podcastVersion");
     await writeFile(
       metaPath,
       `${JSON.stringify(
@@ -721,7 +818,7 @@ describe("import-podcast-audio CLI", () => {
     expect(result.stdout).toContain("Imported 1 audio files");
   });
 
-  it("exits nonzero with a clear message when weekId is missing", async () => {
+  it("exits nonzero with a clear message when no weekly identifier is provided", async () => {
     const { projectRoot } = await createFixtureProject();
     const scriptPath = path.resolve("scripts/import-podcast-audio.mjs");
 
@@ -731,6 +828,6 @@ describe("import-podcast-audio CLI", () => {
     });
 
     expect(result.status).not.toBe(0);
-    expect(result.stderr).toContain("weekId is required");
+    expect(result.stderr).toContain("weekId or weekKey is required");
   });
 });

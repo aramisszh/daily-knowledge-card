@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "daily-knowledge-card.image-generation-report.v1",
+  "imageEngine": "chatgpt-image2",
+  "imagePolicy": "required-before-packaging",
+  "styleAnchor": "daily-knowledge-card-premium-infographic-v1",
+  "packageMode": "mvp-single-card-test",
+  "createdAt": "2026-05-24T03:14:56Z",
+  "items": [
+    {
+      "cardId": "2026-06-01-qr-code-error-correction",
+      "date": "2026-06-01",
+      "imageFile": "images/raw/2026-06-01-qr-code-error-correction.png",
+      "status": "generated",
+      "source": "chatgpt-image2",
+      "qualityGate": {
+        "exists": true,
+        "filenameMatched": true,
+        "aspectRatio": "4:5",
+        "resolution": "1122x1402",
+        "minResolution": "pass",
+        "shortSidePixels": 1122,
+        "textLegibility": "manual-pass",
+        "visualStyle": "series-consistent",
+        "contentCompleteness": "pass",
+        "userQualityConfirmation": true,
+        "noBackendFilesVisible": true,
+        "readyForFinalZip": true
+      },
+      "sha256": "de2037304b4faa062eb65a0f000f91aea268faa1e77bbbfef8ea476d66d6fa18"
+    }
+  ]
+}

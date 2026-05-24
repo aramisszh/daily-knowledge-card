@@ -284,6 +284,28 @@ function buildManifestEntry(existingItem, planCard) {
   };
 }
 
+function isSamePodcastContent(left, right) {
+  if (!left || !right) {
+    return left === right;
+  }
+
+  const { updatedAt: _leftUpdatedAt, ...leftComparable } = left;
+  const { updatedAt: _rightUpdatedAt, ...rightComparable } = right;
+  return JSON.stringify(leftComparable) === JSON.stringify(rightComparable);
+}
+
+function mergePodcastIntoExistingCard(existingCard, planCard, now) {
+  const nextPodcast = buildFormalCard(planCard, now).podcast;
+  if (isSamePodcastContent(existingCard?.podcast, nextPodcast)) {
+    return existingCard;
+  }
+
+  return {
+    ...existingCard,
+    podcast: nextPodcast,
+  };
+}
+
 function buildUpdatedManifest(manifest, planCards) {
   const existingItems = Array.isArray(manifest.items) ? manifest.items : [];
   const publishedPodcastCards = planCards.filter((card) => card?.podcast?.status === "published");
@@ -308,15 +330,18 @@ function buildUpdatedManifest(manifest, planCards) {
   };
 }
 
-async function verifyWrittenCards(projectRoot, cardIds, cards) {
-  for (const cardId of cardIds) {
+async function verifyWrittenCards(projectRoot, planCards, cards) {
+  for (const planCard of planCards) {
+    const cardId = planCard.cardId;
     const card = cards.find((item) => item?.id === cardId);
     if (!card) {
       throw new Error(`Written card not found after data/cards.json write: ${cardId}`);
     }
 
     assertReadableCardText(card);
-    await assertFileExists(publicUrlToFilePath(card.imageUrl, projectRoot), `image for ${cardId}`);
+    if (card.imageUrl === planCard?.image?.publishedUrl) {
+      await assertFileExists(publicUrlToFilePath(card.imageUrl, projectRoot), `image for ${cardId}`);
+    }
 
     if (card?.podcast?.status === "published") {
       await assertFileExists(
@@ -366,7 +391,15 @@ export async function runWeeklyContinue({
     assertReadableCardText(card);
   }
 
-  const nextCards = [...currentCards, ...newCards];
+  const nextCards = currentCards.map((card) => {
+    const matchingPlanCard = weeklyPlan.cards.find((planCard) => planCard.cardId === card?.id);
+    if (!matchingPlanCard) {
+      return card;
+    }
+
+    return mergePodcastIntoExistingCard(card, matchingPlanCard, now);
+  });
+  nextCards.push(...newCards);
   const nextCardsText = stableJsonText(nextCards);
   const updatedManifestCandidate = buildUpdatedManifest(manifest, weeklyPlan.cards);
   const manifestChanged = JSON.stringify(updatedManifestCandidate) !== JSON.stringify(manifest);
@@ -382,8 +415,9 @@ export async function runWeeklyContinue({
     await weeklyContinueInternals.writeTextFileAtomically(manifestPath, nextManifestText);
   }
 
+  const cardsChanged = nextCardsText !== cardsState.text;
   let cardsWritten = false;
-  if (newCards.length > 0) {
+  if (cardsChanged) {
     try {
       await weeklyContinueInternals.writeTextFileAtomically(cardsPath, nextCardsText);
       cardsWritten = true;
@@ -400,7 +434,7 @@ export async function runWeeklyContinue({
   assertCardsArray(writtenCards, cardsPath);
   await verifyWrittenCards(
     projectRoot,
-    newPlanCards.map((card) => card.cardId),
+    weeklyPlan.cards,
     writtenCards,
   );
 

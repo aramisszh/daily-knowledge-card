@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "daily-knowledge-card.cards-draft.v1",
+  "weekId": "2026-W23",
+  "testMode": true,
+  "items": [
+    {
+      "date": "2026-06-01",
+      "cardId": "2026-06-01-qr-code-error-correction",
+      "title": "二维码被弄脏，为什么还能扫出来？",
+      "subtitle": "关键不只是黑白方块，而是纠错编码在偷偷兜底",
+      "category": "信息技术",
+      "summary": "二维码不仅存了内容，还额外存了纠错信息；当局部污损、遮挡或轻微变形时，系统可利用冗余编码在一定范围内推回缺失数据。",
+      "oneSentence": "二维码不仅存了内容，还额外存了纠错信息，所以局部污损、遮挡或轻微变形时，系统仍能把缺失的数据推算回来。",
+      "coreConcepts": [
+        "定位图形：帮助手机找到二维码的方向、边界和透视角度",
+        "静区：二维码外侧留白，用于区分图案和背景",
+        "码字：二维码内部承载数据和纠错信息的基本单位",
+        "Reed–Solomon 纠错：利用冗余校验信息恢复部分损坏数据",
+        "纠错等级：L/M/Q/H 对应不同容错能力和图案密度"
+      ],
+      "contentBlocks": [
+        {
+          "heading": "不是看图识字",
+          "body": "扫码流程先定位、再采样、再解码，最后做校验。手机并不是直接识别整张图片，而是把黑白模块转换成数据序列。"
+        },
+        {
+          "heading": "为什么污损还能扫",
+          "body": "二维码会把原始信息和纠错信息一起编码。只要损坏范围没有超过纠错能力，算法可以推回缺失数据。"
+        },
+        {
+          "heading": "为什么有的码更密",
+          "body": "内容越多或纠错等级越高，二维码需要更多模块，视觉上就更密，也更依赖清晰打印。"
+        },
+        {
+          "heading": "最怕坏哪里",
+          "body": "定位角、静区、整体对比度和变形，比中间小面积污渍更影响扫码。"
+        }
+      ],
+      "thoughtQuestions": [
+        {
+          "question": "二维码越花、纠错等级越高，就一定越好吗？",
+          "answer": "不一定。纠错等级越高，冗余越多，图案通常越密；如果打印尺寸不足或对比度不够，反而可能更难扫。"
+        },
+        {
+          "question": "为什么二维码外侧通常要留一圈空白？",
+          "answer": "这圈空白叫静区，用于帮助扫码设备区分二维码边界和周围背景，是定位的前提。"
+        },
+        {
+          "question": "在二维码中间放 Logo，风险主要在哪里？",
+          "answer": "Logo 会遮挡部分码字。只要遮挡区域、二维码尺寸、纠错等级和对比度仍在可接受范围内，就可能正常扫码；但必须实测。"
+        }
+      ],
+      "podcastAngle": "从生活中的“脏了还能扫”切入，解释二维码如何靠定位图形和纠错码实现容错。",
+      "image": {
+        "fileName": "2026-06-01-qr-code-error-correction.png",
+        "path": "images/raw/2026-06-01-qr-code-error-correction.png",
+        "source": "chatgpt-image2",
+        "status": "generated",
+        "qualityStatus": "pass",
+        "resolution": "1122x1402",
+        "aspectRatio": "4:5",
+        "userQualityConfirmation": true
+      }
+    }
+  ],
+  "updatedAt": "2026-05-24T03:14:56Z",
+  "imageGateStatus": "pass"
+}

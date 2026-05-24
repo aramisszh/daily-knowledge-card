@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-23T06:41:40.603Z",
+  "updatedAt": "2026-05-24T10:14:41.873Z",
   "items": [
     {
       "cardId": "2026-04-30-aviation-engine",
@@ -121,6 +121,17 @@
       "duration": 157.44,
       "sizeBytes": 1901720,
       "checksum": "sha256-a75308ca050abab3b06df85345a2a2cf6532f7f818af0186d02880e4ad8c6c82"
+    },
+    {
+      "cardId": "2026-06-01-qr-code-error-correction",
+      "status": "published",
+      "version": 1,
+      "title": "二维码被弄脏，为什么还能扫出来？",
+      "audioUrl": "/audio/published/2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-01-qr-code-error-correction-podcast-v1.md",
+      "duration": null,
+      "sizeBytes": 4241643,
+      "checksum": "sha256-224a1e94ee57fc0f222956e960f63a2c74884a3dfda9a73f9e7723d93bb3497c"
     }
   ]
 }

@@ -1,0 +1,133 @@
+{
+  "weekId": "2026-W23",
+  "weekStart": "2026-06-01",
+  "weekEnd": "2026-06-07",
+  "batchDays": 7,
+  "cycleType": "full_monday_to_sunday_week",
+  "latestConfirmedContentDateBeforeThisBatch": "2026-05-27",
+  "testMode": true,
+  "testScope": "single_card_mvp_test_for_2026-06-01_only",
+  "includedDates": [
+    "2026-06-01"
+  ],
+  "cardCount": 1,
+  "expectedFullWeekCardCount": 7,
+  "transitionGap": {
+    "start": "2026-05-28",
+    "end": "2026-05-31",
+    "autoGenerate": false,
+    "reason": "switch from 5-day test package to 7-day full weekly cycle"
+  },
+  "cards": [
+    {
+      "cardId": "2026-06-01-qr-code-error-correction",
+      "cardDate": "2026-06-01",
+      "title": "二维码被弄脏，为什么还能扫出来？",
+      "subtitle": "关键不只是黑白方块，而是纠错编码在偷偷兜底",
+      "category": "信息技术",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "二维码不仅存了内容，还额外存了纠错信息；当局部污损、遮挡或轻微变形时，系统可利用冗余编码在一定范围内推回缺失数据。",
+      "keywords": [
+        "定位图形：帮助手机找到二维码的方向、边界和透视角度",
+        "静区：二维码外侧留白，用于区分图案和背景",
+        "码字：二维码内部承载数据和纠错信息的基本单位",
+        "Reed–Solomon 纠错：利用冗余校验信息恢复部分损坏数据",
+        "纠错等级：L/M/Q/H 对应不同容错能力和图案密度"
+      ],
+      "content": {
+        "title": "二维码被弄脏，为什么还能扫出来？",
+        "subtitle": "关键不只是黑白方块，而是纠错编码在偷偷兜底",
+        "category": "信息技术",
+        "subCategory": "未分类",
+        "difficulty": "入门",
+        "summary": "二维码不仅存了内容，还额外存了纠错信息；当局部污损、遮挡或轻微变形时，系统可利用冗余编码在一定范围内推回缺失数据。",
+        "coreMechanism": "二维码不仅存了内容，还额外存了纠错信息，所以局部污损、遮挡或轻微变形时，系统仍能把缺失的数据推算回来。",
+        "whyImportant": [
+          "定位图形：帮助手机找到二维码的方向、边界和透视角度",
+          "静区：二维码外侧留白，用于区分图案和背景",
+          "码字：二维码内部承载数据和纠错信息的基本单位",
+          "Reed–Solomon 纠错：利用冗余校验信息恢复部分损坏数据",
+          "纠错等级：L/M/Q/H 对应不同容错能力和图案密度"
+        ],
+        "keywords": [
+          {
+            "term": "定位图形：帮助手机找到二维码的方向、边界和透视角度",
+            "desc": "定位图形：帮助手机找到二维码的方向、边界和透视角度"
+          },
+          {
+            "term": "静区：二维码外侧留白，用于区分图案和背景",
+            "desc": "静区：二维码外侧留白，用于区分图案和背景"
+          },
+          {
+            "term": "码字：二维码内部承载数据和纠错信息的基本单位",
+            "desc": "码字：二维码内部承载数据和纠错信息的基本单位"
+          },
+          {
+            "term": "Reed–Solomon 纠错：利用冗余校验信息恢复部分损坏数据",
+            "desc": "Reed–Solomon 纠错：利用冗余校验信息恢复部分损坏数据"
+          },
+          {
+            "term": "纠错等级：L/M/Q/H 对应不同容错能力和图案密度",
+            "desc": "纠错等级：L/M/Q/H 对应不同容错能力和图案密度"
+          }
+        ],
+        "misconception": {
+          "title": "常见误区",
+          "content": "不一定。纠错等级越高，冗余越多，图案通常越密；如果打印尺寸不足或对比度不够，反而可能更难扫。"
+        },
+        "financeAngle": "从生活中的“脏了还能扫”切入，解释二维码如何靠定位图形和纠错码实现容错。",
+        "memoryHooks": [
+          "定位图形：帮助手机找到二维码的方向、边界和透视角度",
+          "静区：二维码外侧留白，用于区分图案和背景",
+          "码字：二维码内部承载数据和纠错信息的基本单位"
+        ],
+        "thinkingQuestions": [
+          {
+            "level": "思考题",
+            "question": "二维码越花、纠错等级越高，就一定越好吗？",
+            "answer": "不一定。纠错等级越高，冗余越多，图案通常越密；如果打印尺寸不足或对比度不够，反而可能更难扫。",
+            "keyPoint": "不一定。纠错等级越高，冗余越多，图案通常越密；如果打印尺寸不足或对比度不够，反而可能更难扫。"
+          },
+          {
+            "level": "思考题",
+            "question": "为什么二维码外侧通常要留一圈空白？",
+            "answer": "这圈空白叫静区，用于帮助扫码设备区分二维码边界和周围背景，是定位的前提。",
+            "keyPoint": "这圈空白叫静区，用于帮助扫码设备区分二维码边界和周围背景，是定位的前提。"
+          },
+          {
+            "level": "思考题",
+            "question": "在二维码中间放 Logo，风险主要在哪里？",
+            "answer": "Logo 会遮挡部分码字。只要遮挡区域、二维码尺寸、纠错等级和对比度仍在可接受范围内，就可能正常扫码；但必须实测。",
+            "keyPoint": "Logo 会遮挡部分码字。只要遮挡区域、二维码尺寸、纠错等级和对比度仍在可接受范围内，就可能正常扫码；但必须实测。"
+          }
+        ],
+        "conclusion": "二维码不仅存了内容，还额外存了纠错信息，所以局部污损、遮挡或轻微变形时，系统仍能把缺失的数据推算回来。"
+      },
+      "image": {
+        "status": "imported",
+        "sourceFileName": "2026-06-01-qr-code-error-correction.png",
+        "publishedUrl": "/generated-cards/2026-06-01-qr-code-error-correction.png",
+        "sizeBytes": 1898624,
+        "checksum": "sha256-de2037304b4faa062eb65a0f000f91aea268faa1e77bbbfef8ea476d66d6fa18"
+      },
+      "podcast": {
+        "status": "published",
+        "version": 1,
+        "title": "二维码被弄脏，为什么还能扫出来？",
+        "targetDurationSec": 241,
+        "audioUrl": "/audio/published/2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+        "transcriptUrl": "/transcripts/published/2026-06-01-qr-code-error-correction-podcast-v1.md",
+        "duration": null,
+        "sizeBytes": 4241643,
+        "checksum": "sha256-224a1e94ee57fc0f222956e960f63a2c74884a3dfda9a73f9e7723d93bb3497c"
+      }
+    }
+  ],
+  "imageGateStatus": "pass",
+  "updatedAt": "2026-05-24T10:14:41.873Z",
+  "notes": "MVP single-card package for testing chatgpt-windows-mac workflow. Week window follows 2026-W23, but only 2026-06-01 is included.",
+  "workflowMode": "exchange-handoff",
+  "weekKey": "2026-W23",
+  "status": "received"
+}

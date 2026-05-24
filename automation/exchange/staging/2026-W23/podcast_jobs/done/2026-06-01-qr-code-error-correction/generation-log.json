@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-01-qr-code-error-correction",
+  "status": "success",
+  "generatedAt": "2026-05-24T11:36:29+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-01-qr-code-error-correction-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+  "durationSeconds": 176.16,
+  "mp3SizeBytes": 4241643,
+  "mp3Checksum": "sha256-224a1e94ee57fc0f222956e960f63a2c74884a3dfda9a73f9e7723d93bb3497c",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\generation-log.json"
+}

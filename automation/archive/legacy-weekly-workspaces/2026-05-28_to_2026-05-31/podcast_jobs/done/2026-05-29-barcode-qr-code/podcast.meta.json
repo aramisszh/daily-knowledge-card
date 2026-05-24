@@ -1,0 +1,71 @@
+{
+  "cardId": "2026-05-29-barcode-qr-code",
+  "date": "2026-05-29",
+  "title": "条形码和二维码如何存信息",
+  "category": "工程技术",
+  "status": "generated",
+  "version": 1,
+  "scriptFormat": "VoxCPM2-inline-control",
+  "targetDurationSeconds": {
+    "min": 180,
+    "max": 300,
+    "estimated": 220
+  },
+  "speakerMap": {
+    "spk1": {
+      "role": "male_host",
+      "displayName": "男声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/male.wav"
+    },
+    "spk2": {
+      "role": "female_host",
+      "displayName": "女声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/female.wav"
+    }
+  },
+  "ttsControlPolicy": {
+    "voiceIdentity": "provided_by_reference_audio",
+    "ctrlControls": [
+      "语速",
+      "节奏",
+      "情绪",
+      "语调",
+      "停顿",
+      "画面感"
+    ],
+    "ctrlDoesNotSpecify": [
+      "固定音色",
+      "固定年龄",
+      "固定声线质感"
+    ]
+  },
+  "inputFiles": {
+    "scriptMd": "script.md",
+    "scriptSrt": "script.srt",
+    "transcriptMd": "transcript.md"
+  },
+  "output": {
+    "audioFileName": "2026-05-29-barcode-qr-code-podcast-v1.mp3",
+    "format": "mp3",
+    "bitrate": "96k",
+    "sampleRate": 44100,
+    "audioUrl": "/audio/published/2026-05-29-barcode-qr-code-podcast-v1.mp3",
+    "transcriptUrl": "/transcripts/published/2026-05-29-barcode-qr-code-podcast-v1.md"
+  },
+  "qualityChecklist": [
+    "script.md contains only alternating [ctrl] and [spk1]/[spk2] dialogue lines",
+    "[ctrl] is repeated before every spoken line and only controls the next line",
+    "[ctrl] avoids fixed timbre descriptions; speaker identity comes from reference audio",
+    "transcript.md is web-display text and does not contain TTS control labels",
+    "mp3 output file name must be {cardId}-podcast-v1.mp3"
+  ],
+  "podcastVersion": 1,
+  "audioFile": "2026-05-29-barcode-qr-code-podcast-v1.mp3",
+  "duration": 163.04,
+  "sizeBytes": 1969222,
+  "checksum": "sha256-385196b4a8673105e5dab2652beb9e0717be02302edaf41a2cfe8f810d0ff917",
+  "format": "mp3",
+  "bitrate": "96k",
+  "sampleRate": 44100,
+  "generatedAt": "2026-05-23T13:19:53+08:00"
+}

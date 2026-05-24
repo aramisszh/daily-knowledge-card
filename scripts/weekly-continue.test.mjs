@@ -489,7 +489,7 @@ describe("runWeeklyContinue", () => {
     expect(await readFile(manifestPath, "utf8")).toBe(manifestTextBefore);
   });
 
-  it("skips an existing card id without overwriting its fields", async () => {
+  it("skips an existing card id without overwriting non-podcast fields", async () => {
     const existingCard = {
       ...buildExistingCard(),
       id: CARD_ID,
@@ -509,7 +509,60 @@ describe("runWeeklyContinue", () => {
       appendedCount: 0,
       skippedExistingCount: 1,
     });
-    expect(await readJson(cardsPath)).toEqual([existingCard]);
+    expect(await readJson(cardsPath)).toEqual([
+      expect.objectContaining({
+        ...existingCard,
+        podcast: expect.objectContaining({
+          status: "published",
+          audioUrl: `/audio/published/${CARD_ID}-podcast-v1.mp3`,
+          transcriptUrl: `/transcripts/published/${CARD_ID}-podcast-v1.md`,
+        }),
+      }),
+    ]);
+  });
+
+  it("updates podcast data for an existing card without overwriting user fields", async () => {
+    const existingCard = {
+      ...buildExistingCard(),
+      id: CARD_ID,
+      title: "用户已经存在的正式卡片",
+      completed: true,
+      favorite: true,
+      needReview: true,
+    };
+    const { projectRoot, cardsPath } = await createFixtureProject({ cards: [existingCard] });
+
+    const result = await runWeeklyContinue({
+      projectRoot,
+      weekId: WEEK_ID,
+      now: "2026-05-21T12:00:00.000Z",
+    });
+
+    expect(result).toMatchObject({
+      appendedCount: 0,
+      skippedExistingCount: 1,
+    });
+
+    const [updatedCard] = await readJson(cardsPath);
+    expect(updatedCard).toMatchObject({
+      id: CARD_ID,
+      title: "用户已经存在的正式卡片",
+      completed: true,
+      favorite: true,
+      needReview: true,
+      userLocalField: "preserve-me",
+      podcast: {
+        status: "published",
+        version: 1,
+        audioUrl: `/audio/published/${CARD_ID}-podcast-v1.mp3`,
+        transcriptUrl: `/transcripts/published/${CARD_ID}-podcast-v1.md`,
+        duration: 188,
+        sizeBytes: 11,
+        checksum: "sha256-audio",
+        updatedAt: "2026-05-21T12:00:00.000Z",
+        archivedVersions: [],
+      },
+    });
   });
 });
 

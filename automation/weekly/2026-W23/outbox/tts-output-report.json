@@ -1,0 +1,23 @@
+{
+  "weekId": "2026-W23",
+  "weekStart": "2026-06-01",
+  "weekEnd": "2026-06-07",
+  "sourceZip": "D:\\AI-Podcast\\exchange\\inbox\\dkc-source__2026-W23__2026-06-01_to_2026-06-07.zip",
+  "sourceWorkDir": "D:\\AI-Podcast\\exchange\\work\\2026-W23\\source",
+  "inputDir": "D:\\AI-Podcast\\jobs\\pending\\2026-W23",
+  "outputDir": "D:\\AI-Podcast\\jobs\\done\\2026-W23",
+  "totalTasks": 1,
+  "successCount": 1,
+  "failedCount": 0,
+  "items": [
+    {
+      "cardId": "2026-06-01-qr-code-error-correction",
+      "status": "success",
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+      "durationSeconds": 176.16,
+      "logFile": "generation-log.json"
+    }
+  ]
+}

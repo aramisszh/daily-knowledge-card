@@ -1,13 +1,20 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { readLocalCards } from "../lib/local-data";
 import { supabaseAdmin } from "../lib/supabase-admin";
-import { listCardsFromDatabase, markCardCompleteInDatabase, markPodcastListenedInDatabase } from "./card-service";
+import {
+  getStatsFromDatabase,
+  getTodayCardFromDatabase,
+  listCardsFromDatabase,
+  markCardCompleteInDatabase,
+  markPodcastListenedInDatabase,
+} from "./card-service";
 
 vi.mock("../lib/local-data", () => ({
   readLocalCards: vi.fn(),
 }));
 
 vi.mock("../lib/supabase-admin", () => ({
+  hasSupabaseAdminEnv: true,
   supabaseAdmin: {
     from: vi.fn(),
   },
@@ -56,7 +63,7 @@ beforeEach(() => {
 
 describe("listCardsFromDatabase", () => {
   it("keeps local cards as the content source and maps study records back by card_date", async () => {
-    mockFrom.mockImplementation((table: string) => {
+    mockFrom.mockImplementation(((table: string) => {
       if (table === "study_records") {
         return {
           select: () => ({
@@ -96,7 +103,7 @@ describe("listCardsFromDatabase", () => {
       }
 
       throw new Error(`Unexpected table: ${table}`);
-    });
+    }) as any);
 
     const cards = await listCardsFromDatabase();
 
@@ -110,7 +117,7 @@ describe("listCardsFromDatabase", () => {
   });
 
   it("maps podcast listened state without changing the local card content source", async () => {
-    mockFrom.mockImplementation((table: string) => {
+    mockFrom.mockImplementation(((table: string) => {
       if (table === "study_records") {
         return {
           select: () => ({
@@ -152,13 +159,41 @@ describe("listCardsFromDatabase", () => {
       }
 
       throw new Error(`Unexpected table: ${table}`);
-    });
+    }) as any);
 
     const cards = await listCardsFromDatabase();
 
     expect(cards[0].id).toBe(baseCard.id);
     expect(cards[0].podcastListened).toBe(true);
     expect(cards[0].podcastListenedAt).toBe("2026-05-21T08:00:00+08:00");
+  });
+});
+
+describe("local fallback without supabase env", () => {
+  it("returns local cards and today card without querying supabase", async () => {
+    vi.resetModules();
+    vi.doMock("../lib/local-data", () => ({
+      readLocalCards: vi.fn().mockResolvedValue([baseCard]),
+    }));
+    const fallbackFrom = vi.fn();
+    vi.doMock("../lib/supabase-admin", () => ({
+      hasSupabaseAdminEnv: false,
+      supabaseAdmin: {
+        from: fallbackFrom,
+      },
+    }));
+
+    const service = await import("./card-service");
+    const cards = await service.listCardsFromDatabase();
+    const todayCard = await service.getTodayCardFromDatabase("2026-05-01");
+    const stats = await service.getStatsFromDatabase("2026-05-01");
+
+    expect(cards).toHaveLength(1);
+    expect(cards[0].id).toBe(baseCard.id);
+    expect(todayCard?.id).toBe(baseCard.id);
+    expect(stats.total).toBe(1);
+    expect(stats.completed).toBe(0);
+    expect(fallbackFrom).not.toHaveBeenCalled();
   });
 });
 
@@ -212,7 +247,7 @@ describe("markCardCompleteInDatabase", () => {
       }),
     }));
 
-    mockFrom.mockImplementation((table: string) => {
+    mockFrom.mockImplementation(((table: string) => {
       if (table === "knowledge_cards") {
         return {
           select: () => ({
@@ -232,7 +267,7 @@ describe("markCardCompleteInDatabase", () => {
       }
 
       throw new Error(`Unexpected table: ${table}`);
-    });
+    }) as any);
 
     const record = await markCardCompleteInDatabase(baseCard.id, "finished", "2026-05-01T08:00:00+08:00");
 
@@ -253,8 +288,8 @@ describe("markCardCompleteInDatabase", () => {
       }),
       { onConflict: "user_id,card_id" }
     );
-    expect(upsertStudyRecord.mock.calls[0][0]).not.toHaveProperty("podcast_listened");
-    expect(upsertStudyRecord.mock.calls[0][0]).not.toHaveProperty("podcast_listened_at");
+    expect((upsertStudyRecord.mock.calls[0] as any)[0]).not.toHaveProperty("podcast_listened");
+    expect((upsertStudyRecord.mock.calls[0] as any)[0]).not.toHaveProperty("podcast_listened_at");
     expect(record.completed).toBe(true);
   });
 });
@@ -312,7 +347,7 @@ describe("markPodcastListenedInDatabase", () => {
       }),
     }));
 
-    mockFrom.mockImplementation((table: string) => {
+    mockFrom.mockImplementation(((table: string) => {
       if (table === "knowledge_cards") {
         return {
           select: () => ({
@@ -331,7 +366,7 @@ describe("markPodcastListenedInDatabase", () => {
       }
 
       throw new Error(`Unexpected table: ${table}`);
-    });
+    }) as any);
 
     const record = await markPodcastListenedInDatabase(baseCard.id, "2026-05-21T09:00:00.000Z");
 

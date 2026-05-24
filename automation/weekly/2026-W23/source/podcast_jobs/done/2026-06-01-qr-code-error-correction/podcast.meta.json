@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "daily-knowledge-card.podcast-job.v1",
+  "cardId": "2026-06-01-qr-code-error-correction",
+  "date": "2026-06-01",
+  "weekId": "2026-W23",
+  "title": "二维码被弄脏，为什么还能扫出来？",
+  "status": "pending_tts",
+  "ttsEngineTarget": "VoxCPM 2 multi-speaker",
+  "language": "zh-CN",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300,
+    "estimated": 241
+  },
+  "speakerBindings": {
+    "spk1": {
+      "role": "男声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/male.wav",
+      "dialogueFunction": "提问、追问、复盘"
+    },
+    "spk2": {
+      "role": "女声",
+      "voiceRef": "D:/AI-Podcast/voice_refs/female.wav",
+      "dialogueFunction": "解释、举例、总结"
+    }
+  },
+  "windowsOutput": {
+    "targetMp3FileName": "2026-06-01-qr-code-error-correction-podcast-v1.mp3",
+    "bitrate": "96k",
+    "sampleRate": 44100,
+    "format": "mp3"
+  },
+  "sourceFiles": [
+    "script.md",
+    "script.srt",
+    "transcript.md",
+    "podcast.meta.json"
+  ]
+}

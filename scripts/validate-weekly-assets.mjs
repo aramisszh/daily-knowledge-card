@@ -24,6 +24,24 @@ async function validatePublicFile(projectRoot, publicUrl, label, errors) {
   }
 }
 
+async function validateTranscriptContent(projectRoot, publicUrl, label, errors) {
+  try {
+    const filePath = publicUrlToFilePath(publicUrl, projectRoot);
+    if (!(await pathExists(filePath))) {
+      errors.push(`${label} missing: ${publicUrl} -> ${filePath}`);
+      return;
+    }
+
+    const { readFile } = await import("node:fs/promises");
+    const text = await readFile(filePath, "utf8");
+    if (/\[(ctrl|spk1|spk2)\]/i.test(text)) {
+      errors.push(`${label} contains forbidden TTS tags: ${filePath}`);
+    }
+  } catch (error) {
+    errors.push(`${label} invalid URL: ${publicUrl}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
 function hasChineseText(value) {
   return typeof value === "string" && /[\u3400-\u9fff]/.test(value);
 }
@@ -136,7 +154,7 @@ export async function validatePublishedPodcastAssets(projectRoot = process.cwd()
         if (!podcast.transcriptUrl) {
           errors.push(`Card ${cardId} published podcast transcriptUrl missing`);
         } else {
-          await validatePublicFile(
+          await validateTranscriptContent(
             projectRoot,
             podcast.transcriptUrl,
             `Card ${cardId} podcast transcriptUrl`,
