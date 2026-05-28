@@ -1,68 +1,258 @@
 {
-  "schemaVersion": "daily-knowledge-card.cards-draft.v1",
-  "weekId": "2026-W23",
-  "testMode": true,
+  "packageRole": "chatgpt-weekly-supplement",
+  "cardCount": 6,
   "items": [
     {
-      "date": "2026-06-01",
-      "cardId": "2026-06-01-qr-code-error-correction",
-      "title": "二维码被弄脏，为什么还能扫出来？",
-      "subtitle": "关键不只是黑白方块，而是纠错编码在偷偷兜底",
-      "category": "信息技术",
-      "summary": "二维码不仅存了内容，还额外存了纠错信息；当局部污损、遮挡或轻微变形时，系统可利用冗余编码在一定范围内推回缺失数据。",
-      "oneSentence": "二维码不仅存了内容，还额外存了纠错信息，所以局部污损、遮挡或轻微变形时，系统仍能把缺失的数据推算回来。",
+      "date": "2026-06-02",
+      "cardId": "2026-06-02-electron-microscope",
+      "title": "电子显微镜：看见肉眼看不见的世界",
+      "subtitle": "用电子束观察微观结构，打开材料、生命与纳米世界的大门",
+      "category": "自然科学",
+      "summary": "电子显微镜用电子束代替可见光，通过电磁透镜放大样品细节，能观察细胞、材料和纳米结构，是现代科学研究的重要工具。",
+      "oneSentence": "电子显微镜不是“更强的放大镜”，而是用电子束和电磁透镜突破可见光分辨率限制。",
       "coreConcepts": [
-        "定位图形：帮助手机找到二维码的方向、边界和透视角度",
-        "静区：二维码外侧留白，用于区分图案和背景",
-        "码字：二维码内部承载数据和纠错信息的基本单位",
-        "Reed–Solomon 纠错：利用冗余校验信息恢复部分损坏数据",
-        "纠错等级：L/M/Q/H 对应不同容错能力和图案密度"
-      ],
-      "contentBlocks": [
-        {
-          "heading": "不是看图识字",
-          "body": "扫码流程先定位、再采样、再解码，最后做校验。手机并不是直接识别整张图片，而是把黑白模块转换成数据序列。"
-        },
-        {
-          "heading": "为什么污损还能扫",
-          "body": "二维码会把原始信息和纠错信息一起编码。只要损坏范围没有超过纠错能力，算法可以推回缺失数据。"
-        },
-        {
-          "heading": "为什么有的码更密",
-          "body": "内容越多或纠错等级越高，二维码需要更多模块，视觉上就更密，也更依赖清晰打印。"
-        },
-        {
-          "heading": "最怕坏哪里",
-          "body": "定位角、静区、整体对比度和变形，比中间小面积污渍更影响扫码。"
-        }
+        "电子束",
+        "电磁透镜",
+        "分辨率",
+        "扫描电镜 SEM",
+        "透射电镜 TEM",
+        "样品制备"
       ],
       "thoughtQuestions": [
         {
-          "question": "二维码越花、纠错等级越高，就一定越好吗？",
-          "answer": "不一定。纠错等级越高，冗余越多，图案通常越密；如果打印尺寸不足或对比度不够，反而可能更难扫。"
+          "question": "为什么电子显微镜能看到普通显微镜看不到的结构？",
+          "answer": "因为电子的有效波长远短于可见光，在合适的电磁透镜与真空环境中，可以获得更高分辨率。"
         },
         {
-          "question": "为什么二维码外侧通常要留一圈空白？",
-          "answer": "这圈空白叫静区，用于帮助扫码设备区分二维码边界和周围背景，是定位的前提。"
+          "question": "扫描电镜和透射电镜主要区别是什么？",
+          "answer": "扫描电镜更擅长观察表面形貌，透射电镜更擅长观察内部超薄结构。"
         },
         {
-          "question": "在二维码中间放 Logo，风险主要在哪里？",
-          "answer": "Logo 会遮挡部分码字。只要遮挡区域、二维码尺寸、纠错等级和对比度仍在可接受范围内，就可能正常扫码；但必须实测。"
+          "question": "为什么样品制备会影响观察结果？",
+          "answer": "样品需要导电、薄切、染色或脱水等处理，处理过程可能改变原始结构，因此需要谨慎解读图像。"
         }
       ],
-      "podcastAngle": "从生活中的“脏了还能扫”切入，解释二维码如何靠定位图形和纠错码实现容错。",
+      "podcastAngle": "从“为什么普通光学显微镜看不清病毒和纳米结构”切入，解释电子显微镜如何突破视野边界。",
       "image": {
-        "fileName": "2026-06-01-qr-code-error-correction.png",
-        "path": "images/raw/2026-06-01-qr-code-error-correction.png",
+        "fileName": "2026-06-02-electron-microscope.png",
+        "path": "images/raw/2026-06-02-electron-microscope.png",
         "source": "chatgpt-image2",
         "status": "generated",
         "qualityStatus": "pass",
-        "resolution": "1122x1402",
-        "aspectRatio": "4:5",
-        "userQualityConfirmation": true
+        "reviewStatus": "approved",
+        "approvedForPackaging": true,
+        "revisionCount": 0
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "cardId": "2026-06-03-wind-turbine",
+      "title": "风力发电机：把风的动能变成清洁电能",
+      "subtitle": "利用空气动力学与发电机原理，实现可再生能源转换",
+      "category": "工程技术",
+      "summary": "风力发电机通过叶片捕获风能，经过传动系统和发电机把机械能转化为电能，再由变流、升压和并网系统输送给用户。",
+      "oneSentence": "风电的本质，是用叶片把流动空气中的动能转成旋转机械能，再转成电能。",
+      "coreConcepts": [
+        "叶片升力",
+        "传动系统",
+        "发电机",
+        "变流并网",
+        "偏航控制",
+        "储能与消纳"
+      ],
+      "thoughtQuestions": [
+        {
+          "question": "为什么风力发电机通常是三片叶片？",
+          "answer": "三片叶片在效率、稳定性、噪声和制造成本之间较均衡，是工程上的常见折中。"
+        },
+        {
+          "question": "风速太大时风机会怎样保护自己？",
+          "answer": "通常通过变桨、偏航、刹车或停机策略降低受力，避免结构损坏。"
+        },
+        {
+          "question": "风电为什么还需要储能或电网调度？",
+          "answer": "风速具有波动性，发电量不稳定，需要储能、电网调度或多能源互补来保证稳定供电。"
+        }
+      ],
+      "podcastAngle": "从“风只是吹过，为什么能变成电”切入，讲清楚叶片、发电机和并网系统的协作。",
+      "image": {
+        "fileName": "2026-06-03-wind-turbine.png",
+        "path": "images/raw/2026-06-03-wind-turbine.png",
+        "source": "chatgpt-image2",
+        "status": "generated",
+        "qualityStatus": "pass",
+        "reviewStatus": "approved",
+        "approvedForPackaging": true,
+        "revisionCount": 0
+      }
+    },
+    {
+      "date": "2026-06-04",
+      "cardId": "2026-06-04-compound-interest",
+      "title": "复利效应：世界第八大奇迹",
+      "subtitle": "让时间成为增长的最佳伙伴",
+      "category": "商业金融",
+      "summary": "复利指收益继续产生收益，随着时间延长，增长曲线会从缓慢变得陡峭。理解复利有助于储蓄、投资、养老金规划和长期成本控制。",
+      "oneSentence": "复利的力量不在于单次收益高，而在于时间足够长、收益持续滚入本金。",
+      "coreConcepts": [
+        "本金",
+        "收益率",
+        "时间",
+        "滚存收益",
+        "指数增长",
+        "长期纪律"
+      ],
+      "thoughtQuestions": [
+        {
+          "question": "为什么复利被称为“世界第八大奇迹”？",
+          "answer": "因为长期累积后，收益会继续产生收益，增长速度可能远超线性增长。"
+        },
+        {
+          "question": "投资时间从10年延长到30年，结果为什么会差很多？",
+          "answer": "时间越长，收益滚入本金的轮次越多，后期增长会明显加速。"
+        },
+        {
+          "question": "复利一定会带来稳定收益吗？",
+          "answer": "不一定。复利需要正收益、长期持有和风险控制，亏损同样可能被时间放大。"
+        }
+      ],
+      "podcastAngle": "从“同样一万元，为什么放十年和三十年差距巨大”切入，解释复利、时间和纪律。",
+      "image": {
+        "fileName": "2026-06-04-compound-interest.png",
+        "path": "images/raw/2026-06-04-compound-interest.png",
+        "source": "chatgpt-image2",
+        "status": "generated",
+        "qualityStatus": "pass",
+        "reviewStatus": "approved",
+        "approvedForPackaging": true,
+        "revisionCount": 0
+      }
+    },
+    {
+      "date": "2026-06-05",
+      "cardId": "2026-06-05-silk-road",
+      "title": "丝绸之路：连接东西方的文明动脉",
+      "subtitle": "不只是贸易之路，更是文化、技术与思想的交流桥梁",
+      "category": "历史文明",
+      "summary": "丝绸之路连接东亚、中亚、西亚、欧洲和海上航线，推动商品贸易、技术传播、宗教交流和城市繁荣，是理解古代全球联系的重要线索。",
+      "oneSentence": "丝绸之路不是一条单一路线，而是一张横跨大陆与海洋的交流网络。",
+      "coreConcepts": [
+        "陆上丝路",
+        "海上丝路",
+        "商贸网络",
+        "文化交流",
+        "技术传播",
+        "节点城市"
+      ],
+      "thoughtQuestions": [
+        {
+          "question": "丝绸之路为什么不只是贸易之路？",
+          "answer": "因为语言、宗教、艺术、技术和制度也沿着商路传播，影响了多个文明。"
+        },
+        {
+          "question": "如果没有丝绸之路，东西方文明会有什么不同？",
+          "answer": "交流速度可能更慢，技术和文化传播范围更窄，许多城市的繁荣程度也会不同。"
+        },
+        {
+          "question": "丝绸之路对今天的全球化有什么启示？",
+          "answer": "全球联系依赖通道、信任、节点城市和跨文化协作，贸易背后往往伴随知识与制度交流。"
+        }
+      ],
+      "podcastAngle": "从“一匹丝绸为什么能改变世界地图”切入，讲贸易网络背后的文明交流。",
+      "image": {
+        "fileName": "2026-06-05-silk-road.png",
+        "path": "images/raw/2026-06-05-silk-road.png",
+        "source": "chatgpt-image2",
+        "status": "generated",
+        "qualityStatus": "pass",
+        "reviewStatus": "approved",
+        "approvedForPackaging": true,
+        "revisionCount": 0
+      }
+    },
+    {
+      "date": "2026-06-06",
+      "cardId": "2026-06-06-golden-ratio",
+      "title": "黄金分割：自然与艺术的完美比例",
+      "subtitle": "约0.618的神秘比例，创造视觉上的和谐美感",
+      "category": "艺术设计",
+      "summary": "黄金分割是一种特殊比例关系，常被用于解释自然形态、艺术构图和设计布局。它不是唯一的审美标准，但能提供重要的视觉参考。",
+      "oneSentence": "黄金分割是一种比例工具，不是万能美学公式。合理使用能增强秩序感和视觉平衡。",
+      "coreConcepts": [
+        "0.618",
+        "比例关系",
+        "斐波那契数列",
+        "自然形态",
+        "构图设计",
+        "审美参考"
+      ],
+      "thoughtQuestions": [
+        {
+          "question": "生活中能发现哪些接近黄金分割的例子？",
+          "answer": "植物排列、贝壳螺旋、部分建筑和视觉设计中都可能出现接近黄金分割的比例。"
+        },
+        {
+          "question": "为什么黄金分割会让人感觉更舒适？",
+          "answer": "它能在对称和变化之间提供平衡感，让画面既有秩序又不显得僵硬。"
+        },
+        {
+          "question": "设计中应该怎样合理使用黄金分割？",
+          "answer": "把它作为构图参考，而不是机械套用；还要结合内容、功能、阅读路径和真实使用场景。"
+        }
+      ],
+      "podcastAngle": "从“为什么有些画面看起来刚刚好”切入，解释比例、构图和审美参考。",
+      "image": {
+        "fileName": "2026-06-06-golden-ratio.png",
+        "path": "images/raw/2026-06-06-golden-ratio.png",
+        "source": "chatgpt-image2",
+        "status": "generated",
+        "qualityStatus": "pass",
+        "reviewStatus": "approved",
+        "approvedForPackaging": true,
+        "revisionCount": 0
+      }
+    },
+    {
+      "date": "2026-06-07",
+      "cardId": "2026-06-07-blockchain",
+      "title": "区块链：信任机器如何重塑互联网",
+      "subtitle": "去中心化的分布式账本技术，正在改变价值传递和协作方式",
+      "category": "信息技术",
+      "summary": "区块链是一种由多方共同维护的分布式账本，通过密码学、共识机制和链式结构，让记录公开透明、难以篡改，适合多方协作场景。",
+      "oneSentence": "区块链的核心不是“币”，而是在陌生参与者之间建立可验证、不可轻易篡改的共同记录。",
+      "coreConcepts": [
+        "分布式账本",
+        "哈希值",
+        "区块结构",
+        "共识机制",
+        "不可篡改",
+        "智能合约"
+      ],
+      "thoughtQuestions": [
+        {
+          "question": "区块链主要解决什么信任问题？",
+          "answer": "它让多方在不完全依赖中心机构的情况下，共同维护一份可验证、难篡改的记录。"
+        },
+        {
+          "question": "区块链的“不可篡改”是如何实现的？",
+          "answer": "区块之间通过哈希值链接，记录被多个节点保存，篡改会破坏链式关系并被网络发现。"
+        },
+        {
+          "question": "区块链未来可能带来哪些改变？",
+          "answer": "可能影响支付清算、供应链追溯、数字身份、版权登记、公益透明和自动化合约等场景。"
+        }
+      ],
+      "podcastAngle": "从“陌生人之间为什么能在网上共同维护一本账”切入，讲清楚分布式账本和信任机制。",
+      "image": {
+        "fileName": "2026-06-07-blockchain.png",
+        "path": "images/raw/2026-06-07-blockchain.png",
+        "source": "chatgpt-image2",
+        "status": "generated",
+        "qualityStatus": "pass",
+        "reviewStatus": "approved",
+        "approvedForPackaging": true,
+        "revisionCount": 0
       }
     }
-  ],
-  "updatedAt": "2026-05-24T03:14:56Z",
-  "imageGateStatus": "pass"
+  ]
 }

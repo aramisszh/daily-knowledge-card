@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-03-wind-turbine",
+  "status": "success",
+  "generatedAt": "2026-05-28T09:53:34+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-03-wind-turbine-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\2026-06-03-wind-turbine-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\2026-06-03-wind-turbine-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\2026-06-03-wind-turbine-podcast-v1.mp3",
+  "durationSeconds": 132.32,
+  "mp3SizeBytes": 3188267,
+  "mp3Checksum": "sha256-367e1b0732dcb80fae37de6128e4eedd6112a6d5da78940764319fc208f56fd6",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\generation-log.json"
+}

@@ -3363,5 +3363,653 @@
       ],
       "conclusion": "二维码不仅存了内容，还额外存了纠错信息，所以局部污损、遮挡或轻微变形时，系统仍能把缺失的数据推算回来。"
     }
+  },
+  {
+    "id": "2026-06-02-electron-microscope",
+    "title": "电子显微镜：看见肉眼看不见的世界",
+    "subtitle": "用电子束观察微观结构，打开材料、生命与纳米世界的大门",
+    "category": "自然科学",
+    "subCategory": "未分类",
+    "difficulty": "入门",
+    "cardDate": "2026-06-02",
+    "imageUrl": "/generated-cards/2026-06-02-electron-microscope.png",
+    "summary": "电子显微镜用电子束代替可见光，通过电磁透镜放大样品细节，能观察细胞、材料和纳米结构，是现代科学研究的重要工具。",
+    "keywords": [
+      "电子束",
+      "电磁透镜",
+      "分辨率",
+      "扫描电镜 SEM",
+      "透射电镜 TEM",
+      "样品制备"
+    ],
+    "completed": false,
+    "favorite": false,
+    "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "电子显微镜：看见肉眼看不见的世界",
+      "duration": null,
+      "audioUrl": "/audio/published/2026-06-02-electron-microscope-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-02-electron-microscope-podcast-v1.md",
+      "sizeBytes": 3360872,
+      "checksum": "sha256-ae1efd5da8ee92b7ce82bdd99064abf67c9c9c146ffb4cc9c263b14361e8464c",
+      "updatedAt": "2026-05-28T06:24:20.328Z",
+      "archivedVersions": []
+    },
+    "content": {
+      "title": "电子显微镜：看见肉眼看不见的世界",
+      "subtitle": "用电子束观察微观结构，打开材料、生命与纳米世界的大门",
+      "category": "自然科学",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "电子显微镜用电子束代替可见光，通过电磁透镜放大样品细节，能观察细胞、材料和纳米结构，是现代科学研究的重要工具。",
+      "coreMechanism": "电子显微镜不是“更强的放大镜”，而是用电子束和电磁透镜突破可见光分辨率限制。",
+      "whyImportant": [
+        "电子束",
+        "电磁透镜",
+        "分辨率",
+        "扫描电镜 SEM",
+        "透射电镜 TEM",
+        "样品制备"
+      ],
+      "keywords": [
+        {
+          "term": "电子束",
+          "desc": "电子束"
+        },
+        {
+          "term": "电磁透镜",
+          "desc": "电磁透镜"
+        },
+        {
+          "term": "分辨率",
+          "desc": "分辨率"
+        },
+        {
+          "term": "扫描电镜 SEM",
+          "desc": "扫描电镜 SEM"
+        },
+        {
+          "term": "透射电镜 TEM",
+          "desc": "透射电镜 TEM"
+        },
+        {
+          "term": "样品制备",
+          "desc": "样品制备"
+        }
+      ],
+      "misconception": {
+        "title": "常见误区",
+        "content": "因为电子的有效波长远短于可见光，在合适的电磁透镜与真空环境中，可以获得更高分辨率。"
+      },
+      "financeAngle": "从“为什么普通光学显微镜看不清病毒和纳米结构”切入，解释电子显微镜如何突破视野边界。",
+      "memoryHooks": [
+        "电子束",
+        "电磁透镜",
+        "分辨率"
+      ],
+      "thinkingQuestions": [
+        {
+          "level": "思考题",
+          "question": "为什么电子显微镜能看到普通显微镜看不到的结构？",
+          "answer": "因为电子的有效波长远短于可见光，在合适的电磁透镜与真空环境中，可以获得更高分辨率。",
+          "keyPoint": "因为电子的有效波长远短于可见光，在合适的电磁透镜与真空环境中，可以获得更高分辨率。"
+        },
+        {
+          "level": "思考题",
+          "question": "扫描电镜和透射电镜主要区别是什么？",
+          "answer": "扫描电镜更擅长观察表面形貌，透射电镜更擅长观察内部超薄结构。",
+          "keyPoint": "扫描电镜更擅长观察表面形貌，透射电镜更擅长观察内部超薄结构。"
+        },
+        {
+          "level": "思考题",
+          "question": "为什么样品制备会影响观察结果？",
+          "answer": "样品需要导电、薄切、染色或脱水等处理，处理过程可能改变原始结构，因此需要谨慎解读图像。",
+          "keyPoint": "样品需要导电、薄切、染色或脱水等处理，处理过程可能改变原始结构，因此需要谨慎解读图像。"
+        }
+      ],
+      "conclusion": "电子显微镜不是“更强的放大镜”，而是用电子束和电磁透镜突破可见光分辨率限制。"
+    }
+  },
+  {
+    "id": "2026-06-03-wind-turbine",
+    "title": "风力发电机：把风的动能变成清洁电能",
+    "subtitle": "利用空气动力学与发电机原理，实现可再生能源转换",
+    "category": "工程技术",
+    "subCategory": "未分类",
+    "difficulty": "入门",
+    "cardDate": "2026-06-03",
+    "imageUrl": "/generated-cards/2026-06-03-wind-turbine.png",
+    "summary": "风力发电机通过叶片捕获风能，经过传动系统和发电机把机械能转化为电能，再由变流、升压和并网系统输送给用户。",
+    "keywords": [
+      "叶片升力",
+      "传动系统",
+      "发电机",
+      "变流并网",
+      "偏航控制",
+      "储能与消纳"
+    ],
+    "completed": false,
+    "favorite": false,
+    "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "风力发电机：把风的动能变成清洁电能",
+      "duration": null,
+      "audioUrl": "/audio/published/2026-06-03-wind-turbine-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-03-wind-turbine-podcast-v1.md",
+      "sizeBytes": 3188267,
+      "checksum": "sha256-367e1b0732dcb80fae37de6128e4eedd6112a6d5da78940764319fc208f56fd6",
+      "updatedAt": "2026-05-28T06:24:20.328Z",
+      "archivedVersions": []
+    },
+    "content": {
+      "title": "风力发电机：把风的动能变成清洁电能",
+      "subtitle": "利用空气动力学与发电机原理，实现可再生能源转换",
+      "category": "工程技术",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "风力发电机通过叶片捕获风能，经过传动系统和发电机把机械能转化为电能，再由变流、升压和并网系统输送给用户。",
+      "coreMechanism": "风电的本质，是用叶片把流动空气中的动能转成旋转机械能，再转成电能。",
+      "whyImportant": [
+        "叶片升力",
+        "传动系统",
+        "发电机",
+        "变流并网",
+        "偏航控制",
+        "储能与消纳"
+      ],
+      "keywords": [
+        {
+          "term": "叶片升力",
+          "desc": "叶片升力"
+        },
+        {
+          "term": "传动系统",
+          "desc": "传动系统"
+        },
+        {
+          "term": "发电机",
+          "desc": "发电机"
+        },
+        {
+          "term": "变流并网",
+          "desc": "变流并网"
+        },
+        {
+          "term": "偏航控制",
+          "desc": "偏航控制"
+        },
+        {
+          "term": "储能与消纳",
+          "desc": "储能与消纳"
+        }
+      ],
+      "misconception": {
+        "title": "常见误区",
+        "content": "三片叶片在效率、稳定性、噪声和制造成本之间较均衡，是工程上的常见折中。"
+      },
+      "financeAngle": "从“风只是吹过，为什么能变成电”切入，讲清楚叶片、发电机和并网系统的协作。",
+      "memoryHooks": [
+        "叶片升力",
+        "传动系统",
+        "发电机"
+      ],
+      "thinkingQuestions": [
+        {
+          "level": "思考题",
+          "question": "为什么风力发电机通常是三片叶片？",
+          "answer": "三片叶片在效率、稳定性、噪声和制造成本之间较均衡，是工程上的常见折中。",
+          "keyPoint": "三片叶片在效率、稳定性、噪声和制造成本之间较均衡，是工程上的常见折中。"
+        },
+        {
+          "level": "思考题",
+          "question": "风速太大时风机会怎样保护自己？",
+          "answer": "通常通过变桨、偏航、刹车或停机策略降低受力，避免结构损坏。",
+          "keyPoint": "通常通过变桨、偏航、刹车或停机策略降低受力，避免结构损坏。"
+        },
+        {
+          "level": "思考题",
+          "question": "风电为什么还需要储能或电网调度？",
+          "answer": "风速具有波动性，发电量不稳定，需要储能、电网调度或多能源互补来保证稳定供电。",
+          "keyPoint": "风速具有波动性，发电量不稳定，需要储能、电网调度或多能源互补来保证稳定供电。"
+        }
+      ],
+      "conclusion": "风电的本质，是用叶片把流动空气中的动能转成旋转机械能，再转成电能。"
+    }
+  },
+  {
+    "id": "2026-06-04-compound-interest",
+    "title": "复利效应：世界第八大奇迹",
+    "subtitle": "让时间成为增长的最佳伙伴",
+    "category": "商业金融",
+    "subCategory": "未分类",
+    "difficulty": "入门",
+    "cardDate": "2026-06-04",
+    "imageUrl": "/generated-cards/2026-06-04-compound-interest.png",
+    "summary": "复利指收益继续产生收益，随着时间延长，增长曲线会从缓慢变得陡峭。理解复利有助于储蓄、投资、养老金规划和长期成本控制。",
+    "keywords": [
+      "本金",
+      "收益率",
+      "时间",
+      "滚存收益",
+      "指数增长",
+      "长期纪律"
+    ],
+    "completed": false,
+    "favorite": false,
+    "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "复利效应：世界第八大奇迹",
+      "duration": null,
+      "audioUrl": "/audio/published/2026-06-04-compound-interest-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-04-compound-interest-podcast-v1.md",
+      "sizeBytes": 3092295,
+      "checksum": "sha256-6c9661f685395490228c7b5988a7df7e55979706113f66c237e3aee5528b3f2e",
+      "updatedAt": "2026-05-28T06:24:20.328Z",
+      "archivedVersions": []
+    },
+    "content": {
+      "title": "复利效应：世界第八大奇迹",
+      "subtitle": "让时间成为增长的最佳伙伴",
+      "category": "商业金融",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "复利指收益继续产生收益，随着时间延长，增长曲线会从缓慢变得陡峭。理解复利有助于储蓄、投资、养老金规划和长期成本控制。",
+      "coreMechanism": "复利的力量不在于单次收益高，而在于时间足够长、收益持续滚入本金。",
+      "whyImportant": [
+        "本金",
+        "收益率",
+        "时间",
+        "滚存收益",
+        "指数增长",
+        "长期纪律"
+      ],
+      "keywords": [
+        {
+          "term": "本金",
+          "desc": "本金"
+        },
+        {
+          "term": "收益率",
+          "desc": "收益率"
+        },
+        {
+          "term": "时间",
+          "desc": "时间"
+        },
+        {
+          "term": "滚存收益",
+          "desc": "滚存收益"
+        },
+        {
+          "term": "指数增长",
+          "desc": "指数增长"
+        },
+        {
+          "term": "长期纪律",
+          "desc": "长期纪律"
+        }
+      ],
+      "misconception": {
+        "title": "常见误区",
+        "content": "因为长期累积后，收益会继续产生收益，增长速度可能远超线性增长。"
+      },
+      "financeAngle": "从“同样一万元，为什么放十年和三十年差距巨大”切入，解释复利、时间和纪律。",
+      "memoryHooks": [
+        "本金",
+        "收益率",
+        "时间"
+      ],
+      "thinkingQuestions": [
+        {
+          "level": "思考题",
+          "question": "为什么复利被称为“世界第八大奇迹”？",
+          "answer": "因为长期累积后，收益会继续产生收益，增长速度可能远超线性增长。",
+          "keyPoint": "因为长期累积后，收益会继续产生收益，增长速度可能远超线性增长。"
+        },
+        {
+          "level": "思考题",
+          "question": "投资时间从10年延长到30年，结果为什么会差很多？",
+          "answer": "时间越长，收益滚入本金的轮次越多，后期增长会明显加速。",
+          "keyPoint": "时间越长，收益滚入本金的轮次越多，后期增长会明显加速。"
+        },
+        {
+          "level": "思考题",
+          "question": "复利一定会带来稳定收益吗？",
+          "answer": "不一定。复利需要正收益、长期持有和风险控制，亏损同样可能被时间放大。",
+          "keyPoint": "不一定。复利需要正收益、长期持有和风险控制，亏损同样可能被时间放大。"
+        }
+      ],
+      "conclusion": "复利的力量不在于单次收益高，而在于时间足够长、收益持续滚入本金。"
+    }
+  },
+  {
+    "id": "2026-06-05-silk-road",
+    "title": "丝绸之路：连接东西方的文明动脉",
+    "subtitle": "不只是贸易之路，更是文化、技术与思想的交流桥梁",
+    "category": "历史文明",
+    "subCategory": "未分类",
+    "difficulty": "入门",
+    "cardDate": "2026-06-05",
+    "imageUrl": "/generated-cards/2026-06-05-silk-road.png",
+    "summary": "丝绸之路连接东亚、中亚、西亚、欧洲和海上航线，推动商品贸易、技术传播、宗教交流和城市繁荣，是理解古代全球联系的重要线索。",
+    "keywords": [
+      "陆上丝路",
+      "海上丝路",
+      "商贸网络",
+      "文化交流",
+      "技术传播",
+      "节点城市"
+    ],
+    "completed": false,
+    "favorite": false,
+    "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "丝绸之路：连接东西方的文明动脉",
+      "duration": null,
+      "audioUrl": "/audio/published/2026-06-05-silk-road-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-05-silk-road-podcast-v1.md",
+      "sizeBytes": 3157610,
+      "checksum": "sha256-51f7ea2bfbd314c731a61d675731a4d204bf17c5fdd42baf04a1dbc159cce619",
+      "updatedAt": "2026-05-28T06:24:20.328Z",
+      "archivedVersions": []
+    },
+    "content": {
+      "title": "丝绸之路：连接东西方的文明动脉",
+      "subtitle": "不只是贸易之路，更是文化、技术与思想的交流桥梁",
+      "category": "历史文明",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "丝绸之路连接东亚、中亚、西亚、欧洲和海上航线，推动商品贸易、技术传播、宗教交流和城市繁荣，是理解古代全球联系的重要线索。",
+      "coreMechanism": "丝绸之路不是一条单一路线，而是一张横跨大陆与海洋的交流网络。",
+      "whyImportant": [
+        "陆上丝路",
+        "海上丝路",
+        "商贸网络",
+        "文化交流",
+        "技术传播",
+        "节点城市"
+      ],
+      "keywords": [
+        {
+          "term": "陆上丝路",
+          "desc": "陆上丝路"
+        },
+        {
+          "term": "海上丝路",
+          "desc": "海上丝路"
+        },
+        {
+          "term": "商贸网络",
+          "desc": "商贸网络"
+        },
+        {
+          "term": "文化交流",
+          "desc": "文化交流"
+        },
+        {
+          "term": "技术传播",
+          "desc": "技术传播"
+        },
+        {
+          "term": "节点城市",
+          "desc": "节点城市"
+        }
+      ],
+      "misconception": {
+        "title": "常见误区",
+        "content": "因为语言、宗教、艺术、技术和制度也沿着商路传播，影响了多个文明。"
+      },
+      "financeAngle": "从“一匹丝绸为什么能改变世界地图”切入，讲贸易网络背后的文明交流。",
+      "memoryHooks": [
+        "陆上丝路",
+        "海上丝路",
+        "商贸网络"
+      ],
+      "thinkingQuestions": [
+        {
+          "level": "思考题",
+          "question": "丝绸之路为什么不只是贸易之路？",
+          "answer": "因为语言、宗教、艺术、技术和制度也沿着商路传播，影响了多个文明。",
+          "keyPoint": "因为语言、宗教、艺术、技术和制度也沿着商路传播，影响了多个文明。"
+        },
+        {
+          "level": "思考题",
+          "question": "如果没有丝绸之路，东西方文明会有什么不同？",
+          "answer": "交流速度可能更慢，技术和文化传播范围更窄，许多城市的繁荣程度也会不同。",
+          "keyPoint": "交流速度可能更慢，技术和文化传播范围更窄，许多城市的繁荣程度也会不同。"
+        },
+        {
+          "level": "思考题",
+          "question": "丝绸之路对今天的全球化有什么启示？",
+          "answer": "全球联系依赖通道、信任、节点城市和跨文化协作，贸易背后往往伴随知识与制度交流。",
+          "keyPoint": "全球联系依赖通道、信任、节点城市和跨文化协作，贸易背后往往伴随知识与制度交流。"
+        }
+      ],
+      "conclusion": "丝绸之路不是一条单一路线，而是一张横跨大陆与海洋的交流网络。"
+    }
+  },
+  {
+    "id": "2026-06-06-golden-ratio",
+    "title": "黄金分割：自然与艺术的完美比例",
+    "subtitle": "约0.618的神秘比例，创造视觉上的和谐美感",
+    "category": "艺术设计",
+    "subCategory": "未分类",
+    "difficulty": "入门",
+    "cardDate": "2026-06-06",
+    "imageUrl": "/generated-cards/2026-06-06-golden-ratio.png",
+    "summary": "黄金分割是一种特殊比例关系，常被用于解释自然形态、艺术构图和设计布局。它不是唯一的审美标准，但能提供重要的视觉参考。",
+    "keywords": [
+      "0.618",
+      "比例关系",
+      "斐波那契数列",
+      "自然形态",
+      "构图设计",
+      "审美参考"
+    ],
+    "completed": false,
+    "favorite": false,
+    "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "黄金分割：自然与艺术的完美比例",
+      "duration": null,
+      "audioUrl": "/audio/published/2026-06-06-golden-ratio-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-06-golden-ratio-podcast-v1.md",
+      "sizeBytes": 3219088,
+      "checksum": "sha256-2491059ba510a2ae9a5fe42972e838f55ab4f2c4b47c4db00fa32412ea08e3f2",
+      "updatedAt": "2026-05-28T06:24:20.328Z",
+      "archivedVersions": []
+    },
+    "content": {
+      "title": "黄金分割：自然与艺术的完美比例",
+      "subtitle": "约0.618的神秘比例，创造视觉上的和谐美感",
+      "category": "艺术设计",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "黄金分割是一种特殊比例关系，常被用于解释自然形态、艺术构图和设计布局。它不是唯一的审美标准，但能提供重要的视觉参考。",
+      "coreMechanism": "黄金分割是一种比例工具，不是万能美学公式。合理使用能增强秩序感和视觉平衡。",
+      "whyImportant": [
+        "0.618",
+        "比例关系",
+        "斐波那契数列",
+        "自然形态",
+        "构图设计",
+        "审美参考"
+      ],
+      "keywords": [
+        {
+          "term": "0.618",
+          "desc": "0.618"
+        },
+        {
+          "term": "比例关系",
+          "desc": "比例关系"
+        },
+        {
+          "term": "斐波那契数列",
+          "desc": "斐波那契数列"
+        },
+        {
+          "term": "自然形态",
+          "desc": "自然形态"
+        },
+        {
+          "term": "构图设计",
+          "desc": "构图设计"
+        },
+        {
+          "term": "审美参考",
+          "desc": "审美参考"
+        }
+      ],
+      "misconception": {
+        "title": "常见误区",
+        "content": "植物排列、贝壳螺旋、部分建筑和视觉设计中都可能出现接近黄金分割的比例。"
+      },
+      "financeAngle": "从“为什么有些画面看起来刚刚好”切入，解释比例、构图和审美参考。",
+      "memoryHooks": [
+        "0.618",
+        "比例关系",
+        "斐波那契数列"
+      ],
+      "thinkingQuestions": [
+        {
+          "level": "思考题",
+          "question": "生活中能发现哪些接近黄金分割的例子？",
+          "answer": "植物排列、贝壳螺旋、部分建筑和视觉设计中都可能出现接近黄金分割的比例。",
+          "keyPoint": "植物排列、贝壳螺旋、部分建筑和视觉设计中都可能出现接近黄金分割的比例。"
+        },
+        {
+          "level": "思考题",
+          "question": "为什么黄金分割会让人感觉更舒适？",
+          "answer": "它能在对称和变化之间提供平衡感，让画面既有秩序又不显得僵硬。",
+          "keyPoint": "它能在对称和变化之间提供平衡感，让画面既有秩序又不显得僵硬。"
+        },
+        {
+          "level": "思考题",
+          "question": "设计中应该怎样合理使用黄金分割？",
+          "answer": "把它作为构图参考，而不是机械套用；还要结合内容、功能、阅读路径和真实使用场景。",
+          "keyPoint": "把它作为构图参考，而不是机械套用；还要结合内容、功能、阅读路径和真实使用场景。"
+        }
+      ],
+      "conclusion": "黄金分割是一种比例工具，不是万能美学公式。合理使用能增强秩序感和视觉平衡。"
+    }
+  },
+  {
+    "id": "2026-06-07-blockchain",
+    "title": "区块链：信任机器如何重塑互联网",
+    "subtitle": "去中心化的分布式账本技术，正在改变价值传递和协作方式",
+    "category": "信息技术",
+    "subCategory": "未分类",
+    "difficulty": "入门",
+    "cardDate": "2026-06-07",
+    "imageUrl": "/generated-cards/2026-06-07-blockchain.png",
+    "summary": "区块链是一种由多方共同维护的分布式账本，通过密码学、共识机制和链式结构，让记录公开透明、难以篡改，适合多方协作场景。",
+    "keywords": [
+      "分布式账本",
+      "哈希值",
+      "区块结构",
+      "共识机制",
+      "不可篡改",
+      "智能合约"
+    ],
+    "completed": false,
+    "favorite": false,
+    "needReview": false,
+    "podcast": {
+      "status": "published",
+      "version": 1,
+      "title": "区块链：信任机器如何重塑互联网",
+      "duration": null,
+      "audioUrl": "/audio/published/2026-06-07-blockchain-podcast-v1.mp3",
+      "transcriptUrl": "/transcripts/published/2026-06-07-blockchain-podcast-v1.md",
+      "sizeBytes": 3226677,
+      "checksum": "sha256-e3c10456cd30f13195f555230f3fc7fd7e069ff9f6f0241e36cb41dc10f468b9",
+      "updatedAt": "2026-05-28T06:24:20.328Z",
+      "archivedVersions": []
+    },
+    "content": {
+      "title": "区块链：信任机器如何重塑互联网",
+      "subtitle": "去中心化的分布式账本技术，正在改变价值传递和协作方式",
+      "category": "信息技术",
+      "subCategory": "未分类",
+      "difficulty": "入门",
+      "summary": "区块链是一种由多方共同维护的分布式账本，通过密码学、共识机制和链式结构，让记录公开透明、难以篡改，适合多方协作场景。",
+      "coreMechanism": "区块链的核心不是“币”，而是在陌生参与者之间建立可验证、不可轻易篡改的共同记录。",
+      "whyImportant": [
+        "分布式账本",
+        "哈希值",
+        "区块结构",
+        "共识机制",
+        "不可篡改",
+        "智能合约"
+      ],
+      "keywords": [
+        {
+          "term": "分布式账本",
+          "desc": "分布式账本"
+        },
+        {
+          "term": "哈希值",
+          "desc": "哈希值"
+        },
+        {
+          "term": "区块结构",
+          "desc": "区块结构"
+        },
+        {
+          "term": "共识机制",
+          "desc": "共识机制"
+        },
+        {
+          "term": "不可篡改",
+          "desc": "不可篡改"
+        },
+        {
+          "term": "智能合约",
+          "desc": "智能合约"
+        }
+      ],
+      "misconception": {
+        "title": "常见误区",
+        "content": "它让多方在不完全依赖中心机构的情况下，共同维护一份可验证、难篡改的记录。"
+      },
+      "financeAngle": "从“陌生人之间为什么能在网上共同维护一本账”切入，讲清楚分布式账本和信任机制。",
+      "memoryHooks": [
+        "分布式账本",
+        "哈希值",
+        "区块结构"
+      ],
+      "thinkingQuestions": [
+        {
+          "level": "思考题",
+          "question": "区块链主要解决什么信任问题？",
+          "answer": "它让多方在不完全依赖中心机构的情况下，共同维护一份可验证、难篡改的记录。",
+          "keyPoint": "它让多方在不完全依赖中心机构的情况下，共同维护一份可验证、难篡改的记录。"
+        },
+        {
+          "level": "思考题",
+          "question": "区块链的“不可篡改”是如何实现的？",
+          "answer": "区块之间通过哈希值链接，记录被多个节点保存，篡改会破坏链式关系并被网络发现。",
+          "keyPoint": "区块之间通过哈希值链接，记录被多个节点保存，篡改会破坏链式关系并被网络发现。"
+        },
+        {
+          "level": "思考题",
+          "question": "区块链未来可能带来哪些改变？",
+          "answer": "可能影响支付清算、供应链追溯、数字身份、版权登记、公益透明和自动化合约等场景。",
+          "keyPoint": "可能影响支付清算、供应链追溯、数字身份、版权登记、公益透明和自动化合约等场景。"
+        }
+      ],
+      "conclusion": "区块链的核心不是“币”，而是在陌生参与者之间建立可验证、不可轻易篡改的共同记录。"
+    }
   }
 ]

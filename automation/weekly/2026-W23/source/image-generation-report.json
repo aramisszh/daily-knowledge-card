@@ -1,32 +1,171 @@
 {
-  "schemaVersion": "daily-knowledge-card.image-generation-report.v1",
   "imageEngine": "chatgpt-image2",
   "imagePolicy": "required-before-packaging",
   "styleAnchor": "daily-knowledge-card-premium-infographic-v1",
-  "packageMode": "mvp-single-card-test",
-  "createdAt": "2026-05-24T03:14:56Z",
+  "packageRole": "chatgpt-weekly-supplement",
+  "cardCount": 6,
   "items": [
     {
-      "cardId": "2026-06-01-qr-code-error-correction",
-      "date": "2026-06-01",
-      "imageFile": "images/raw/2026-06-01-qr-code-error-correction.png",
+      "cardId": "2026-06-02-electron-microscope",
+      "date": "2026-06-02",
+      "imageFile": "images/raw/2026-06-02-electron-microscope.png",
       "status": "generated",
       "source": "chatgpt-image2",
+      "sha256": "78ee2a26354caeccac37226c5d6acb40dff97ad3b07451b1b6b94be5f6f96cfd",
       "qualityGate": {
         "exists": true,
         "filenameMatched": true,
         "aspectRatio": "4:5",
-        "resolution": "1122x1402",
-        "minResolution": "pass",
-        "shortSidePixels": 1122,
+        "actualResolution": "1122x1402",
+        "minResolution": "short-side>=1000",
+        "shortSide": 1122,
         "textLegibility": "manual-pass",
         "visualStyle": "series-consistent",
         "contentCompleteness": "pass",
-        "userQualityConfirmation": true,
-        "noBackendFilesVisible": true,
-        "readyForFinalZip": true
+        "singleTopic": "pass",
+        "excludedMultiTopicOrWrongTopic": false
       },
-      "sha256": "de2037304b4faa062eb65a0f000f91aea268faa1e77bbbfef8ea476d66d6fa18"
+      "userApprovalGate": {
+        "required": true,
+        "status": "approved",
+        "approvedForPackaging": true,
+        "approvalPhrase": "本周图片确认通过，按harness要求开始打包，注意只打包符合要求的6张每日知识卡图片，一张图片上多个主题、图片主题不符合要求的都不要打包"
+      }
+    },
+    {
+      "cardId": "2026-06-03-wind-turbine",
+      "date": "2026-06-03",
+      "imageFile": "images/raw/2026-06-03-wind-turbine.png",
+      "status": "generated",
+      "source": "chatgpt-image2",
+      "sha256": "6a56a50d3aedb56a38aa053db2daa45c3cf9871f9d5295595da832085745ccb0",
+      "qualityGate": {
+        "exists": true,
+        "filenameMatched": true,
+        "aspectRatio": "4:5",
+        "actualResolution": "1122x1402",
+        "minResolution": "short-side>=1000",
+        "shortSide": 1122,
+        "textLegibility": "manual-pass",
+        "visualStyle": "series-consistent",
+        "contentCompleteness": "pass",
+        "singleTopic": "pass",
+        "excludedMultiTopicOrWrongTopic": false
+      },
+      "userApprovalGate": {
+        "required": true,
+        "status": "approved",
+        "approvedForPackaging": true,
+        "approvalPhrase": "本周图片确认通过，按harness要求开始打包，注意只打包符合要求的6张每日知识卡图片，一张图片上多个主题、图片主题不符合要求的都不要打包"
+      }
+    },
+    {
+      "cardId": "2026-06-04-compound-interest",
+      "date": "2026-06-04",
+      "imageFile": "images/raw/2026-06-04-compound-interest.png",
+      "status": "generated",
+      "source": "chatgpt-image2",
+      "sha256": "748d5bbf376b2e6673166048922f504c5e0b469b3aa0b997186fa6b5390ecb43",
+      "qualityGate": {
+        "exists": true,
+        "filenameMatched": true,
+        "aspectRatio": "4:5",
+        "actualResolution": "1122x1402",
+        "minResolution": "short-side>=1000",
+        "shortSide": 1122,
+        "textLegibility": "manual-pass",
+        "visualStyle": "series-consistent",
+        "contentCompleteness": "pass",
+        "singleTopic": "pass",
+        "excludedMultiTopicOrWrongTopic": false
+      },
+      "userApprovalGate": {
+        "required": true,
+        "status": "approved",
+        "approvedForPackaging": true,
+        "approvalPhrase": "本周图片确认通过，按harness要求开始打包，注意只打包符合要求的6张每日知识卡图片，一张图片上多个主题、图片主题不符合要求的都不要打包"
+      }
+    },
+    {
+      "cardId": "2026-06-05-silk-road",
+      "date": "2026-06-05",
+      "imageFile": "images/raw/2026-06-05-silk-road.png",
+      "status": "generated",
+      "source": "chatgpt-image2",
+      "sha256": "8d49c7d31b6bc8d0468cfac65239e41247880c767bf7f0e35860bc8c26e502fb",
+      "qualityGate": {
+        "exists": true,
+        "filenameMatched": true,
+        "aspectRatio": "4:5",
+        "actualResolution": "1126x1397",
+        "minResolution": "short-side>=1000",
+        "shortSide": 1126,
+        "textLegibility": "manual-pass",
+        "visualStyle": "series-consistent",
+        "contentCompleteness": "pass",
+        "singleTopic": "pass",
+        "excludedMultiTopicOrWrongTopic": false
+      },
+      "userApprovalGate": {
+        "required": true,
+        "status": "approved",
+        "approvedForPackaging": true,
+        "approvalPhrase": "本周图片确认通过，按harness要求开始打包，注意只打包符合要求的6张每日知识卡图片，一张图片上多个主题、图片主题不符合要求的都不要打包"
+      }
+    },
+    {
+      "cardId": "2026-06-06-golden-ratio",
+      "date": "2026-06-06",
+      "imageFile": "images/raw/2026-06-06-golden-ratio.png",
+      "status": "generated",
+      "source": "chatgpt-image2",
+      "sha256": "f65433e244cc2fb420d178c53b32aa247a5e749170225412db9b58c947edd616",
+      "qualityGate": {
+        "exists": true,
+        "filenameMatched": true,
+        "aspectRatio": "4:5",
+        "actualResolution": "1122x1402",
+        "minResolution": "short-side>=1000",
+        "shortSide": 1122,
+        "textLegibility": "manual-pass",
+        "visualStyle": "series-consistent",
+        "contentCompleteness": "pass",
+        "singleTopic": "pass",
+        "excludedMultiTopicOrWrongTopic": false
+      },
+      "userApprovalGate": {
+        "required": true,
+        "status": "approved",
+        "approvedForPackaging": true,
+        "approvalPhrase": "本周图片确认通过，按harness要求开始打包，注意只打包符合要求的6张每日知识卡图片，一张图片上多个主题、图片主题不符合要求的都不要打包"
+      }
+    },
+    {
+      "cardId": "2026-06-07-blockchain",
+      "date": "2026-06-07",
+      "imageFile": "images/raw/2026-06-07-blockchain.png",
+      "status": "generated",
+      "source": "chatgpt-image2",
+      "sha256": "e2f45fe2c400be46c1b390c636a0ce2a1994556e16092146da941ddd320dde45",
+      "qualityGate": {
+        "exists": true,
+        "filenameMatched": true,
+        "aspectRatio": "4:5",
+        "actualResolution": "1122x1402",
+        "minResolution": "short-side>=1000",
+        "shortSide": 1122,
+        "textLegibility": "manual-pass",
+        "visualStyle": "series-consistent",
+        "contentCompleteness": "pass",
+        "singleTopic": "pass",
+        "excludedMultiTopicOrWrongTopic": false
+      },
+      "userApprovalGate": {
+        "required": true,
+        "status": "approved",
+        "approvedForPackaging": true,
+        "approvalPhrase": "本周图片确认通过，按harness要求开始打包，注意只打包符合要求的6张每日知识卡图片，一张图片上多个主题、图片主题不符合要求的都不要打包"
+      }
     }
   ]
 }

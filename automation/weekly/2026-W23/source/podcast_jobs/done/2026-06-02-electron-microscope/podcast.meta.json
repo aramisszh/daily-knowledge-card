@@ -1,0 +1,17 @@
+{
+  "cardId": "2026-06-02-electron-microscope",
+  "date": "2026-06-02",
+  "title": "电子显微镜：看见肉眼看不见的世界",
+  "targetAudioFile": "2026-06-02-electron-microscope-podcast-v1.mp3",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300
+  },
+  "speakerBindings": {
+    "spk1": "D:/AI-Podcast/voice_refs/male.wav",
+    "spk2": "D:/AI-Podcast/voice_refs/female.wav"
+  },
+  "scriptFile": "script.md",
+  "srtFile": "script.srt",
+  "transcriptFile": "transcript.md"
+}

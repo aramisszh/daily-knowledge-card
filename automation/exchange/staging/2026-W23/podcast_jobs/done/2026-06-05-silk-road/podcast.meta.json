@@ -1,0 +1,17 @@
+{
+  "cardId": "2026-06-05-silk-road",
+  "date": "2026-06-05",
+  "title": "丝绸之路：连接东西方的文明动脉",
+  "targetAudioFile": "2026-06-05-silk-road-podcast-v1.mp3",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300
+  },
+  "speakerBindings": {
+    "spk1": "D:/AI-Podcast/voice_refs/male.wav",
+    "spk2": "D:/AI-Podcast/voice_refs/female.wav"
+  },
+  "scriptFile": "script.md",
+  "srtFile": "script.srt",
+  "transcriptFile": "transcript.md"
+}

@@ -1,0 +1,17 @@
+{
+  "cardId": "2026-06-03-wind-turbine",
+  "date": "2026-06-03",
+  "title": "风力发电机：把风的动能变成清洁电能",
+  "targetAudioFile": "2026-06-03-wind-turbine-podcast-v1.mp3",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300
+  },
+  "speakerBindings": {
+    "spk1": "D:/AI-Podcast/voice_refs/male.wav",
+    "spk2": "D:/AI-Podcast/voice_refs/female.wav"
+  },
+  "scriptFile": "script.md",
+  "srtFile": "script.srt",
+  "transcriptFile": "transcript.md"
+}

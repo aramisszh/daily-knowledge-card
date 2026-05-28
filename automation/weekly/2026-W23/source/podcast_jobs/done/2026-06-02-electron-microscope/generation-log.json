@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-02-electron-microscope",
+  "status": "success",
+  "generatedAt": "2026-05-28T09:53:33+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-02-electron-microscope-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\2026-06-02-electron-microscope-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\2026-06-02-electron-microscope-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\2026-06-02-electron-microscope-podcast-v1.mp3",
+  "durationSeconds": 139.52,
+  "mp3SizeBytes": 3360872,
+  "mp3Checksum": "sha256-ae1efd5da8ee92b7ce82bdd99064abf67c9c9c146ffb4cc9c263b14361e8464c",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\generation-log.json"
+}

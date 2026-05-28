@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-04-compound-interest",
+  "status": "success",
+  "generatedAt": "2026-05-28T09:53:35+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-04-compound-interest-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\2026-06-04-compound-interest-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\2026-06-04-compound-interest-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\2026-06-04-compound-interest-podcast-v1.mp3",
+  "durationSeconds": 128.32,
+  "mp3SizeBytes": 3092295,
+  "mp3Checksum": "sha256-6c9661f685395490228c7b5988a7df7e55979706113f66c237e3aee5528b3f2e",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\generation-log.json"
+}

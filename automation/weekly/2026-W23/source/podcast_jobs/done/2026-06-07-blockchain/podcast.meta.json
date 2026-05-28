@@ -1,0 +1,17 @@
+{
+  "cardId": "2026-06-07-blockchain",
+  "date": "2026-06-07",
+  "title": "区块链：信任机器如何重塑互联网",
+  "targetAudioFile": "2026-06-07-blockchain-podcast-v1.mp3",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300
+  },
+  "speakerBindings": {
+    "spk1": "D:/AI-Podcast/voice_refs/male.wav",
+    "spk2": "D:/AI-Podcast/voice_refs/female.wav"
+  },
+  "scriptFile": "script.md",
+  "srtFile": "script.srt",
+  "transcriptFile": "transcript.md"
+}

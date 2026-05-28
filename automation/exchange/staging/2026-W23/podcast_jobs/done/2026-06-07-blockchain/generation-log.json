@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-07-blockchain",
+  "status": "success",
+  "generatedAt": "2026-05-28T09:53:37+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-07-blockchain-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\2026-06-07-blockchain-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\2026-06-07-blockchain-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\2026-06-07-blockchain-podcast-v1.mp3",
+  "durationSeconds": 133.92,
+  "mp3SizeBytes": 3226677,
+  "mp3Checksum": "sha256-e3c10456cd30f13195f555230f3fc7fd7e069ff9f6f0241e36cb41dc10f468b9",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\generation-log.json"
+}

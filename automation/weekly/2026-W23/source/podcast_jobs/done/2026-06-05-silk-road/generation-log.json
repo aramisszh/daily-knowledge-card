@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-05-silk-road",
+  "status": "success",
+  "generatedAt": "2026-05-28T09:53:35+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-05-silk-road-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\2026-06-05-silk-road-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\2026-06-05-silk-road-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\2026-06-05-silk-road-podcast-v1.mp3",
+  "durationSeconds": 131.04,
+  "mp3SizeBytes": 3157610,
+  "mp3Checksum": "sha256-51f7ea2bfbd314c731a61d675731a4d204bf17c5fdd42baf04a1dbc159cce619",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\generation-log.json"
+}

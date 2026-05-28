@@ -1,0 +1,17 @@
+{
+  "cardId": "2026-06-06-golden-ratio",
+  "date": "2026-06-06",
+  "title": "黄金分割：自然与艺术的完美比例",
+  "targetAudioFile": "2026-06-06-golden-ratio-podcast-v1.mp3",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300
+  },
+  "speakerBindings": {
+    "spk1": "D:/AI-Podcast/voice_refs/male.wav",
+    "spk2": "D:/AI-Podcast/voice_refs/female.wav"
+  },
+  "scriptFile": "script.md",
+  "srtFile": "script.srt",
+  "transcriptFile": "transcript.md"
+}

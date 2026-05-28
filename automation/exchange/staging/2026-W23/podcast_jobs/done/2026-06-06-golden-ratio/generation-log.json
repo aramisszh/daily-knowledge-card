@@ -1,0 +1,16 @@
+{
+  "weekId": "2026-W23",
+  "cardId": "2026-06-06-golden-ratio",
+  "status": "success",
+  "generatedAt": "2026-05-28T09:53:36+08:00",
+  "sourceRawAudio": "D:\\AI-Podcast\\output\\raw-wav\\2026-06-06-golden-ratio-podcast-v1.flac",
+  "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\2026-06-06-golden-ratio-podcast-v1.flac",
+  "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\2026-06-06-golden-ratio-podcast-v1.mp3",
+  "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\2026-06-06-golden-ratio-podcast-v1.mp3",
+  "durationSeconds": 133.6,
+  "mp3SizeBytes": 3219088,
+  "mp3Checksum": "sha256-2491059ba510a2ae9a5fe42972e838f55ab4f2c4b47c4db00fa32412ea08e3f2",
+  "bitrate": "192k",
+  "sampleRate": 44100,
+  "logFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\generation-log.json"
+}

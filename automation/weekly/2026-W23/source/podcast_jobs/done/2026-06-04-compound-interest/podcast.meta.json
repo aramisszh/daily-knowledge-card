@@ -1,0 +1,17 @@
+{
+  "cardId": "2026-06-04-compound-interest",
+  "date": "2026-06-04",
+  "title": "复利效应：世界第八大奇迹",
+  "targetAudioFile": "2026-06-04-compound-interest-podcast-v1.mp3",
+  "durationTargetSeconds": {
+    "min": 180,
+    "max": 300
+  },
+  "speakerBindings": {
+    "spk1": "D:/AI-Podcast/voice_refs/male.wav",
+    "spk2": "D:/AI-Podcast/voice_refs/female.wav"
+  },
+  "scriptFile": "script.md",
+  "srtFile": "script.srt",
+  "transcriptFile": "transcript.md"
+}

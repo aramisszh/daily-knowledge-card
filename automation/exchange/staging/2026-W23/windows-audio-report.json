@@ -2,21 +2,68 @@
   "weekId": "2026-W23",
   "weekStart": "2026-06-01",
   "weekEnd": "2026-06-07",
-  "sourceZip": "D:\\AI-Podcast\\exchange\\inbox\\dkc-source__2026-W23__2026-06-01_to_2026-06-07.zip",
-  "sourceWorkDir": "D:\\AI-Podcast\\exchange\\work\\2026-W23\\source",
+  "packageStart": "2026-06-02",
+  "packageEnd": "2026-06-07",
+  "sourceZip": "D:\\AI-Podcast\\exchange\\inbox\\dkc-source__2026-W23__2026-06-02_to_2026-06-07.zip",
+  "sourceWorkDir": "D:\\AI-Podcast\\exchange\\work\\2026-W23\\source__2026-06-02_to_2026-06-07",
   "inputDir": "D:\\AI-Podcast\\jobs\\pending\\2026-W23",
   "outputDir": "D:\\AI-Podcast\\jobs\\done\\2026-W23",
-  "totalTasks": 1,
-  "successCount": 1,
+  "totalTasks": 6,
+  "successCount": 6,
   "failedCount": 0,
   "items": [
     {
-      "cardId": "2026-06-01-qr-code-error-correction",
+      "cardId": "2026-06-02-electron-microscope",
       "status": "success",
-      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.flac",
-      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.mp3",
-      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-01-qr-code-error-correction\\2026-06-01-qr-code-error-correction-podcast-v1.mp3",
-      "durationSeconds": 176.16,
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\2026-06-02-electron-microscope-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\2026-06-02-electron-microscope-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-02-electron-microscope\\2026-06-02-electron-microscope-podcast-v1.mp3",
+      "durationSeconds": 139.52,
+      "logFile": "generation-log.json"
+    },
+    {
+      "cardId": "2026-06-03-wind-turbine",
+      "status": "success",
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\2026-06-03-wind-turbine-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\2026-06-03-wind-turbine-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-03-wind-turbine\\2026-06-03-wind-turbine-podcast-v1.mp3",
+      "durationSeconds": 132.32,
+      "logFile": "generation-log.json"
+    },
+    {
+      "cardId": "2026-06-04-compound-interest",
+      "status": "success",
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\2026-06-04-compound-interest-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\2026-06-04-compound-interest-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-04-compound-interest\\2026-06-04-compound-interest-podcast-v1.mp3",
+      "durationSeconds": 128.32,
+      "logFile": "generation-log.json"
+    },
+    {
+      "cardId": "2026-06-05-silk-road",
+      "status": "success",
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\2026-06-05-silk-road-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\2026-06-05-silk-road-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-05-silk-road\\2026-06-05-silk-road-podcast-v1.mp3",
+      "durationSeconds": 131.04,
+      "logFile": "generation-log.json"
+    },
+    {
+      "cardId": "2026-06-06-golden-ratio",
+      "status": "success",
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\2026-06-06-golden-ratio-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\2026-06-06-golden-ratio-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-06-golden-ratio\\2026-06-06-golden-ratio-podcast-v1.mp3",
+      "durationSeconds": 133.6,
+      "logFile": "generation-log.json"
+    },
+    {
+      "cardId": "2026-06-07-blockchain",
+      "status": "success",
+      "flacFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\2026-06-07-blockchain-podcast-v1.flac",
+      "mp3File": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\2026-06-07-blockchain-podcast-v1.mp3",
+      "finalPublishFile": "D:\\AI-Podcast\\jobs\\done\\2026-W23\\2026-06-07-blockchain\\2026-06-07-blockchain-podcast-v1.mp3",
+      "durationSeconds": 133.92,
       "logFile": "generation-log.json"
     }
   ]
