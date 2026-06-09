@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { readLocalCards } from "../lib/local-data";
 import { supabaseAdmin } from "../lib/supabase-admin";
 import {
@@ -55,10 +55,33 @@ const baseCard = {
   },
 };
 
+const newerCard = {
+  ...baseCard,
+  id: "2026-05-03-water-cycle",
+  title: "Water Cycle",
+  category: "Science",
+  subCategory: "Earth",
+  cardDate: "2026-05-03",
+  imageUrl: "/generated-cards/2026-05-03-water-cycle.png",
+  summary: "Water summary",
+  keywords: ["water"],
+  content: {
+    ...baseCard.content,
+    title: "Water Cycle",
+    category: "Science",
+    subCategory: "Earth",
+    summary: "Water summary",
+  },
+};
+
 beforeEach(() => {
   mockReadLocalCards.mockReset();
   mockReadLocalCards.mockResolvedValue([baseCard]);
   mockFrom.mockReset();
+});
+
+afterEach(() => {
+  vi.restoreAllMocks();
 });
 
 describe("listCardsFromDatabase", () => {
@@ -167,6 +190,105 @@ describe("listCardsFromDatabase", () => {
     expect(cards[0].podcastListened).toBe(true);
     expect(cards[0].podcastListenedAt).toBe("2026-05-21T08:00:00+08:00");
   });
+
+  it("returns local cards with default study state when study_records query errors", async () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    mockFrom.mockImplementation(((table: string) => {
+      if (table === "study_records") {
+        return {
+          select: () => ({
+            eq: vi.fn().mockResolvedValue({ data: null, error: { message: "network error" } }),
+          }),
+        };
+      }
+      if (table === "knowledge_cards") {
+        return {
+          select: () => Promise.resolve({ data: [], error: null }),
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    }) as any);
+
+    const cards = await listCardsFromDatabase();
+
+    expect(cards).toHaveLength(1);
+    expect(cards[0].completed).toBe(false);
+    expect(cards[0].favorite).toBe(false);
+    expect(cards[0].needReview).toBe(false);
+  });
+
+  it("returns local cards with default study state when knowledge_cards query errors", async () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    mockFrom.mockImplementation(((table: string) => {
+      if (table === "study_records") {
+        return {
+          select: () => ({
+            eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+          }),
+        };
+      }
+      if (table === "knowledge_cards") {
+        return {
+          select: () => Promise.resolve({ data: null, error: { message: "network error" } }),
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    }) as any);
+
+    const cards = await listCardsFromDatabase();
+
+    expect(cards).toHaveLength(1);
+    expect(cards[0].completed).toBe(false);
+    expect(cards[0].favorite).toBe(false);
+    expect(cards[0].needReview).toBe(false);
+  });
+});
+
+describe("getTodayCardFromDatabase", () => {
+  it("returns the latest card when no card matches today's date", async () => {
+    mockReadLocalCards.mockResolvedValue([baseCard, newerCard]);
+    mockFrom.mockImplementation(((table: string) => {
+      if (table === "study_records") {
+        return {
+          select: () => ({
+            eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+          }),
+        };
+      }
+      if (table === "knowledge_cards") {
+        return {
+          select: () => Promise.resolve({ data: [], error: null }),
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    }) as any);
+
+    const todayCard = await getTodayCardFromDatabase("2099-01-01");
+    expect(todayCard).not.toBeNull();
+    expect(todayCard?.id).toBe(newerCard.id);
+  });
+
+  it("returns null when there are no cards at all", async () => {
+    mockReadLocalCards.mockResolvedValue([]);
+    mockFrom.mockImplementation(((table: string) => {
+      if (table === "study_records") {
+        return {
+          select: () => ({
+            eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+          }),
+        };
+      }
+      if (table === "knowledge_cards") {
+        return {
+          select: () => Promise.resolve({ data: [], error: null }),
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    }) as any);
+
+    const todayCard = await getTodayCardFromDatabase("2099-01-01");
+    expect(todayCard).toBeNull();
+  });
 });
 
 describe("local fallback without supabase env", () => {
@@ -194,6 +316,35 @@ describe("local fallback without supabase env", () => {
     expect(stats.total).toBe(1);
     expect(stats.completed).toBe(0);
     expect(fallbackFrom).not.toHaveBeenCalled();
+  });
+});
+
+describe("getStatsFromDatabase", () => {
+  it("returns stats based on local cards when supabase queries fail", async () => {
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    mockFrom.mockImplementation(((table: string) => {
+      if (table === "study_records") {
+        return {
+          select: () => ({
+            eq: vi.fn().mockResolvedValue({ data: null, error: { message: "network error" } }),
+          }),
+        };
+      }
+      if (table === "knowledge_cards") {
+        return {
+          select: () => Promise.resolve({ data: null, error: { message: "network error" } }),
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    }) as any);
+
+    const stats = await getStatsFromDatabase("2026-05-01");
+    expect(stats.total).toBe(1);
+    expect(stats.completed).toBe(0);
+    expect(stats.favorites).toBe(0);
+    expect(stats.needReview).toBe(0);
+    expect(stats.streak).toBe(0);
+    expect(stats.completedByCategory).toEqual({});
   });
 });
 

@@ -80,12 +80,21 @@ async function loadKnowledgeCardRows() {
 }
 
 async function loadCardsAndRecords() {
+  const cards = await loadLocalCards();
+
   if (!hasSupabaseAdminEnv) {
-    const cards = await loadLocalCards();
     return { cards, recordRows: [], knowledgeCardRows: [] };
   }
 
-  const [cards, recordRows, knowledgeCardRows] = await Promise.all([loadLocalCards(), loadStudyRecordRows(), loadKnowledgeCardRows()]);
+  let recordRows: StudyRecordRow[] = [];
+  let knowledgeCardRows: KnowledgeCardRow[] = [];
+
+  try {
+    [recordRows, knowledgeCardRows] = await Promise.all([loadStudyRecordRows(), loadKnowledgeCardRows()]);
+  } catch (error) {
+    console.warn("Failed to load Supabase study state; falling back to local cards only.", error);
+  }
+
   return { cards, recordRows, knowledgeCardRows };
 }
 
@@ -208,7 +217,7 @@ export async function getCardByIdFromDatabase(id: string) {
 
 export async function getTodayCardFromDatabase(todayDate = getSingaporeDateString()) {
   const cards = await listCardsFromDatabase();
-  return cards.find((card) => card.cardDate === todayDate) ?? null;
+  return cards.find((card) => card.cardDate === todayDate) ?? cards[0] ?? null;
 }
 
 export async function getStatsFromDatabase(todayDate = getSingaporeDateString()): Promise<StatsSummary> {
